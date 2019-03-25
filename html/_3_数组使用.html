@@ -22,6 +22,7 @@
     //tips:
     //1.push和pop对应的是后进先出，操作的是栈尾的数据
     //2.shift和unshift对应的是先进先出，操作的是栈首的数据
+    console.log('---------------------------------------------------------');
 
 
     //2.sort 数组排序
@@ -35,15 +36,86 @@
     console.log(arr2.toString());
 
     //3.concat 数组拼接
-    let arr3=['1',8,'小王'];
-    let arr3_2=[999,'5'];
-    let arr4=arr3.concat(arr3_2,'大脸');
-    console.log('arr3:'+arr3.toString());
-    console.log('arr3_2:'+arr3_2.toString());
-    console.log('arr4:'+arr4.toString());
+    let arr3 = ['1', 8, '小王'];
+    let arr3_2 = [999, '5'];
+    let arr4 = arr3.concat(arr3_2, '大脸');
+    console.log('arr3:' + arr3.toString());
+    console.log('arr3_2:' + arr3_2.toString());
+    console.log('arr4:' + arr4.toString());
     //tips:
     //1.concat不会操作原来的数组，只会组合数据到新的数组上面
     //2.concat可以同时进行多个参数的组合，如果其中一个参数类型是数组，那么会遍历取出其中的所有子元素，来进行组合
+    console.log('---------------------------------------------------------');
+
+    //4.slice 数组截取
+    let arr5 = [1, 2, 3, 4, 5];
+    let arr5_2 = arr5.slice(0);
+    let arr5_3 = arr5.slice(1, 3);
+    let arr5_4 = arr5.slice(-2, -3);
+    let arr5_5 = arr5.slice(-2, -1);
+    console.log('arr5:' + arr5.toString());
+    console.log('arr5_2:' + arr5_2.toString());
+    console.log('arr5_3:' + arr5_3.toString());
+    console.log('arr5_4:' + arr5_4.toString());
+    console.log('arr5_5:' + arr5_5.toString());
+    //tips:
+    //1.slice不会操作原来的数组，与concat类似，是克隆原数组数据到新数组上面
+    //2.slice最多支持两个参数，第一个参数表示截取数组的起始下标(从0开始)，第二个参数表示截取的结束下标(第几个就是几，不用减一)；
+    //第二个参数是可选的，不传的话，表示从起始下标一直截取到原数组的最后一个元素
+    //3.起始下标的值不能大于结束位置，否则返回空数组
+    //4.slice的两个参数可以为负数，表示的含义会被转换为数组长度减去这个负数得到的值
+    console.log('---------------------------------------------------------');
+
+    //5.splice 数组删除、插入、替换等操作
+    let arr6 = ['tom', 'jerry', 'babel', 'month', 'white'];
+    console.log('原始数组:' + arr6.toString());
+    let arr6_2 = arr6.splice(0, 2);
+    console.log('截取后的数组:' + arr6.toString());
+    console.log('截取掉的选项', arr6_2.toString());
+
+    let arr7 = ['java', 'vue', 'objective-c', 'gradle', 'swift'];
+    console.log('原始数组:' + arr7.toString());
+    let arr7_2 = arr7.splice(1, 2, 'xxxx', 'jjjjj');
+    console.log('替换两项后的数组:' + arr7.toString());
+    console.log('截取掉的选项', arr7_2.toString());
+
+    let arr8 = [77, 45, 1, 134, 600];
+    console.log('原始数组:' + arr8.toString());
+    let arr8_2 = arr8.splice(1, 0, 999, 888);
+    console.log('插入两项后的数组:' + arr8.toString());
+    console.log('截取掉的选项', arr8_2.toString());
+
+    //tips:
+    //1.splice与slice和concat的最大区别就是，它会操作原始数组
+    //2.调用splice后，会得到一个截取到的元素数组
+    //3.splice最少传入2个参数。第一个表示需要截取的下标起始位置(从0开始)，第二个表示要截取的长度，这个长度可以为0，就表示不截取，只是作为插入的下标位置。
+    //第三个，到之后的那些参数表示从下标位置开始需要插入进去的元素
+    console.log('---------------------------------------------------------');
+
+    //6.indexOf lastIndexOf定位
+    let arr9 = [9, 8, 7, 6, 5, 4, 9, 0, 8, 6, 9, 1];
+    console.log('原始数组:' + arr9.toString());
+    console.log('第一个9的位置:' + arr9.indexOf(9));
+    console.log('最后一个9的位置:' + arr9.lastIndexOf(9));
+    console.log('100的位置:' + arr9.lastIndexOf(100));
+
+    let arr9_2=[];
+    function calAllItemIndex(oriArr, item) {
+        let i=oriArr.lastIndexOf(item);
+        if(i!==-1){
+            arr9_2.push(i);
+            calAllItemIndex(oriArr.slice(0,i),item);
+        }
+    }
+    calAllItemIndex(arr9,9);
+    arr9_2.sort(function (v1,v2) {
+        return v1-v2;
+    });
+    console.log('所有9的位置:' + arr9_2);
+    //tips:
+    //1.indexOf定位第一个找到的元素下标，lastIndexOf定位最后一个找到的元素下标
+    //2.没有定位到指定元素的话，会返回-1
+
 </script>
 </body>
 </html>
