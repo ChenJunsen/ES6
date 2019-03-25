@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pp1</title>
+    <style type="text/css">
+        body{
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+        }
+        .num{
+            font-size: 80px;
+            color: #ff0000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        .btn{
+            width: 100vw;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="num">1</div>
+    <input type="button" value="跳转" class="btn" id="turn">
+</body>
+<script type="text/javascript">
+    function ready(callback) {
+        // 如果jsbridge已经注入则直接调用
+        if (window.AlipayJSBridge) {
+            callback && callback();
+        } else {
+            // 如果没有注入则监听注入的事件
+            document.addEventListener('AlipayJSBridgeReady', callback, false);
+        }
+    }
+
+    ready(function () {
+        AlipayJSBridge.call('getUserFromAddressBook',function (res) {
+            
+        });
+    });
+    ready(function () {
+        document.getElementById('turn').addEventListener('click', function () {
+            window.location.href = './pp2.html';
+        });
+        document.addEventListener('back', function (pushWebEvent) {
+            pushWebEvent.preventDefault();
+            window.history.go(-1);
+        }, false);
+    });
+</script>
+</html>

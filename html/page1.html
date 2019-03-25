@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>page1</title>
+    <style type="text/css">
+        .btn{
+            width: 200px;
+            height: 80px;
+            color: white;
+            background: #4cbdfe;
+            border: purple;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="button" value="跳转页面" class="btn">
+    </div>
+    <script>
+        alert('ok')
+        function callback(e) {
+            alert(JSON.stringify(e));
+        }
+
+        function ready(callback) {
+            // 如果jsbridge已经注入则直接调用
+            if (window.AlipayJSBridge) {
+                callback && callback();
+            } else {
+                // 如果没有注入则监听注入的事件
+                document.addEventListener('AlipayJSBridgeReady', callback, false);
+            }
+        }
+        ready(function () {
+            console.error('------>ready addNotifyListener---------')
+            alert('ready')
+            AlipayJSBridge.call('addNotifyListener', {
+                name:'NEBULANOTIFY_resume' // H5发出的事件必须以NEBULANOTIFY_开通进行监听
+            }, function (res) {
+                console.error(JSON.stringify(res))
+                alert(JSON.stringify(res))
+            });
+
+            document.querySelector('.btn').addEventListener('click', function() {
+                console.error('------>ready pushWindow---------')
+                AlipayJSBridge.call('pushWindow', {
+                    url:'./page2.html',
+                    param:{
+                        defaultTitle:'page2'
+                    }
+                });
+            });
+        })
+    </script>
+</body>
+
+
+</html>

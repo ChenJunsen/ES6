@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pagex</title>
+    <style type="text/css">
+        .btn {
+            width: 200px;
+            height: 80px;
+            color: white;
+            background: #4cbdfe;
+            border: purple;
+            font-size: 30px;
+        }
+
+        .btn2 {
+            width: 200px;
+            height: 80px;
+            color: white;
+            background: #4cbdfe;
+            border: purple;
+            font-size: 30px;
+        }
+
+        .btn3 {
+            width: 200px;
+            height: 80px;
+            color: white;
+            background: #4cbdfe;
+            border: purple;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="button" value="销毁页面" class="btn">
+    <input type="button" value="隐藏按钮" class="btn2" id="hideBtn">
+    <input type="button" value="显示按钮" class="btn3" id="showBtn">
+    <input type="button" value="跳转页面" class="btn" id="turn">
+    <input type="button" value="读取PDF" class="btn" id="readPDF">
+</div>
+<script type="text/javascript">
+
+    function ready(callback) {
+        // 如果jsbridge已经注入则直接调用
+        if (window.AlipayJSBridge) {
+            callback && callback();
+        } else {
+            // 如果没有注入则监听注入的事件
+            document.addEventListener('AlipayJSBridgeReady', callback, false);
+        }
+    }
+
+    ready(function () {
+        console.error('------>ready popWindow---------')
+        document.addEventListener('optionMenu', function (res) {
+            alert(res)
+            console.error(res)
+        });
+        alert('------>ready popWindow---------');
+        document.getElementById('showBtn').addEventListener('click', function () {
+            alert('show')
+            //设置单个按钮
+            /*AlipayJSBridge.call('setOptionMenu',{
+                title:'哈哈',
+                color:'#333333'
+            });*/
+            AlipayJSBridge.call('setOptionMenu', {
+                menus: [
+                    {
+                        icontype:'scan'
+                        // icon:'http://192.168.43.108:8090/img/ic_earphone.png'
+                        // title:'呵呵',
+                        // color:'#85ddcf'
+                    },
+                    {
+                        title:'点我试试',
+                        color:'#333777'
+                    }
+                ],
+                override:true
+            });
+            AlipayJSBridge.call('showOptionMenu');
+        });
+
+
+        /*document.querySelector('.btn').addEventListener('click', function() {
+            alert('popWindow')
+            AlipayJSBridge.call('popWindow', {
+                data:{
+                    command:'refresh'
+                }
+            });
+        });
+*/
+        document.getElementById('hideBtn').addEventListener('click', function () {
+            alert('隐藏')
+            AlipayJSBridge.call('hideOptionMenu', function (res) {
+                alert(JSON.stringify(res))
+            });
+        });
+
+        document.getElementById('readPDF').addEventListener('click', function () {
+            alert('读PDF:'+u);
+            AlipayJSBridge.call('readPDFFile',{
+                url:'http://cqrcb-test.oss-cn-shanghai.aliyuncs.com/1.pdf'
+            });
+        });
+
+        document.getElementById('turn').addEventListener('click',function () {
+            AlipayJSBridge.call('openPageWithName', {
+                pageName:'z-demo1',
+                pageTitle:'z-demo1',
+                // param:'hello,我是来自Es6的参数'//支持(非对象类型，取参需要从param里面取)
+                // param:JSON.stringify({name:'Tom'})//支持(非对象但是可以转换为JSON对象类型的字符，支持直接从键名取值)
+                // param:{name:'TomeAndJerry'}//支持(对象类型，支持直接从键名取值)
+                param:['1','2','2dbg#ff']//支持(非对象类型，取参需要从param里面取)
+            });
+        })
+    })
+</script>
+</body>
+
+
+</html>

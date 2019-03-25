@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../js/desconstruct.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="hello">hello</div>
+</body>
+<script>
+    /*des1([1,2]);
+    des2(['bob','jerry',true],199.0);
+    des3({
+        a:'tom',
+        b:12,
+        c:'444'
+    })*/
+    /*var s1='abc?tt=sd';
+    console.error(s1.indexOf('?tct=sd'))*/
+    /*var s1='我要%s呵呵';
+    console.log(s1.replace(new RegExp("%s","g"),'apple'))*/
+    /*var countTime=60;
+    setInterval(function () {
+
+    },1000);*/
+
+    // let s="clientParam": "isNeedLogin=Y|image=DepositButton|pageName=accmanage-hangcard|nodeType=WebNebulaPackage|jumpType=PushRoot|";
+
+    /*let d={
+        a:'a1',
+        b:'b1'
+    }
+    console.log(JSON.stringify(d)+'')*/
+
+    /*console.log(document);
+    function a(){
+        alert('ok')
+    }
+    document.getElementById('hello').addEventListener('click',a);
+    document.getElementById('hello').removeEventListener('click',a)
+
+
+    document.addEventListener('click',a);
+    document.removeEventListener('click',a)*/
+
+    // console.log(200/1000);
+
+    var excludeSpecial = function(s) {
+        // 去掉转义字符
+        s = s.replace(/[\'\"\\\/\b\f\n\r\t]/g, '');
+        // 去掉特殊字符
+        s = s.replace(/[\@\#\$\%\^\&\*\(\)\{\}\:\"\L\<\>\?\[\]]/);
+        return s;
+    };
+
+    var tr={"ChannelNo":"62","CouponsDesc":"金融券随机红包发放","CouponsName":"金融券随机红包发放","CouponsRule":"金融券随机红包发放","CouponsStatus":0,"CouponsType":"C2","CouponsValue":"7.67","EffectDate":"2019-02-14","InvalidDate":"2019-02-28","InvalidType":"0","InvalidityEndDate":"2019-02-28","MaxAmount":"10","MinAmount":"0.01","ObtainDate":1550073600000,"ObtainTime":"20190214192018","ObtianSource":"A63761","PersonMobilePhone":"13211111115","RandomAmount":"7.67","ToolParam":"{\"ValiditEndDate\":\"2019-02-28\",\"MinAmount\":\"0.01\",\"InvalidDate\":\"2019-02-28\",\"InvalidType\":\"0\",\"UsedMinAmount\":\"0.02\",\"ValidityBeginDate\":\"2019-02-02\",\"MaxAmount\":\"10\"}","ToolSeq":67604,"UsedMinAmount":"0.02","ValiditEndDate":"2019-02-28","ValidityBeginDate":"2019-02-02"};
+    console.log(excludeSpecial(JSON.stringify(tr)));
+</script>
+</html>

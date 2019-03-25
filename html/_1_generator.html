@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator</title>
+</head>
+<body>
+
+</body>
+<script>
+    let gen = testGen();
+    console.log(gen.next());//{value:'step1',done:false}
+    console.log(gen.next());//{value:'step1',done:false}
+    //    console.log(gen.next().value.val());
+    console.log(gen.next());//{value:'step1',done:true}
+
+    //generator是es6的一个异步操作的解决方案
+    //写法是function后面跟一个*，至于*跟在哪里：
+    //function* a
+    //function *a
+    //function*a
+    //上面写法都能通过
+    function* testGen() {
+        //yield实则就是一个断点
+        //yield表达式只能用在 Generator 函数里面，用在其他地方都会报错
+        yield 'step1';
+        yield {
+            name: 'step2',
+            val: function () {
+                return 'hello'
+            }
+        };
+        return 'step_end';
+    }
+    //yield表达式与return语句既有相似之处，也有区别。
+    // 相似之处在于，都能返回紧跟在语句后面的那个表达式的值。
+    // 区别在于每次遇到yield，函数暂停执行，下一次再从该位置继续向后执行，而return语句不具备位置记忆的功能。
+    // 一个函数里面，只能执行一次（或者说一个）return语句，但是可以执行多次（或者说多个）yield表达式。
+    // 正常函数只能返回一个值，因为只能执行一次return；Generator 函数可以返回一系列的值，因为可以有任意多个yield。
+
+
+    function* test2Gen(x) {
+        let a = yield x + 5;
+        let b = yield a + 3;
+        let c = yield b / 2;
+    }
+
+    let gen2 = test2Gen(1);
+    console.log(gen2.next());
+    console.log(gen2.next(2));
+    console.log(gen2.next(3));
+
+
+    //原生的javascript对象是没有实现iterator接口的，使用Generator函数后，就会自动实现
+    //然后就可以使用for of进行循环遍历
+    function *data() {
+        let a = 0;
+        for (; ;) {
+            yield a++;
+        }
+    }
+
+    let d = data();
+    for (let dd of d) {//for of 循环
+        if (dd > 20) {
+            break;
+        }
+        console.log(dd)
+    }
+    //从上面代码可见，使用for...of语句时不需要使用next方法。
+
+
+    function *data2() {
+        let a = 0;
+        for (let i = 0; i < 10; i++) {
+            yield a += 2;
+        }
+        return 10;
+    }
+    let n=data2();
+    for(let nn of n){
+        console.log(nn)
+    }
+    //使用let of语法不会输出return语句的值
+
+
+    //关于yield*的使用
+    function *testStar() {
+        yield 'star';
+    }
+
+    function *testStar2() {
+        yield 'star2';
+        yield testStar();
+        yield* testStar();//带*跟不带*的方式是引用值不一样，不带*引用的是方法体，带*引用的是方法的结果。
+    }
+
+    let t=testStar2();
+    for(let n of t){
+        console.log(n)
+    }
+
+
+</script>
+</html>
