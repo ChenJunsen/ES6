@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历</title>
+</head>
+<body>
+<div>遍历</div>
+<script type="text/javascript">
+    let arr = ['Apple', 'Alienware', 'Lenovo', 'HuaWei', 'Samsung'];
+    //1.do--while
+    let i1 = 0;
+    do {
+        console.log('do--while循环:index:' + i1 + ' ' + arr[i1]);
+        i1++;
+    } while (i1 < arr.length);
+    //tips:
+    //即使不满足i1里面的条件，至少会执行一次do里面的操作
+    console.log('-----------------------------------------------------------------');
+
+    //2.while
+    let i2 = 0;
+    while (i2 < arr.length) {
+        console.log('while循环:index:' + i2 + ' ' + arr[i2]);
+        i2++;
+    }
+    console.log('-----------------------------------------------------------------');
+
+    //3.for--in
+    for (let item in arr) {
+        console.log('for--in循环:index:' + item + ' ' + arr[item]);
+    }
+    let obj = {
+        name: 'tom',
+        age: 12,
+        gender: 'male',
+        hobby: 'tennis'
+    };
+    for (let prop in obj) {
+        console.log('for--in循环属性:' + prop + ':' + obj[prop]);
+    }
+    //tips:
+    //1.for--in循环里面的item实际上是对应子元素的下标而不是子元素本身
+    //2.该循环也可以遍历对象内部的属性，相关文档说由于属性是无序的，所以遍历出来的属性顺序也是无序的，这句话有待商榷。因为实际运行的结果是有序的。
+    console.log('-----------------------------------------------------------------');
+
+    //4.for 最经典的循环
+    for (let i = 0; i < arr.length; i++) {
+        console.log('for循环:index:' + i + ' ' + arr[i]);
+    }
+    //tips:
+    //可以写成下面这种形式，造成无限循环:
+    // for(;;){
+    //
+    // }
+</script>
+</body>
+</html>
