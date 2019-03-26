@@ -5,7 +5,7 @@
     <title>数组使用</title>
 </head>
 <body>
-<div>我只是一个测试的</div>
+<div>数组使用</div>
 <script type="text/javascript">
     //1.push、pop、shift、unshift 数组出入栈
     let arr1 = [];
@@ -99,22 +99,69 @@
     console.log('最后一个9的位置:' + arr9.lastIndexOf(9));
     console.log('100的位置:' + arr9.lastIndexOf(100));
 
-    let arr9_2=[];
+    let arr9_2 = [];
+
     function calAllItemIndex(oriArr, item) {
-        let i=oriArr.lastIndexOf(item);
-        if(i!==-1){
+        let i = oriArr.lastIndexOf(item);
+        if (i !== -1) {
             arr9_2.push(i);
-            calAllItemIndex(oriArr.slice(0,i),item);
+            calAllItemIndex(oriArr.slice(0, i), item);
         }
     }
-    calAllItemIndex(arr9,9);
-    arr9_2.sort(function (v1,v2) {
-        return v1-v2;
+
+    calAllItemIndex(arr9, 9);
+    arr9_2.sort(function (v1, v2) {
+        return v1 - v2;
     });
     console.log('所有9的位置:' + arr9_2);
     //tips:
     //1.indexOf定位第一个找到的元素下标，lastIndexOf定位最后一个找到的元素下标
     //2.没有定位到指定元素的话，会返回-1
+    console.log('---------------------------------------------------------');
+
+    //7.some every 判定数组的子项是否满足特定条件
+    let arr10 = [3, -9, 110, 100, 55, 8, 3];
+    let every = arr10.every(function (value, index, arr) {
+        console.log('every->value:' + value + ' index:' + index + ' arr:' + arr);
+        // return value>22;//子项是否都满足值大于22
+        return value >= -9;//子项是否都满足值大于-9
+    });
+    console.log('every:' + every);
+
+    let some = arr10.some(function (value, index, arr) {
+        console.log('some->value:' + value + ' index:' + index + ' arr:' + arr);
+        // return value>22;//子项是否有满足值大于22
+        return value >= 110;//子项是否有满足值大于110
+    });
+    console.log('some:' + some);
+    //tips:
+    //1.some和every所在的回调函数都可以传入三个参数，第一个表示是当前遍历所在的值，第二个是所值的下标，第三个是数字自身；
+    //2.some一旦遍历到指定条件的子元素和就会直接返回true，every会遍历所有值，如果遍历完后还没有找到指定值就返会false;
+    console.log('---------------------------------------------------------');
+
+    //8.filter(过滤) map(映射) foreach(循环) 遍历
+    let arr11 = [22, 77, 3, -4, 178, 0, 4, 4, 8];
+    let filter = arr11.filter(function (value, index, arr) {
+        console.log('filter->value:' + value + ' index:' + index + ' arr:' + arr);
+        return value >= 22;
+    });
+    console.log('filter:' + filter);
+    
+    let map=arr11.map(function (value,index,arr) {
+        console.log('map->value:' + value + ' index:' + index + ' arr:' + arr);
+        return value*index;
+    });
+    console.log('map:' + map);
+
+    arr11.forEach(function (value,index,arr) {
+        console.log('foreach->value:' + value + ' index:' + index + ' arr:' + arr);
+    })
+    //tips:
+    //1.三个方法都可以循环遍历
+    //2.这三个里面，foreach的功能最为单一，只是循环遍历而已，类似for循环
+    //3.filter意思为过滤指定条件的遍历，回调函数返回的是过滤条件，整个方法返回的是所有满足过滤条件的子元素集合
+    //4.map意思为映射，返回的是在原来的数组子元素基础上过滤后的数组（不会操作原来的数组，新拷贝的）
+    //5.filter和map的回调函数如果不返回值，就等同于foreach
 
 </script>
 </body>
