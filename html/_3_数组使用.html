@@ -155,13 +155,36 @@
 
     arr11.forEach(function (value,index,arr) {
         console.log('foreach->value:' + value + ' index:' + index + ' arr:' + arr);
-    })
+    });
     //tips:
     //1.三个方法都可以循环遍历
     //2.这三个里面，foreach的功能最为单一，只是循环遍历而已，类似for循环
     //3.filter意思为过滤指定条件的遍历，回调函数返回的是过滤条件，整个方法返回的是所有满足过滤条件的子元素集合
     //4.map意思为映射，返回的是在原来的数组子元素基础上过滤后的数组（不会操作原来的数组，新拷贝的）
     //5.filter和map的回调函数如果不返回值，就等同于foreach
+    console.log('---------------------------------------------------------');
+
+    //9.reduce reduceRight 归并
+    let arr12=[2,2,0,7,1,5,9];
+    let reduce=arr12.reduce(function (pre,cur,index,arr) {
+        console.log('reduce->pre:'+pre+' cur:'+cur+' index:'+index+' arr:'+arr);
+        return pre+cur;
+    });
+    console.log('reduce:'+reduce);
+
+    let reduceRight=arr12.reduceRight(function (pre,cur,index,arr) {
+        console.log('reduceRight->pre:'+pre+' cur:'+cur+' index:'+index+' arr:'+arr);
+        return pre+cur;
+    });
+    console.log('reduceRight:'+reduceRight);
+    //tips:
+    //1.归并的意思与递归类似，这两个方法的回调函数都有四个参数，
+    //第一个pre表示前一次遍历后回调函数返回的值，
+    //第二个cur表示当前遍历下标所对应的值
+    //第三个index表示当前对应的下标
+    //第四个arr数组本身
+    //2.reduce与reduceRight的区别就是，前者是从左往右遍历，后者是从右往左遍历
+    console.log('---------------------------------------------------------');
 
 </script>
 </body>
