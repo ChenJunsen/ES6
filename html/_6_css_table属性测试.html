@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS table</title>
+    <style>
+        body {
+            background: darkred;
+        }
+
+        .container {
+            width: 200px;
+            height: 200px;
+            background: black;
+        }
+
+        .container > span {
+            display: inline-grid;
+            margin: 10px;
+            height: 30px;
+            width: 110px;
+            background: blueviolet;
+            border: cyan 1px solid;
+        }
+
+        .container2{
+            height: 140px;
+            width: 140px;
+            margin-top: 20px;
+            text-align: center;
+            background: #1a92cf;
+        }
+
+        .container2>span{
+            text-align: left;
+            display: inline-block;
+            background: #505050;
+            color: aliceblue;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <span></span>
+    <span></span>
+</div>
+<div class="container2">
+    <span>少文字</span>
+    <span>文字少的时候居中，多的时候居左</span>
+</div>
+</body>
+</html>
