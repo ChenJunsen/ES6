@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <style type="text/css">
+        .container{
+            height: 80%;
+            width: 80%;
+            border: red 3px solid;
+        }
+        .d1{
+            height: 80px;
+            width: 80px;
+            border: blueviolet 1px solid;
+            background-color: rgba(255,255,189,0.5);
+        }
+        .s1{
+            height: 70px;
+            width: 70px;
+            border: brown 1px solid;
+            float: left;
+            background-color: rgba(77,77,77,0.5);
+        }
+        .s2{
+            height: 70px;
+            width: 70px;
+            border: brown 1px solid;
+            background-color: rgba(138,0,255,0.5);
+            display: inline-block;/*由于s2作用的span是标准的行内元素，给其设置宽高是不会有效果的，而设置为block模式的话又会自动换行，所以用inline-block的话，既可以有行内元素效果而且还不用换行*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="d1">d1</div>
+        <!--tips:行内元素设置宽高是不会有效果的-->
+        <span class="s1">s1</span><span class="s1">s1</span>
+        <div class="d1">d2</div>
+        <span class="s2">s2</span><span class="s2">s2</span>
+    </div>
+</body>
+</html>
