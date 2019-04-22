@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS一些样例</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 10px;
+            background: black;
+            color: deeppink;
+            font-size: 40px;
+        }
+
+        .test-block {
+            border: 2px solid silver;
+            margin-bottom: 20px;
+        }
+
+        .test-block > .block{
+            height: 50px;
+            background: blueviolet;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .test-block > .divider {
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 2px;
+            background: cyan;
+        }
+
+        .test-block > .input1{
+            white-space: normal;
+        }
+
+        .test-block-demo1{
+            text-align: center;
+        }
+
+        .test-block > .content{
+            display: inline-block;
+            text-align: left;
+            border: 1px solid limegreen;
+            margin: 10px;
+            padding: 10px;
+            word-break: break-all;/*这个是针对字母设置的，不然即使超过content的最大宽度也无法换行*/
+        }
+    </style>
+</head>
+<body>
+<!--1.分割线测试-->
+<!--实验说明:-->
+<!--这里的分割线没有设置具体的宽度（auto）,由于采用的是块级元素div,自身带有流动性，会自动填充，这样给分割线设置左右边距就很灵活，不用手动计算宽度-->
+<div class="test-block">
+    <div class="block">1</div>
+    <div class="divider"></div>
+    <div class="block">2</div>
+    <div class="divider"></div>
+    <div class="block">3</div>
+    <div class="divider"></div>
+    <div class="block">4</div>
+</div>
+
+<!--2.关于按钮-->
+<div class="test-block">
+    <!--这两个按钮是并列在同一行的，所以很明显是inline-block-->
+    <!--input的按钮和button的按钮的区别一就是前者在按钮文字超过其最大宽度后，不会换行，后者会-->
+    <!--但是给input设置white-space后，就会自动换行了，这就是说明button默认white-space就是pre-->
+    <button>按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮</button>
+    <input type="button" class="input1" value="按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮">
+</div>
+
+<!--3.一个包裹性例子：文字少时居中显示，多时主体居中，但是文字靠左-->
+<div class="test-block test-block-demo1">
+    <span class="content">文字</span>
+    <span class="content">ABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABC</span>
+    <span class="content">我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字</span>
+</div>
+</body>
+</html>
