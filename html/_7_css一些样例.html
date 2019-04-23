@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
     <title>CSS一些样例</title>
     <style type="text/css">
         body {
@@ -17,7 +18,7 @@
             margin-bottom: 20px;
         }
 
-        .test-block > .block{
+        .test-block > .block {
             height: 50px;
             background: blueviolet;
             display: flex;
@@ -32,21 +33,60 @@
             background: cyan;
         }
 
-        .test-block > .input1{
+        .test-block > .input1 {
             white-space: normal;
         }
 
-        .test-block-demo1{
+        .test-block-demo1 {
             text-align: center;
         }
 
-        .test-block > .content{
+        .test-block > .content {
             display: inline-block;
             text-align: left;
             border: 1px solid limegreen;
             margin: 10px;
             padding: 10px;
-            word-break: break-all;/*这个是针对字母设置的，不然即使超过content的最大宽度也无法换行*/
+            word-break: break-all; /*这个是针对字母设置的，不然即使超过content的最大宽度也无法换行*/
+        }
+
+        .test-block > .b1 {
+            width: 200px;
+            padding: 14px;
+            border: 3px solid gold;
+            margin: 20px;
+            background: #1a92cf;
+            display: inline-block;
+        }
+
+        .test-block > .b0 {
+            width: 200px;
+            display: inline-block;
+        }
+
+        .test-block > .b0 > .b2 {
+            padding: 14px;
+            border: 3px solid gold;
+            margin: 20px;
+            background: #1a92cf;
+        }
+
+        .test-block > .b0 > .b3 {
+            padding: 14px;
+            border: 3px solid gold;
+            margin: 50px;
+            background: #1a92cf;
+        }
+
+        .test-block > .b4 {
+            width: 200px;
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 14px;
+            border: 3px solid gold;
+            margin: 20px;
+            background: #1a92cf;
+            word-break: break-all;
         }
     </style>
 </head>
@@ -69,8 +109,11 @@
     <!--这两个按钮是并列在同一行的，所以很明显是inline-block-->
     <!--input的按钮和button的按钮的区别一就是前者在按钮文字超过其最大宽度后，不会换行，后者会-->
     <!--但是给input设置white-space后，就会自动换行了，这就是说明button默认white-space就是pre-->
-    <button>按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮</button>
-    <input type="button" class="input1" value="按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮">
+    <button>
+        按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮
+    </button>
+    <input type="button" class="input1"
+           value="按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮">
 </div>
 
 <!--3.一个包裹性例子：文字少时居中显示，多时主体居中，但是文字靠左-->
@@ -78,6 +121,28 @@
     <span class="content">文字</span>
     <span class="content">ABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABC</span>
     <span class="content">我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字我是一行文字</span>
+</div>
+
+<!--4.关于包裹性的探讨-->
+<div class="test-block">
+    <!--虽然b1的宽度写死为200px,但是由于浏览的盒子模型的原因，实际宽度还要加上border和padding的-->
+    <div class="b1">原生盒子模型</div>
+    <!--要想使得实际宽度就是200px,解决方式之一就是采用宽度分离模式,这样的话，最外层的宽度最大200px-->
+    <!--宽度分离的思想就是在原来的层级外面再套一层block元素，内部元素不设宽度，利用流动性自适应外部宽度-->
+    <div class="b0">
+        <div class="b2">宽度分离模型1</div>
+    </div>
+    <div class="b0">
+        <div class="b3">宽度分离模型2</div>
+    </div>
+
+    <!--解决方式之二:box-sizing-->
+    <!--方式一的一个去点就是多了一个层级，而box-sizing的主要作用目的就是在不增加层级的前提下实现方式一的效果-->
+    <!--盒子模型有四层(从外至内：margin border padding content)->多对应的box-sizing理论就应该有:margin-box border-box padding-box content-box-->
+    <!--但是实际上：margin-box是没有的，padding-box只曾经在fire-fox的浏览器上面支持过，默认方式采用的是content-box,因此实际上可选用的也就只剩下border-box-->
+    <!--顾名思义，border-box就是将以前宽度作用在content上面直接移至border层级上面，这样的话，你在border内部（包括），无论怎样设置border,padding的宽度，最终的整体宽度依旧是你外面设置的那个-->
+    <div class="b4">box-sizing模型</div>
+    <!--tips:box-sizing的作用其实可以理解为宽度的作用范围-->
 </div>
 </body>
 </html>
