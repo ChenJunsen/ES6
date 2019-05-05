@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
     <title>CSS一些样例</title>
     <style type="text/css">
         body {
@@ -88,6 +89,99 @@
             background: #1a92cf;
             word-break: break-all;
         }
+
+        .three-lines {
+            display: inline-block;;
+            width: 140px;
+            height: 10px;
+            padding: 35px 0;
+            border-top: 10px solid;
+            border-bottom: 10px solid;
+            background-color: currentColor;
+            background-clip: content-box;
+        }
+
+        .double-dot{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 10px solid;
+            border-radius: 50%;
+            background-color: currentColor;
+            background-clip: content-box;
+        }
+
+        .rec{
+            margin: 20px;
+            height: 30px;
+            background: currentColor;
+        }
+
+        .rec2{
+            display: inline-block;
+            margin: 20px;
+            height: 30px;
+            width: 100px;
+            background: currentColor;
+        }
+
+        .father{
+            height: 100px;
+        }
+
+        .father > .son{
+            margin: 20px;
+            height: 50px;
+            width: 50px;
+            background: currentColor;
+        }
+
+        .t1{
+            height: 200px;
+            border: 2px solid salmon;
+            margin: 10px;
+            position: relative;
+        }
+
+        .t1 > .t2{
+            position: absolute;
+            height: 100px;
+            width: 300px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: lime 1px solid;
+        }
+
+        .t3{
+            width: 400px;
+            height: 200px;
+            border: 2px solid salmon;
+            margin: 10px;
+        }
+
+        .t3 > .t4{
+            height: 100px;
+            width: 300px;
+            border: lime 1px solid;
+            margin: auto;
+        }
+
+        .block1{
+            height: 300px;
+            border: 2px solid skyblue;
+            width: 50%;
+        }
+
+        .block1 > .child{
+            height: 100px;
+            margin-bottom: 550px;
+            border: 2px solid hotpink;
+            width: 50%;
+        }
     </style>
 </head>
 <body>
@@ -143,6 +237,58 @@
     <!--顾名思义，border-box就是将以前宽度作用在content上面直接移至border层级上面，这样的话，你在border内部（包括），无论怎样设置border,padding的宽度，最终的整体宽度依旧是你外面设置的那个-->
     <div class="b4">box-sizing模型</div>
     <!--tips:box-sizing的作用其实可以理解为宽度的作用范围-->
+</div>
+
+<!--5.纯CSS模拟三道杠-->
+<div class="test-block">
+    <div class="three-lines"></div>
+</div>
+
+<!--6.纯CSS模拟双层圆点-->
+<div class="test-block">
+    <div class="double-dot"></div>
+</div>
+
+<!--7.margin合并测试(垂直)-->
+<div class="test-block">
+    <!--这里有三条线，公用样式设置的margin都是20px,理论照一般思想，线与线之间的间距应该是40px,但是实际只有20px-->
+    <!--margin的合并方向在当前文档流垂直的方向上，一般的默认文档流是水平方向，那么自然margin合并起作用的就是垂直方向-->
+    <div class="rec"></div>
+    <div class="rec"></div>
+    <div class="rec"></div>
+</div>
+
+<!--8.margin合并测试2(水平)-->
+<div class="test-block">
+    <!--与上面例子相比可以看到，水平方向并没有合并-->
+    <div class="rec2"></div>
+    <div class="rec2"></div>
+    <div class="rec2"></div>
+</div>
+
+<!--9.margin合并测试3(正方形测试)-->
+<div class="test-block">
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</div>
+
+<div class="test-block">
+    <div class="t1">
+        <div class="t2"></div>
+    </div>
+</div>
+
+<div class="test-block">
+    <div class="t3">
+        <div class="t4"></div>
+    </div>
+</div>
+
+<div class="test-block">
+    <div class="block1">
+        <div class="child"></div>
+    </div>
 </div>
 </body>
 </html>
