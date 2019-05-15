@@ -101,7 +101,7 @@
             background-clip: content-box;
         }
 
-        .double-dot{
+        .double-dot {
             display: inline-block;
             width: 100px;
             height: 100px;
@@ -112,13 +112,13 @@
             background-clip: content-box;
         }
 
-        .rec{
+        .rec {
             margin: 20px;
             height: 30px;
             background: currentColor;
         }
 
-        .rec2{
+        .rec2 {
             display: inline-block;
             margin: 20px;
             height: 30px;
@@ -126,25 +126,25 @@
             background: currentColor;
         }
 
-        .father{
+        .father {
             height: 100px;
         }
 
-        .father > .son{
+        .father > .son {
             margin: 20px;
             height: 50px;
             width: 50px;
             background: currentColor;
         }
 
-        .t1{
+        .t1 {
             height: 200px;
             border: 2px solid salmon;
             margin: 10px;
             position: relative;
         }
 
-        .t1 > .t2{
+        .t1 > .t2 {
             position: absolute;
             height: 100px;
             width: 300px;
@@ -156,31 +156,136 @@
             border: lime 1px solid;
         }
 
-        .t3{
+        .t3 {
             width: 400px;
             height: 200px;
             border: 2px solid salmon;
             margin: 10px;
         }
 
-        .t3 > .t4{
+        .t3 > .t4 {
             height: 100px;
             width: 300px;
             border: lime 1px solid;
             margin: auto;
         }
 
-        .block1{
+        .block1 {
             height: 300px;
             border: 2px solid skyblue;
             width: 50%;
         }
 
-        .block1 > .child{
+        .block1 > .child {
             height: 100px;
             margin-bottom: 550px;
             border: 2px solid hotpink;
             width: 50%;
+        }
+
+        /*double是双实线边框,最窄高度为1px。并且设置的高度一般会除以3来得到单边的高度*/
+        .three-line {
+            margin: 20px;
+            width: 200px;
+            height: 40px;
+            border-top: 120px double red;
+            border-bottom: 40px solid red;
+        }
+
+        .add {
+            margin: 20px;
+            display: inline-block;
+            width: 76px;
+            height: 76px;
+            color: #ccc;
+            border: 2px dashed;
+            /*text-indent: -12em;*/
+            transition: color .25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .add:hover {
+            color: deeppink;
+        }
+
+        .add::before, .add::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        .add::before {
+            width: 20px;
+            border-top: 4px solid;
+            margin: -2px 0 0 -10px;
+        }
+
+        .add::after {
+            height: 20px;
+            border-left: 4px solid;
+            margin: -10px 0 0 -2px;
+        }
+
+        .ip-container {
+            position: relative;
+            margin: 40px;
+            height: 70px;
+            width: 500px;
+        }
+
+        .ip1 {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            font-size: 22px;
+            font-weight: bold;
+            color: deeppink;
+            background: transparent;
+            border: 6px solid rebeccapurple;
+            padding-left: 30px;
+            padding-right: 50px;
+        }
+
+        .cross {
+            position: absolute;
+            top: 10px;
+            right: -70px;
+            width: 20px;
+            height: 20px;
+            z-index: 100;
+            border: 20px solid transparent;
+            border-right-width: 10px;
+            border-left-width: 5px;
+        }
+
+        .triangle{
+            /*width: 100px;
+            border: 50px solid;
+            border-color: deeppink greenyellow tomato;
+            margin: 20px;*/
+            width: 0;
+            border: 50px solid;
+            border-color: deeppink transparent transparent;
+            margin: 20px;
+        }
+
+        .arrow-down{
+            display: inline-block;
+            width: 32px;
+            height: 1ex;
+            background: url("../img/arrow-down.png") no-repeat center;
+        }
+
+        .ex-test{
+            height: 30px;
+            font-size: 30px;
+            background: #cccccc;
+        }
+
+        .test-block-tt{
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -290,5 +395,58 @@
         <div class="child"></div>
     </div>
 </div>
+
+<!--通过设置border为double来实现多道杠图标-->
+<div class="test-block">
+    <div class="three-line"></div>
+</div>
+
+<!--绘制虚线加号框-->
+<div class="test-block">
+    <div class="add"></div>
+</div>
+
+<!--利用透明border实现点击作用域放大-->
+<div class="test-block">
+    <div class="ip-container">
+        <input type="text" placeholder="测试文本框" class="ip1" id="ip1"/>
+        <img src="../img/cross_pink.png" class="cross" id="cross" onclick="crossClick(event)"/>
+    </div>
+
+</div>
+
+<!--利用border属性绘制等腰三角形-->
+<div class="test-block">
+    <div class="triangle"></div>
+</div>
+
+<!--利用ex度量单位实现垂直居中-->
+<div class="test-block test-block-tt">
+    <div class="ex-test">
+        <span>我是一行文字ABCXx</span>
+        <div class="arrow-down"></div>
+    </div>
+</div>
+
 </body>
+
+<script>
+    var ip = document.getElementById('ip1');
+    var cross = document.getElementById('cross');
+    cross.style.display = 'none';
+
+    ip.addEventListener('input', function (e) {
+        var val = e.target.value;
+        if (val == '' || val == undefined || val == null) {
+            cross.style.display = 'none';
+        } else {
+            cross.style.display = 'inline';
+        }
+    });
+
+    function crossClick() {
+        ip.value = '';
+        cross.style.display = 'none';
+    }
+</script>
 </html>
