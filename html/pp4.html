@@ -22,13 +22,25 @@
             width: 100vw;
             height: 50px;
         }
+        .t{
+            font-size: 60px;
+        }
     </style>
 </head>
 <body>
+history:<div id="display" class="t"></div>
     <div class="num">4</div>
     <input type="button" value="跳转" class="btn" id="turn">
+<input type="button" value="exitApp" class="btn" id="exitApp">
 </body>
 <script type="text/javascript">
+    /*document.getElementById('display').innerText=window.history.length;
+    document.getElementById('turn').addEventListener('click', function () {
+        window.location.href = './pp5.html';
+    });
+    document.getElementById('back').addEventListener('click', function () {
+        window.history.go(-1);
+    });*/
     function ready(callback) {
         // 如果jsbridge已经注入则直接调用
         if (window.AlipayJSBridge) {
@@ -39,12 +51,25 @@
         }
     }
     ready(function () {
+        document.getElementById('display').innerText=window.history.length;
         document.getElementById('turn').addEventListener('click', function () {
             window.location.href = './pp5.html';
         });
+        document.getElementById('exitApp').addEventListener('click', function () {
+            alert('just exitApp');
+            AlipayJSBridge.call('exitApp');
+            /*AlipayJSBridge.call('popPackageTo',{
+                pageName:'pp1'
+            });*/
+        });
         document.addEventListener('back', function (pushWebEvent) {
             pushWebEvent.preventDefault();
-            window.history.go(-1);
+            if (window.history.length == 1) {
+                AlipayJSBridge.call('popWindow');
+                return;
+            }else{
+                window.history.go(-1);
+            }
         }, false);
     });
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--防止页面可以被用户放大从而不会出现放大按钮-->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <title>CJSBridge功能性测试（H5端）</title>
+    <style>
+        *, body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .btn {
+            border-radius: 50px;
+            height: 45px;
+            border: 2px solid #0c60ee;
+            font-size: 16px;
+            box-sizing: border-box;
+            padding: 5px 10px;
+            outline: none;
+            color: white;
+            background: #ff4cbd;
+        }
+
+        .btn:active {
+            border-radius: 50px;
+            background: rgba(255, 145, 200, 0.5);
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <input type="button"
+           value="调用原生Toast"
+           class="btn"
+           onclick="callNative('toast',{'msg':'H5成功调用了原生的Toast'})">
+    <input type="button"
+           value="调用原生对话框"
+           class="btn"
+           onclick="callNative('dialog',{'msg':'H5成功调用了原生的Dialog','title':'提示'})">
+</div>
+
+<script>
+    function callNative(command, params) {
+        // javascript:CJSI.toast('hello')
+        //传参的话不能直接传对象，需要先序列化,然后由客户端反序列化进行相关字段解析
+        javascript:CJSI[command](JSON.stringify(params))
+    }
+</script>
+</body>
+</html>

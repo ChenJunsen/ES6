@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin</title>
+    <style>
+        body{
+            width: 100vw;
+        }
+        .c1 {
+            width: 50%;
+            height: 50%;
+            background: #4cbdfe;
+            color: #333333;
+            font-size: .2rem;
+            margin: 0 auto 2rem;
+            padding: 2rem;
+        }
+        .block{
+            width: 5rem;
+            height: 5rem;
+            background: #ff4cbd;
+        }
+        .c2{
+            /*display: block;*/
+
+            margin: 0 auto;
+        }
+        .c3{
+            margin-left: auto;
+            margin-right: 5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="c1">
+    <span class="c2 block">
+    </span>
+</div>
+<div class="c1">
+    <div class="c3 block"></div>
+</div>
+</body>
+</html>

@@ -29,6 +29,7 @@
 </head>
 <body>
 <h1>WebViewJavascriptBridge Demo</h1>
+<script src="./public.js"></script>
 <script>
     //-------------------------------------------------可以写作public.js----------------------------------------------
     window.onerror = function (err) {
@@ -36,7 +37,7 @@
     }
 
     //新版JS桥接
-    function connectWebViewJavascriptBridge(callback) {
+    /*function connectWebViewJavascriptBridge(callback) {
         if (window.WebViewJavascriptBridge) {
             callback(WebViewJavascriptBridge)
         } else {
@@ -80,7 +81,7 @@
         });
     }
 
-    //******JS桥加载准备函数 是一切调用方法的根本********
+    //!******JS桥加载准备函数 是一切调用方法的根本********
     function AlipayJSBridgeReadyFun(readyCallback) {
         function ready(callback) {
             // 如果 jsbridge 已经注入则直接调用
@@ -92,12 +93,12 @@
         }
 
         ready(readyCallback);
-    }
+    }*/
+
 
 
     //-------------------------------------------测试样例----------------------------------------
     var uniqueId = 1
-
     function log(message, data) {
         var log = document.getElementById('log')
         var el = document.createElement('div')
@@ -112,7 +113,7 @@
 
     //实践应用
     window.onload = function () {
-        //监听原生init
+        /*//监听原生init
         AlipayJSBridgeReadyFun(function () {
             AlipayJSBridge_init(function (message, responseCallback) {
                 log('JS got a message', message)
@@ -150,8 +151,9 @@
             AlipayJSBridge_call('testObjcCallback', {'foo': 'bar'}, function (response) {
                 log('JS got response2222222', response)
             })
-        }
+        }*/
 
+        //调用原生testToast方法
         var alertBtn = document.getElementById('buttons').appendChild(document.createElement('button'))
         alertBtn.innerHTML = '调用原生吐司'
         alertBtn.onclick = function (e) {

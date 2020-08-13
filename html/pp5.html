@@ -20,15 +20,20 @@
         }
         .btn{
             width: 100vw;
-            height: 50px;
+            height: 150px;
+            font-size: 44px;
         }
     </style>
 </head>
 <body>
+history:<div id="display"></div>
     <div class="num">5</div>
     <input type="button" value="跳转" class="btn" id="turn">
 </body>
 <script type="text/javascript">
+    setTimeout(function () {
+        document.getElementById('display').innerText=window.history.length;
+    },1000);
     function ready(callback) {
         // 如果jsbridge已经注入则直接调用
         if (window.AlipayJSBridge) {
@@ -39,12 +44,17 @@
         }
     }
     ready(function () {
+
         document.getElementById('turn').addEventListener('click', function () {
-            window.location.href = './pp6.html';
+            window.location.href = './pp5.html';
         });
         document.addEventListener('back', function (pushWebEvent) {
             pushWebEvent.preventDefault();
             window.history.go(-1);
+            if (window.history.length == 1) {
+                AlipayJSBridge.call('popWindow');
+                return;
+            }
         }, false);
     });
 

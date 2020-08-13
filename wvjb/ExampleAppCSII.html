@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <style type='text/css'>
+        html {
+            font-family: Helvetica;
+            color: #222;
+        }
+
+        h1 {
+            color: steelblue;
+            font-size: 24px;
+            margin-top: 24px;
+        }
+
+        button {
+            margin: 0 3px 10px;
+            font-size: 12px;
+        }
+
+        .logLine {
+            border-bottom: 1px solid #ccc;
+            padding: 4px 2px;
+            font-family: courier;
+            font-size: 11px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WebViewJavascriptBridge Demo</h1>
+    <script>
+        /*BEGIN----------------------------------------------------------------------------------*/
+        
+        //这部分是新JS桥交互的逻辑
+        /*BEGIN***********************************************************************************/
+        function setupWebViewJavascriptBridge(callback) {
+            if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+            if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+            window.WVJBCallbacks = [callback];
+            var WVJBIframe = document.createElement('iframe');
+            WVJBIframe.style.display = 'none';
+            WVJBIframe.src = 'https://__bridge_loaded__';
+            document.documentElement.appendChild(WVJBIframe);
+            setTimeout(function () { document.documentElement.removeChild(WVJBIframe) }, 0)
+        }
+        setupWebViewJavascriptBridge(function (bridge) {
+            window.AlipayJSBridge = bridge;
+            var evt = document.createEvent('Events');
+            evt.initEvent('AlipayJSBridgeReady', false, false);
+            document.dispatchEvent(evt);
+        });
+        function document_addEventListener(eventName, eventCallback) {
+            AlipayJSBridgeReadyFun(function () {
+                AlipayJSBridge.registerHandler(eventName, function (data, responseCallback) {
+                    eventCallback({ data: data });
+                    responseCallback({ state: "success" })
+                })
+            });
+        }
+        /*END***********************************************************************************/
+        
+        //这部分是原来JS有的逻辑（根据情况调整）
+        function AlipayJSBridge_call(rpcStr, paramDict, successFun, errorFun) {
+            AlipayJSBridgeReadyFun(function () {
+                AlipayJSBridge.call(rpcStr, paramDict, successFun);
+            });
+        }
+        function AlipayJSBridgeReadyFun(readyCallback) {
+            function ready(callback) {
+                // 如果 jsbridge 已经注入则直接调用
+                if (window.AlipayJSBridge) {
+                    callback && callback();
+                } else {
+                    document.addEventListener('AlipayJSBridgeReady', callback, false);
+                }
+            }
+            ready(readyCallback);
+        }
+        /*END----------------------------------------------------------------------------------*/
+        
+        //这部分是例子方法调用
+        var uniqueId = 1
+        function log(message, data) {
+            var log = document.getElementById('log')
+            var el = document.createElement('div')
+            el.className = 'logLine'
+            el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
+            if (log.children.length) { log.insertBefore(el, log.children[0]) }
+            else { log.appendChild(el) }
+        }
+        window.onerror = function (errorMessage, scriptURI, lineNo, columnNo, error) {
+            log('errorMessage: ', errorMessage); // 异常信息
+            log('scriptURI: ', scriptURI); // 异常文件路径
+            log('lineNo: ', lineNo); // 异常行号
+            log('columnNo: ', columnNo); // 异常列号
+            log('error: ', error); // 异常堆栈信息
+        }
+        window.onload = function () {
+            document.body.appendChild(document.createElement('br'))
+            var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'))
+            callbackButton.innerHTML = 'Fire testObjcCallback'
+            callbackButton.onclick = function (e) {
+                e.preventDefault()
+                AlipayJSBridge.call('testObjcCallback', { 'foo': 'bar' }, function (response) {
+                    log('JS got response', response)
+                })
+            }
+
+            //JSAPI和之前调用方法一致
+            AlipayJSBridge_call('testObjcCallback', { 'foo': 'bar' }, function (response) {
+                log('JS got response', response)
+            });
+            //之前的 document.addEventListener 绑定原生交互事件改成 document_addEventListener
+            document_addEventListener('testJavascriptHandler', function (event) {
+                if (event.data) {
+                    log('JS got response', event.data)
+                }
+            })
+        };
+    </script>
+    <div id='buttons'></div>
+    <div id='log'></div>
+</body>
+
+</html>

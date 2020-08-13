@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>pp1</title>
+    <title>pp1-pushWindow</title>
     <style type="text/css">
-        body{
+        body {
             display: flex;
             flex-direction: column;
             width: 100vw;
             height: 100vh;
         }
-        .num{
+
+        .num {
             font-size: 80px;
             color: #ff0000;
             display: flex;
@@ -18,17 +19,37 @@
             justify-content: center;
             flex-grow: 1;
         }
-        .btn{
+
+        .btn {
             width: 100vw;
             height: 50px;
+        }
+
+        .t {
+            font-size: 60px;
         }
     </style>
 </head>
 <body>
-    <div class="num">1</div>
-    <input type="button" value="跳转" class="btn" id="turn">
+history:
+<div id="display" class="t"></div>
+<div class="num">1-pushWindow AB汗啊或者，,.lkpoasdi';/</div>
+<input type="button" value="跳转" class="btn" id="turn">
+<input type="button" value="返回" class="btn" id="back">
+<input type="button" value="调用相册" class="btn" id="album">
 </body>
 <script type="text/javascript">
+    /*document.getElementById('display').innerText = window.history.length;
+    document.getElementById('turn').addEventListener('click', function () {
+        window.location.href = './pp2.html';
+    });
+    document.getElementById('back').addEventListener('click', function () {
+        window.history.go(-1);
+    });*/
+    setTimeout(function () {
+        document.getElementById('display').innerText = window.history.length;
+    }, 1000);
+
     function ready(callback) {
         // 如果jsbridge已经注入则直接调用
         if (window.AlipayJSBridge) {
@@ -40,17 +61,36 @@
     }
 
     ready(function () {
-        AlipayJSBridge.call('getUserFromAddressBook',function (res) {
-            
-        });
-    });
-    ready(function () {
+        document.getElementById('display').innerText = window.history.length;
         document.getElementById('turn').addEventListener('click', function () {
-            window.location.href = './pp2.html';
+            // window.location.href = './pp2.html';
+            alert('pp2 openPageWithName');
+            /*AlipayJSBridge.call('pushWindow', {
+                url: "./pp2.html"
+            });*/
+            AlipayJSBridge.call('openPageWithName', {
+                pageName: 'pp2',
+                pageTitle: 'pp2',
+                appId:'90000002'
+            });
+        });
+        document.getElementById('album').addEventListener('click', function () {
+            // window.location.href = './pp2.html';
+            AlipayJSBridge.call('chooseImage', {
+                count: 3,
+                sourceType: ['camera', 'album']
+            }, (res) => {
+                alert('ok');
+            });
         });
         document.addEventListener('back', function (pushWebEvent) {
             pushWebEvent.preventDefault();
-            window.history.go(-1);
+            if (window.history.length == 1) {
+                AlipayJSBridge.call('popWindow');
+                return;
+            } else {
+                window.history.go(-1);
+            }
         }, false);
     });
 </script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSII Demo</title>
+    <script src="public.js"></script>
+    <style>
+        .title {
+            font-size: 30px;
+            color: #222222;
+            border: 2px solid #ff4cbd;
+            box-sizing: border-box;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div class="title" id="display"></div>
+<script>
+    window.onload = function () {
+        AlipayJSBridge_startupParams(function (p) {
+            document.getElementById('display').innerHTML = JSON.stringify(p);
+        })
+         //监听原生testJavascriptHandler指令
+        document_addEventListener('testBack', function (data) {
+            //data.preventDefault();
+            alert('h5做testBack')
+        })
+        AlipayJSBridge_call('beginShake')
+        m_document_addEventListener('shake',function (res) {
+            alert('摇一摇:'+JSON.stringify(res))
+        })
+    }
+</script>
+</body>
+</html>

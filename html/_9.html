@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM2IMAGE测试页面</title>
+    <script type="text/javascript" src="../js/dom-to-image.min.js"></script>
+    <style>
+        .v-container{
+            width: 500px;
+            height: 400px;
+            background-color: indigo;
+        }
+
+        .v-container > img{
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+    <script>
+
+        window.onload=function(){
+            var node = document.getElementById('vv');
+            domtoimage.toPng(node)
+                .then(function (dataUrl) {
+                    console.log(dataUrl);
+                    var img = new Image();
+                    img.src = dataUrl;
+                    document.body.appendChild(img);
+                });
+        }
+
+    </script>
+</head>
+<body>
+        <div class="v-container" id="vv">
+            <img src="http://img0.imgtn.bdimg.com/it/u=3813064241,3882198389&fm=26&gp=0.jpg">
+        </div>
+</body>
+</html>

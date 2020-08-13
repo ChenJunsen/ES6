@@ -4,13 +4,13 @@
 	var sendMessageQueue = []
 	var receiveMessageQueue = []
 	var messageHandlers = {}
-	
+
 	var CUSTOM_PROTOCOL_SCHEME = 'wvjbscheme'
 	var QUEUE_HAS_MESSAGE = '__WVJB_QUEUE_MESSAGE__'
-	
+
 	var responseCallbacks = {}
 	var uniqueId = 1
-	
+
 	function _createQueueReadyIframe(doc) {
 		messagingIframe = doc.createElement('iframe')
 		messagingIframe.style.display = 'none'
@@ -30,15 +30,15 @@
 	function send(data, responseCallback) {
 		_doSend({ data:data }, responseCallback)
 	}
-	
+
 	function registerHandler(handlerName, handler) {
 		messageHandlers[handlerName] = handler
 	}
-	
+
 	function callHandler(handlerName, data, responseCallback) {
 		_doSend({ handlerName:handlerName, data:data }, responseCallback)
 	}
-	
+
 	function _doSend(message, responseCallback) {
 		if (responseCallback) {
 			var callbackId = 'cb_'+(uniqueId++)+'_'+new Date().getTime()
@@ -59,7 +59,7 @@
 		setTimeout(function _timeoutDispatchMessageFromObjC() {
 			var message = JSON.parse(messageJSON)
 			var messageHandler
-			
+
 			if (message.responseId) {
 				var responseCallback = responseCallbacks[message.responseId]
 				if (!responseCallback) { return; }
@@ -73,12 +73,12 @@
 						_doSend({ responseId:callbackResponseId, responseData:responseData })
 					}
 				}
-				
+
 				var handler = WebViewJavascriptBridge._messageHandler
 				if (message.handlerName) {
 					handler = messageHandlers[message.handlerName]
 				}
-				
+
 				try {
 					handler(message.data, responseCallback)
 				} catch(exception) {
@@ -89,7 +89,7 @@
 			}
 		})
 	}
-	
+
 	function _handleMessageFromObjC(messageJSON) {
 		if (receiveMessageQueue) {
 			receiveMessageQueue.push(messageJSON)
@@ -102,7 +102,7 @@
 		init: init,
 		send: send,
 		registerHandler: registerHandler,
-		callHandler: callHandler,
+		call: callHandler,
 		_fetchQueue: _fetchQueue,
 		_handleMessageFromObjC: _handleMessageFromObjC
 	}
@@ -110,7 +110,7 @@
 	var doc = document
 	_createQueueReadyIframe(doc)
 	var readyEvent = doc.createEvent('Events')
-	readyEvent.initEvent('WebViewJavascriptBridgeReady')
+	readyEvent.initEvent('AlipayJSBridgeReady')
 	readyEvent.bridge = WebViewJavascriptBridge
 	doc.dispatchEvent(readyEvent)
 })();

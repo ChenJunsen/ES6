@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>html2canvas example</title>
+    <script type="text/javascript" src="../js/html2canvas.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container-view {
+            background-color: slateblue;
+            width: 60%;
+            height: 500px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .item1 {
+            background-color: red;
+            width: 30%;
+            height: 200px;
+            text-align: center;
+            color: white;
+            line-height: 200px;
+            font-size: 80px;
+        }
+
+        .pic {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            top: 35%;
+        }
+
+        .pic > img {
+            width: 128px;
+            height: 128px;
+            crossOrigin: 'Anonymous'
+        }
+
+        .btn {
+            margin-top: 10px;
+            width: 50%;
+            margin-left: 30%;
+            background-color: mediumvioletred;
+            border: 2px solid hotpink;
+            font-size: 30px;
+            color: white;
+        }
+
+
+        .con {
+            height: 250px;
+            width: 200px;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #4cd964;
+        }
+
+        .subscript {
+            color: #fff;
+            height: 30px;
+            width: 100px;
+            position: absolute;
+            right: -30px;
+            text-align: center;
+            line-height: 30px;
+            font-family: "黑体";
+            background-color: #0c60ee;
+            -moz-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<script type="text/javascript">
+    function getURLBase64(url,fun) {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            var url = URL.createObjectURL(this.response);
+            var img = new Image();
+            var canvas = document.createElement('canvas');
+            canvas.width = 200;
+            canvas.height = 200;
+            var ctx = canvas.getContext('2d');
+            img.setAttribute('crossOrigin', 'anonymous'); // 注意设置图片跨域应该在图片加载之前
+            img.onload = function () {
+                // 此时你就可以使用canvas对img为所欲为了
+                // ... code ...
+                // 图片用完后记得释放内存
+                ctx.drawImage(img, 0, 0, 200, 200);
+                document.body.appendChild(canvas);
+                var canvastourl = canvas.toDataURL();
+                fun(canvastourl);
+                URL.revokeObjectURL(url);
+            };
+            img.src = url;
+        };
+        xhr.open('GET', url, true);
+        xhr.responseType = 'blob';
+        xhr.send();
+    }
+
+    function takeScreenshot() {
+        console.log('test');
+        html2canvas(document.getElementById('container-view'), {
+            onrendered: function (canvas) {
+                document.body.appendChild(canvas);
+                console.log(canvas.toDataURL())
+            },
+            useCORS: true,
+            logging: true,
+            allowTaint: true
+        });
+    }
+
+    function saveImage(fun) {
+        var imgurl = 'http://113.207.109.62:8888/public/staffheadimg/setting-userHeadImgUpd_001_001_1192979827251355648_20191109.png';
+        var canvas = document.createElement('canvas');
+        canvas.width = 200;
+        canvas.height = 200;
+        var ctx = canvas.getContext('2d');
+        var img = new Image();
+        img.setAttribute('crossOrigin', 'anonymous'); // 注意设置图片跨域应该在图片加载之前
+        img.src = imgurl;
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0, 200, 200);
+            document.body.appendChild(canvas);
+            var canvastourl = canvas.toDataURL();
+            fun(canvastourl);
+        }
+    }
+
+    window.onload=function () {
+       /*saveImage(function (res) {
+           document.getElementById('picture').src=res;
+       });*/
+
+       getURLBase64('http://113.207.109.62:8888/public/staffheadimg/setting-userHeadImgUpd_001_001_1192979827251355648_20191109.png',function (res) {
+           document.getElementById('picture').src=res;
+       });
+
+    };
+
+</script>
+<body>
+<div id="container-view">
+    <div class="item1">Item1</div>
+    <input type="button" value="截图" onclick="takeScreenshot()" class="btn">
+    <div class="pic">
+        <img id="picture"/>
+    </div>
+    <div class="con">
+        <div class="subscript">
+            角标
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

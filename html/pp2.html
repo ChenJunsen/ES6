@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>pp2</title>
     <style type="text/css">
-        body{
+        body {
             display: flex;
             flex-direction: column;
             width: 100vw;
             height: 100vh;
         }
-        .num{
+
+        .num {
             font-size: 80px;
             color: #ff0000;
             display: flex;
@@ -18,17 +19,36 @@
             justify-content: center;
             flex-grow: 1;
         }
-        .btn{
+
+        .btn {
             width: 100vw;
             height: 50px;
+        }
+
+        .t {
+            font-size: 60px;
         }
     </style>
 </head>
 <body>
-    <div class="num">2</div>
-    <input type="button" value="跳转" class="btn" id="turn">
+history:
+<div id="display" class="t"></div>
+<div class="num">2-pushWindow</div>
+<input type="button" value="跳转" class="btn" id="turn">
+<input type="button" value="返回" class="btn" id="back">
 </body>
 <script type="text/javascript">
+    /*document.getElementById('display').innerText=window.history.length;
+    document.getElementById('turn').addEventListener('click', function () {
+        window.location.href = './pp3.html';
+    });
+    document.getElementById('back').addEventListener('click', function () {
+        window.history.go(-1);
+    });*/
+    setTimeout(function () {
+        document.getElementById('display').innerText = window.history.length;
+    }, 1000);
+
     function ready(callback) {
         // 如果jsbridge已经注入则直接调用
         if (window.AlipayJSBridge) {
@@ -38,15 +58,25 @@
             document.addEventListener('AlipayJSBridgeReady', callback, false);
         }
     }
+
     ready(function () {
+        document.getElementById('display').innerText = window.history.length;
         document.getElementById('turn').addEventListener('click', function () {
             window.location.href = './pp3.html';
+            /*AlipayJSBridge.call('pushWindow', {
+                url: "./pp3.html"
+            });*/
+
         });
         document.addEventListener('back', function (pushWebEvent) {
             pushWebEvent.preventDefault();
-            window.history.go(-1);
+            if (window.history.length == 1) {
+                AlipayJSBridge.call('popWindow');
+                return;
+            } else {
+                window.history.go(-1);
+            }
         }, false);
     });
-
 </script>
 </html>

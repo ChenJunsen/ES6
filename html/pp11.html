@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>密码测试</title>
+    <style type="text/css">
+        *{
+            font-size: 60px;
+        }
+        .input {
+            height: 80px;
+            border: 1px #4cbdfe solid;
+        }
+    </style>
+</head>
+<body>
+    密码<input class="input" id="ed" readonly/><br>
+    <h3 id="display"></h3>
+
+    <script>
+        var ed=document.getElementById('ed');
+        ed.addEventListener('input',function (e) {
+            console.log(e.target.value);
+        });
+
+        ed.addEventListener('click',function (e) {
+            OCModel.callKeyboardType('ed', '123');
+        });
+
+        document.addEventListener('ed', function (res) {
+            if (res && res.data) {
+                if (res.data.length >= 6) {
+                    document.getElementById('display').innerText=res.data.password;
+                } else {
+                    alert('输入长度不够6位');
+                }
+            } else {
+                alert('没有获取到密码');
+            }
+        }, false);
+
+        document.addEventListener('edLength', function (res) {
+            if (res && res.data) {
+                console.log('密码长度:'+res.data.length+"   id："+res.data.id);
+            }
+        }, false);
+
+    </script>
+</body>
+</html>

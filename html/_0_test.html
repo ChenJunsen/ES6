@@ -6,7 +6,7 @@
     <title>Title</title>
 </head>
 <body>
-    <div id="hello">hello</div>
+<div id="hello">hello123</div>
 </body>
 <script>
     /*des1([1,2]);
@@ -46,7 +46,7 @@
 
     // console.log(200/1000);
 
-    var excludeSpecial = function(s) {
+    /*var excludeSpecial = function(s) {
         // 去掉转义字符
         s = s.replace(/[\'\"\\\/\b\f\n\r\t]/g, '');
         // 去掉特殊字符
@@ -55,6 +55,156 @@
     };
 
     var tr={"ChannelNo":"62","CouponsDesc":"金融券随机红包发放","CouponsName":"金融券随机红包发放","CouponsRule":"金融券随机红包发放","CouponsStatus":0,"CouponsType":"C2","CouponsValue":"7.67","EffectDate":"2019-02-14","InvalidDate":"2019-02-28","InvalidType":"0","InvalidityEndDate":"2019-02-28","MaxAmount":"10","MinAmount":"0.01","ObtainDate":1550073600000,"ObtainTime":"20190214192018","ObtianSource":"A63761","PersonMobilePhone":"13211111115","RandomAmount":"7.67","ToolParam":"{\"ValiditEndDate\":\"2019-02-28\",\"MinAmount\":\"0.01\",\"InvalidDate\":\"2019-02-28\",\"InvalidType\":\"0\",\"UsedMinAmount\":\"0.02\",\"ValidityBeginDate\":\"2019-02-02\",\"MaxAmount\":\"10\"}","ToolSeq":67604,"UsedMinAmount":"0.02","ValiditEndDate":"2019-02-28","ValidityBeginDate":"2019-02-02"};
-    console.log(excludeSpecial(JSON.stringify(tr)));
+    console.log(excludeSpecial(JSON.stringify(tr)));*/
+
+    /*let obj1={
+        "name":"Jerry",
+        "t2":{
+            "t":"abc\"hahaha\"MMMMM"
+        }
+    };
+
+    let obj2=JSON.parse(JSON.stringify(obj1.t2));
+    console.log(obj2);
+
+    let obj3=Object.assign(obj1,obj2);
+
+    obj1.t3="jjjj";
+    obj2.t4={
+        "t5":"kkkk"
+    };
+
+    console.log(obj3);*/
+
+    /*let foo = {a:1,b:2};
+    let bar = {a:3,c:3,d:5,...foo};
+    console. log(bar);
+    let [x, y = 'b'] = ['a'];
+    console. log(x,y);
+    console. log([[1,2],[3,4]].map(([a,b]) =>a+b));
+
+    let obj1 = {a:1, b:2}
+    let obj2 = {...obj1, c:3};
+    obj1.c = 3;
+    console. log(JSON.stringify(obj1) === JSON.stringify(obj2));
+    console. log(obj1 === obj2)*/
+
+    /*var bb = 1;
+    function aa(bb) {
+        bb = 2;
+        alert(bb);
+    };
+    aa(bb);
+    alert(bb);
+
+    document.getEle*/
+
+    /*function coverString(subStr,str){
+        var reg = eval("/"+subStr+"/ig");
+        return reg.test(str);
+    }
+
+    console.log(coverString('abC1','ABCD'))*/
+
+    /*let arr=['1','hello','999']
+    console.log(arr.indexOf('hello7'))
+
+
+    let s='20200417  20:18:26'
+    console.log(s.length)*/
+
+    // let s='{\"encryptionPassword\":\"5khnL47SuCOQdu4Dz9wzhg==\",\"serviceRandom\":\"MTIzNDU2Nzg5MDk4NzY1NA==\",\"randomEncryption\":\"e7++PkSBLYBUI8\\\\/HJ+l8xULOU1jTT1h+xMApRy6IdDXc0LVHQ3cyulfbxbDRXZ0fRoVTHgNqJjzxsNWl2TeEpEs3\\/QsxHQlCgiRCgmE5kIHySDOHYLdO9jdtzGDr2eK6ju4Atn7iLS0t3hhfPcLxQg==\"}'
+    // let s2='{\"encryptionPassword\":\"phOGFLhlOnhJcjg9ziMUww==\",\"serviceRandom\":\"MTIzNDU2Nzg5MDk4NzY1NA==\",\"randomEncryption\":\"gyLzoEYHBuGs1SM3lYP5sgkQoOeLzd+bksMKtFqleRsgF8NcCIVofjZCeS36UhShxvmz6lzORvSMN0kqYQ6hRIUvYW3zouhf3grDTGhMezR8T1G0cUhZ0yalfGWHjlSJy9563IRtqUcznOCtswX2Vg==\"}'
+    // let s3='{\"encryptionPassword\":\"8o53d6iaRV\\\/V3RAZw1QYFw==\",\"serviceRandom\":\"MTIzNDU2Nzg5MDk4NzY1NA==\",\"randomEncryption\":\"HuOHnoi8QpX8Dd+V7Hr85MnNSx6KKYizOWEc8sUOtBYq1ngu\\\/5OlMu2G8IzD5eSDgyVM6kbWNH238HQBnJ26Qb3NUHCEO71IW355ze5A5yQukmIy59kx6IzB2DQfqzCoYspL\\\/2h\\\/6GKcAsUyBOJabQ==\"}'
+    // console.log(JSON.parse(s2))
+
+    // let v=Number.isInteger(Number('m'))
+    // console.log(v)
+
+    /*let s1='<pre spellcheck="false">重磅重磅，西藏银行理财年利率最高可达5%啦!!!\n' +
+        '</pre><h1><span style="color: rgb(230, 0, 0);">心动不如行动，现在存入还有更多优惠好礼哦</span>，快快点击下方链接查看吧</h1><p>< a href=" " rel="noopener noreferrer" target="_blank">https://www.baidu.com</ a></p ><p>发啊十多个完全二七七23123124<span style="background-color: rgb(102, 61, 0);">法撒大噶撒大噶撒大噶诗歌大赛夺冠S大噶是个大多发几个反抗军的条件而的故事吧v现场v</span></p ><p><br></p >'
+    let obj={
+        "s1":s1,
+        "s2":'123'
+    }
+
+    console.log(JSON.stringify(obj))*/
+
+    let s = '0.031500'
+
+
+    function formatRate2(value, minLength, zoom) {
+        if (!isNumber(value)) {
+            return '--'
+        } else {
+            let v = value
+            if (isNumber(zoom)) {
+                v = accMul(Number(value),Number(zoom))//设置放大
+            }
+            console.log(v+'')
+            let ss = (v + '').split('.')
+            let m = Math.abs(isInteger(minLength) ? Number(minLength) : 2)//默认两位小数
+            console.log('m:'+m)
+            if (ss.length == 1 || m == 0) {//整数
+                console.log('a')
+                let sec = ''
+                for (let i = 0; i < m; i++) {
+                    sec += '0'
+                }
+                if(sec){
+                    return ss[0] + '.' + sec//整数拼接小数零
+                }else{
+                    return ss[0]//纯整数
+                }
+
+            } else {//小数
+
+                let round = ss[0]//整数部分
+                let f = ss[1]//小数部分
+                let sec = ''
+                if (f.length < m) {
+                    console.log('b')
+                    for (let i = 0; i < m - f.length; i++) {
+                        sec += '0'
+                    }
+                    sec = f + sec
+                } else if (f.length == m) {
+                    console.log('c')
+                    sec = f
+                } else {
+                    console.log('d')
+                    let index = f.length-1
+                    for (let i = f.length-1; i >= m; i--) {
+                        index=i
+                        console.log('index:'+index+' '+f[i])
+                        if (f[i] != 0) {
+                            break;
+                        }
+                    }
+
+                    sec = f.substring(0, index+1)
+                }
+                return round + '.' + sec
+            }
+        }
+    }
+
+    function isNumber(value) {
+        return value && value != 'null' && !Number.isNaN(Number(value))
+    }
+
+    function isInteger(obj) {
+        return typeof obj === 'number' && obj%1 === 0
+    }
+
+    function accMul(num1,num2){
+        var m=0,s1=num1.toString(),s2=num2.toString();
+        try{m+=s1.split(".")[1].length}catch(e){};
+        try{m+=s2.split(".")[1].length}catch(e){};
+        return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m);
+    }
+
+    console.log(formatRate2(s,3,100))
+
 </script>
 </html>

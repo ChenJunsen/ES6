@@ -1,0 +1,13 @@
+{
+  "recommendInfoMap": {
+    "RecommendList": [
+      {
+        "GuId": "",
+        "STATUS": ""
+      }
+    ],
+    "RecommendSuccNum": 100,
+    "RecommendWaitNum": 100,
+    "toolName": ""
+  }
+}

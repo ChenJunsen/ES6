@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ES6.iml" filepath="$PROJECT_DIR$/.idea/ES6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Vue/webproject(1)/webproject/.idea/webproject.iml" filepath="$PROJECT_DIR$/../../Vue/webproject(1)/webproject/.idea/webproject.iml" />
     </modules>
   </component>
 </project>

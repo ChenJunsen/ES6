@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--防止页面可以被用户放大从而不会出现放大按钮-->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <title>下载客户端</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: url("./img/xzbank_download_bg.png") no-repeat;
+            background-size: 100vw 100vh;
+            position: relative;
+        }
+
+        .submit {
+            background: #fff;
+            border-radius: 50px;
+            min-height: 55px;
+            min-width: 150px;
+            font-size: 17px;
+            font-weight: bold;
+            color: #1489e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 10px 20px;
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            margin-left: -75px;
+        }
+
+        .float-layer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 100;
+        }
+    </style>
+    <script>
+        // Browser environment sniffing
+        const inBrowser = typeof window !== 'undefined'
+        const UA = inBrowser && window.navigator.userAgent.toLowerCase()
+        const isAndroid = UA && UA.indexOf('android') > 0
+        const isIOS = UA && /iphone|ipad|ipod|ios/.test(UA)
+        const isWeiXin = inBrowser &&
+            (window.navigator.userAgent.toLowerCase().indexOf('micromessenger') > -1 ||
+                window.navigator.userAgent.toLowerCase().indexOf('wechat') > -1)
+
+        function download() {
+            if(isAndroid){
+                window.location.href='http://222.209.82.18:18887/androidAPK/xzbank-default.apk'
+            }else if(isIOS){
+                window.location.href='https://www.pgyer.com/l8xJ'
+            }else{
+                alert('当前下载只支持IOS和安卓，不支持PC浏览器')
+            }
+        }
+
+        window.onload = function () {
+            document.getElementById('layer').style.display = isWeiXin ? 'visible' : 'none'
+        }
+    </script>
+</head>
+<body>
+<div class="submit" onclick="download()">立即下载</div>
+<img src="./img/xzbank_download_float_layer.png" class="float-layer" id="layer">
+</body>
+</html>

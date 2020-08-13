@@ -40,12 +40,15 @@
     }
     ready(function () {
         document.getElementById('turn').addEventListener('click', function () {
-            // window.location.href = './pp3.html';
-            alert('没有更多页面了')
+            window.location.href = './pp10.html';
         });
         document.addEventListener('back', function (pushWebEvent) {
             pushWebEvent.preventDefault();
             window.history.go(-1);
+            if (window.history.length == 1) {
+                AlipayJSBridge.call('popWindow');
+                return;
+            }
         }, false);
     });
 
