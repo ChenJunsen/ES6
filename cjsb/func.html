@@ -22,6 +22,7 @@
             outline: none;
             color: white;
             background: #ff4cbd;
+            margin-top: 5px;
         }
 
         .btn:active {
@@ -44,13 +45,40 @@
            value="调用原生对话框"
            class="btn"
            onclick="callNative('dialog',{'msg':'H5成功调用了原生的Dialog','title':'提示'})">
+    <input type="button"
+           value="弹出H5Alert对话框"
+           class="btn"
+           onclick="alertDialog()">
+    <input type="button"
+           value="弹出H5Prompt对话框"
+           class="btn"
+           onclick="promptDialog()">
 </div>
 
 <script>
     function callNative(command, params) {
         // javascript:CJSI.toast('hello')
         //传参的话不能直接传对象，需要先序列化,然后由客户端反序列化进行相关字段解析
+        console.log("H5调用原生方法:"+command+"  传参:"+JSON.stringify(params))
+        // console.error("H5调用原生方法:"+command)
         javascript:CJSI[command](JSON.stringify(params))
+    }
+
+    function alertDialog() {
+        alert("我是H5直接弹出的对话框")
+    }
+
+    function promptDialog() {
+        prompt("我是prompt对话框","123")
+    }
+
+    /*function consoleErr(params) {
+        console.error(params.msg)
+        return "call consoleErr success!"
+    }*/
+
+    window.onload=function () {
+        console.log("window onload")
     }
 </script>
 </body>
