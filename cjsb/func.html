@@ -53,8 +53,16 @@
            value="弹出H5Prompt对话框"
            class="btn"
            onclick="promptDialog()">
+    <input type="button"
+           value="通过CJSB调用Toast"
+           class="btn"
+           onclick="cjsbToast()">
+    <input type="button"
+           value="通过CJSB调用Dialog"
+           class="btn"
+           onclick="cjsbDialog()">
 </div>
-
+<script src="CJSBridge.js"></script>
 <script>
     function callNative(command, params) {
         // javascript:CJSI.toast('hello')
@@ -76,6 +84,22 @@
         console.error(params.msg)
         return "call consoleErr success!"
     }*/
+
+    function cjsbToast(){
+        CJSBridge.call("CJSBUI","toast",{
+            msg:"你好2"
+        },res=>{
+            alert(JSON.stringify(res))
+        })
+    }
+
+    function cjsbDialog(){
+        CJSBridge.call('CJSBUI','dialog',{
+            msg:'你瞅啥？打死你哦！'
+        },res=>{
+            alert(JSON.stringify(res))
+        })
+    }
 
     window.onload=function () {
         console.log("window onload")
