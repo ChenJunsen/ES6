@@ -1,6 +1,6 @@
 /**
- * JS桥 v1.0 created by cjs at 2020.08
- * 采用prompt进行协议传输
+ * JS桥 v2.0 created by cjs at 2020.09.16
+ * 采用iframe进行传输协议
  * 1、自定义协议格式
  * <pre>
  *     bridge_scheme://bridgeName:sid/methodName?‘jsp’=params&...
@@ -23,6 +23,7 @@
      * @type {string}
      */
     const CJSB_BRIDGE_SCHEME = 'cjsb'
+    const CJSB_BRIDGE_NAME = 'cjsbridge'
     const CJSB_CALL_BACK_PREFIX = 'cjsb_callBack_'
     const CJSB_TAG_PREFIX = '[CJSB]'
     var enbale_cjsb_log = true
@@ -156,19 +157,30 @@
         }
     }
 
-    function callNative(bridgeName, methodName, params, sid) {
-        var url = CJSB_BRIDGE_SCHEME + "://" + bridgeName + ":" + sid + '/' + methodName + '?params=' + generateParams(params)
+    function callNative(methodName, params, sid) {
+        var url = CJSB_BRIDGE_SCHEME + "://"+CJSB_BRIDGE_NAME+":" + sid + '/' + methodName + '?params=' + generateParams(params)
         //核心 -------->真正传输给原生数据的入口<------
         L.d("H5 call native url:" + url)
-        prompt(url)
+        iframeCall(url)
+    }
+
+    function iframeCall(url) {
+        //创建一个看不见的iframe,用于传输url给原生
+        var iframe = document.createElement('iframe')
+        iframe.src=url
+        iframe.style.display = 'none'
+        document.documentElement.appendChild(iframe)
+        setTimeout(()=>{
+            document.documentElement.removeChild(iframe)
+        },0)
     }
 
     //设置桥实体
     var core = {
-        call: function (bridgeName, methodName, params, callBack) {
+        call: function (methodName, params, callBack) {
             var sid = generateSID()
             registerCall(sid, callBack)
-            callNative(bridgeName, methodName, params, sid)
+            callNative(methodName, params, sid)
         },
         callBack: function (sid, data) {
             var callB = unRegisterCall(sid)
@@ -185,5 +197,5 @@
         }
     }
 
-    L.i('CJSBridge注入完毕')
+    L.i('CJSBridge2注入完毕')
 }())
