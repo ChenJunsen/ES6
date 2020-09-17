@@ -12,7 +12,7 @@
             CJSBridge.call('toast', {
                 msg: msg
             }, (res) => {
-                alert(JSON.stringify(res))
+                console.log('h5收到了来自调用原生Toast的回调:'+JSON.stringify(res))
             })
         }
 
