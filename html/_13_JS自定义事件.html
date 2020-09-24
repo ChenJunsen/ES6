@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--防止页面可以被用户放大从而不会出现放大按钮-->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <title>JS自定义事件</title>
+    <style>
+        .btn{
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        let evA=new CustomEvent('evA',{
+            detail:{
+                msg:'112233ee',
+                confirm:function () {
+                    confirm('112233')
+                }
+            },
+            cancelable:true,
+            bubbles:true
+        })
+
+        document.addEventListener('evA',function (res) {
+            // console.log(res)
+            res.detail.confirm()
+        })
+
+
+        function alertClick() {
+            // alert('I am ok')
+            document.dispatchEvent(evA)
+        }
+    </script>
+</head>
+<body>
+    <input type="button" class="btn" onclick="alertClick()" value="I am ok">
+</body>
+</html>
