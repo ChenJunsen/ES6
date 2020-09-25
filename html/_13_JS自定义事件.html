@@ -23,14 +23,20 @@
             bubbles:true
         })
 
+        console.log(evA)
+
         document.addEventListener('evA',function (res) {
-            // console.log(res)
-            res.detail.confirm()
+            /*for(let key in res){
+                console.log(key+':'+res[key])
+            }*/
+            console.log(res)
+            // res.detail.confirm()
         })
 
 
         function alertClick() {
             // alert('I am ok')
+            // evA.detail.msg='2323232'
             document.dispatchEvent(evA)
         }
     </script>
