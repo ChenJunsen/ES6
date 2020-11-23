@@ -268,7 +268,7 @@
             }
         },
         registerEvent: function (evName, params) {
-            registerEvent(evName, params, false, false)
+            registerEvent(evName, params, true, true)
         },
         triggerEvent: function (evName, params) {
             triggerEvent(evName, params)

@@ -130,7 +130,7 @@
 
     console.log(JSON.stringify(obj))*/
 
-    let s = '0.031500'
+    /*let s = '0.031500'
 
 
     function formatRate2(value, minLength, zoom) {
@@ -204,7 +204,103 @@
         return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m);
     }
 
-    console.log(formatRate2(s,3,100))
+    console.log(formatRate2(s,3,100))*/
 
+    /*let a='123.do'
+    console.log(a.indexOf('.do'))*/
+
+
+    /*function str2Date(str) {
+        function handleFirst(s) {
+            let res=''
+            if(s.indexOf('-')!==-1){
+                s.replace(/-/,'/')
+                res=s
+            }else if(s.length===8){
+                res=s.substring(0,4)+'/'+s.substring(4,6)+'/'+s.substring(6,8)
+            }
+            console.log(s+'->'+res)
+            return res
+        }
+        if (str) {
+            let first=str
+            let second=''
+            if (str.indexOf(' ') !== -1) {//yyyy?MM?dd hh:mm:ss
+                let arr=str.split(' ')
+                first=arr[0]
+                second=arr[1]
+                return new Date(Date.parse(handleFirst(first)+' '+second))
+            }else{//yyyy?MM?dd
+                return new Date(handleFirst(first))
+            }
+        } else {
+            console.warn(`invalid string to convert to a date object：[str:${str}]`)
+            return {}
+        }
+    }
+
+    let date='20201011'
+    let dateObj=str2Date(date)
+    console.log(dateObj.getFullYear())*/
+
+    /*Date.prototype.format = function (fmt) { //author: meizz
+        "use strict";
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "h+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    };
+
+    function getDateBeforeAWeek(date){
+        let currentDateTime=date.getTime()
+        return new Date(currentDateTime-7*24*60*60*1000)
+    }
+
+    console.log(getDateBeforeAWeek(new Date()).format('yyyy/MM/dd'))*/
+
+    /*let obj1={
+        a:'1',
+        b:'2'
+    }
+
+    let obj2={
+        a:'2',
+        c:'3'
+    }
+
+    console.log(JSON.stringify(Object.assign(obj1,obj2)))
+    console.log(JSON.stringify(obj1))
+    console.log(JSON.stringify(obj2))
+
+    for(let key in obj2){
+        console.log(key)
+    }
+
+    console.log('1'-'2')*/
+
+    /*let a='aa'
+    console.log(a.split(','))*/
+
+    /*let a=null
+    console.log(isNaN(a))*/
+
+   /* let s=new Set()
+    s.add('root')
+    s.add('child1')
+    console.log(s)
+    console.log(s.keys())
+    console.log(Array.from(s))*/
+
+   let s=null
+    console.log(Number.parseInt(s))
 </script>
 </html>

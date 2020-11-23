@@ -1,0 +1,45 @@
+{
+  "HeadTotalNum": "2",
+  "List": [
+    {
+      "StrategyMap": {
+        "产品推荐1": {
+          "ControlGroupNum": "20",
+          "ControlGroupRatio": "20.00",
+          "PolicyGroupNum": "180",
+          "PolicyGroupRatio": "80.00",
+          "StrategyName": "产品推荐1"
+        },
+        "测试1": {
+          "ControlGroupNum": "20",
+          "ControlGroupRatio": "20.00",
+          "PolicyGroupNum": "180",
+          "PolicyGroupRatio": "80.00",
+          "StrategyName": "测试1"
+        },
+        "TransDate": "2020-10-19"
+      }
+    },
+    {
+      "StrategyMap": {
+        "产品推荐2": {
+          "ControlGroupNum": "20",
+          "ControlGroupRatio": "20.00",
+          "PolicyGroupNum": "180",
+          "PolicyGroupRatio": "80.00",
+          "StrategyName": "产品推荐2"
+        },
+        "测试2": {
+          "ControlGroupNum": "20",
+          "ControlGroupRatio": "20.00",
+          "PolicyGroupNum": "180",
+          "PolicyGroupRatio": "80.00",
+          "StrategyName": "测试2"
+        },
+        "TransDate": "2020-10-19"
+      }
+    }
+  ],
+  "_RejCode": "000000",
+  "_RejMsg": ""
+}
