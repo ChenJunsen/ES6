@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+<div>数组去重</div>
+<script>
+    function L(obj, tag) {
+        if (tag) {
+            console.log(tag + ':')
+        }
+        console.log(obj)
+    }
+
+    //1.在存值时就去重，使用Set数据结构
+    L('一、在存值时就去重，使用Set结构')
+    let set1 = new Set()
+    set1.add(1)
+    set1.add(2)
+    set1.add(3)
+    set1.add(3)
+    //配合Array.from方法转为数组
+    L(set1)
+    L(Array.from(set1))
+    L('------------------------------------------------------------------------')
+    L('二、存值后去重')
+    //2.存值后去重
+    let oriArray = [1, 2, 3, 3, 4, 5, 5, null, null]
+    L(oriArray, '原始数组')
+    //(1)使用Set结构
+    L(new Set(oriArray), '1、Set去重')
+    L(Array.from(new Set(oriArray)))
+    //使用展开运算符，可以简写为:
+    L([...new Set(oriArray)], '1.1、Set去重(展开运算符写法)')
+    L('------------------------------------------------------------------------')
+    //(2)使用遍历+Array.includes/Array.indexOf去重
+    let oriArray2 = ['小明', '小花', '小萌', '小明', 2, 2, 2, 4, 5, NaN, 7, NaN]
+    L(oriArray2, '原始数组2')
+    let tempArray = []
+    oriArray2.forEach(item => {
+        if (!tempArray.includes(item)) {
+            tempArray.push(item)
+        }
+    })
+    L(tempArray, '2、includes去重')
+    let tempArray2 = []
+    oriArray2.forEach(item => {
+        if (tempArray2.indexOf(item) === -1) {
+            tempArray2.push(item)
+        }
+    })
+    L(tempArray2, '3、indexOf去重')
+    L('具体使用indexOf还是includes：')
+    L('<1>、indexOf返回的是搜索对象的索引下标，是个数字，-1表示不存在；includes返回的是布尔值')
+    L('<2>、indexOf不支持NaN的检索，includes可以，因此，单纯地想要判断是否含有某个元素优先使用includes')
+    L('------------------------------------------------------------------------')
+    //(3)使用遍历+mapHash思想去重
+    //核心思想与上述遍历去重类似，就是先新建一个缓存数组，在遍历途中判断该数组是否添加了该元素，从而去重
+    //不同的是，判断是否含有改元素地方法改为我们自己实现
+    //而采用对象地键值对模式，就能很取巧地去重(同一键位只对应一个值)
+    let oriArray3 = ['solid', 'liquid', 'gas', 5, NaN, NaN, 'gas', 1334, true, false, null, true, true]
+    L(oriArray3, '原始数组3')
+    let hash = {}
+    let tempArray3 = []
+    oriArray3.forEach(item => {
+        if (!hash[item]) {
+            hash[item] = true
+            tempArray3.push(item)
+        }
+    })
+    L(tempArray3, '4、mapHash去重')
+    //该种模式还可以转换为使用Map数据结构地写法
+    let map = new Map()
+    let tempArray4 = []
+    oriArray3.forEach(item => {
+        if (!map.has(item)) {
+            map.set(item, '')//这里只需判断有无这个key就行了，值随便写
+            tempArray4.push(item)
+        }
+    })
+    L(tempArray4, '4.1、mapHash去重(使用Map数据结构)')
+    L('------------------------------------------------------------------------')
+    //(4)使用Array.filter+indexOf进行去重(无法判断NaN)
+    let oriArray4=[1,2,3,4,4,4,null,true,undefined,5,6,4,NaN,'小明',NaN]
+    L(oriArray4, '原始数组4')
+    let tempArray5=oriArray4.filter((item,index,arr)=>{
+        //indexOf默认返回找到地第一个元素地下标
+        //index表示是当前遍历到地下标，如果二者相等则表示第一个
+        //当然这种思想只要使用任何一个能遍历地方法，如forEach和for循环都能实现
+        //只不过filter能直接返回过滤好的元素，不用再声明一个缓存数组
+        return arr.indexOf(item) === index
+    })
+    L(tempArray5,'5、Array.filter去重(无法判断NaN)')
+
+</script>
+</body>
+</html>
