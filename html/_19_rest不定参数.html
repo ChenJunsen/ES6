@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rest不定参数</title>
+</head>
+<body>
+<h1>rest不定参数</h1>
+<script>
+    function L(obj, tag) {
+        if (tag) {
+            console.log(tag + ':')
+        }
+        console.log(obj)
+    }
+
+    L('------------不定参数演示-------------')
+
+    //不定参数以...开始表示，后面的参数其实是个数组，因此适用数组的任何方法
+    function f(...vals) {
+        let res = 0
+        for (let v of vals) {
+            res += v
+        }
+        L(res)
+    }
+
+    f(1, 1, 1, 1, 1)
+
+    function f1(a, ...c) {
+        if (Array.isArray(a)) {
+            c.forEach(item => {
+                a.push(item)
+            })
+        }
+        L(a)
+    }
+
+    f1([], 1, 2, 3, 4, 5, 6)
+
+    //需要注意的是，不定参数只能位于形参最后一个，否则声明就报错了
+    /*function f2(a,...b,c) {
+
+    }*/
+</script>
+</body>
+</html>
