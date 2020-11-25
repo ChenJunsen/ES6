@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6新增运算方法</title>
+</head>
+<body>
+<h1>ES6新增运算方法</h1>
+<script>
+    function L(obj, tag) {
+        if (tag) {
+            console.log(tag + ':')
+        }
+        console.log(obj)
+    }
+
+    //1、指数运算符 **
+    L('---------1、指数运算符----------')
+    L(2 ** 3, '2的3次方')
+
+    let a = 3
+    a **= 2
+    L(a,'3的2次方，**=运算符')
+
+
+    //2、去除小数
+    L('--------2、去除小数 Math.trunc-------')
+    let b=3.1415926
+    let trunc=Math.trunc(b)
+    L(b+'--->'+trunc)
+
+    //3、返回所有参数的平方和的平方根(勾股定理)
+    L('--------3、返回所有参数的平方和的平方根(勾股定理)----------')
+    let d1=3
+    let d2=4
+    L(Math.hypot(d1,d2),`${d1}和${d2}`)
+</script>
+</body>
+</html>
