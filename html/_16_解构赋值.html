@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构赋值</title>
+</head>
+<body>
+<h1>解构赋值</h1>
+<script>
+    function L(obj, tag) {
+        if (tag) {
+            console.log(tag + ':')
+        }
+        console.log(obj)
+    }
+
+    L('---------对象解构赋值------------')
+    let {a, b, c} = {a: 1, b: true, c: null}
+    console.log('解构赋值1:', a, b, c)
+    let {a2, b2, c2} = {a2: 3, b2: '小王', c2: {name: '校长'}}
+    console.log('解构赋值2:', a2, b2, c2)
+
+    L('---------数组解构赋值-------------')
+    let [a3, b3, c3] = [false, NaN, 'Apple']
+    console.log('解构赋值3:', a3, b3, c3)
+    let [a4, b4, c4, {e4}] = [999, undefined, {age: 12, hobby: 'games'}, {e4: 'ecmascript5'}]
+    console.log('解构赋值4:', a4, b4, c4, e4)
+
+    L('---------带默认值-------------')
+    //对象内部键值对无序排列，只要有对应键位，就能得到值
+    let {a5 = 100, b5 = false, c5 = '爱吃'} = {m: null, a5: ''}
+    console.log('解构赋值4:', a5, b5, c5)
+
+    //混合赋值，数组可以看作为key为数字下标的键值对
+    //键位取别名
+    let {1: f, 2: g, 3: h} = [100, 'pear', true, 0]
+    //数组下标从0开始，因此，f,g,h对应的是后面三个值
+    console.log('解构赋值5:', f, g, h)
+
+    // L('=============灵活用法 交换值============')
+    // let x = 90
+    // let y = 5
+    // [x, y] = [y, x] //这种写法是ES6标准入门里面的写法，实测报错
+    // console.log(x, y)
+</script>
+</body>
+</html>
