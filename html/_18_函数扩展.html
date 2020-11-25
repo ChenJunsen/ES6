@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数扩展</title>
+</head>
+<body>
+<h1>函数扩展</h1>
+<script>
+    function L(obj, tag) {
+        if (tag) {
+            console.log(tag + ':')
+        }
+        console.log(obj)
+    }
+
+    L('-------1、函数形参设置默认值--------')
+
+    function f1(a, b = 'def') {
+        L(`f1[${a},${b}]`)
+    }
+
+    f1('apple')
+    f1('apple', 'disk')
+    f1()
+    //注意：上面例子恰好将默认值参数设置在了形参队列最后一个，如果变成下面这样
+    function f6(a='def', b) {
+        L(`f6[${a},${b}]`)
+    }
+    // f6(,2) 编译就会报错，需要显式指定undefined才能触发默认值
+    f6(undefined,2)//只有这种写法才能触发默认值
+    f6(null,2)
+    f6(NaN,2)
+    f6('',2)
+    L('配合对象解构赋值')
+
+    function f2({name = 'Jason', age = 25}) {
+        L(`f2:[${name},${age}]`)
+    }
+
+    f2({name: 'Tome'})
+    f2({age: 22})
+    f2({name: 'Tome', age: 15})
+    // f2() //这种写法报错，需给函数设置默认值
+    //对象解构赋值的前提是要存在这个对象，如果不传就是undefined,自然从undefined里面取属性就会报错
+    function f3({name = 'Jason', age = 25} = {}) {
+        L(`f3:[${name},${age}]`)
+    }
+    f3()
+
+    //对象解构的另一种默认值写法
+    function f4({name, age} = {name: 'Jason', age: 25}) {
+        L(`f4:[${name},${age}]`)
+    }
+    f4({name:'Cock'})//这里采用别名形式赋值，没有设置别名的，取值就会变成undefined
+    f4({age:5})
+    f4({name:'Cock',age:4})
+    f4()
+
+    L('----------------2、应用-提示某些参数必输------------------')
+    function checkMustParams(name) {
+        console.error(`${name}参数为必输项！`)
+    }
+    function f7(a=checkMustParams('a'),b,c=checkMustParams('c')) {
+        L(`f7:[${a},${b},${c}]`)
+    }
+    f7()
+    f7(1)
+    f7(1,2)
+    f7(1,2,3)
+</script>
+</body>
+</html>
