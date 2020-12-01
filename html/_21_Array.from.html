@@ -29,17 +29,29 @@
     map.set('b', '小黄')
     map.set('c', '小狗')
     map.set('d', '小丽')
-    L(Array.from(map),'map转数组')
+    L(Array.from(map), 'map转数组')
     //2、伪数组转真数组
     //伪数组必须要有length属性，然后有数字下标对应的值
     //length值如果大于下标对应值长度，超出部分为undefined
-    let obj={
-        0:'12',
-        1:'锅',
-        2:null,
-        length:3
+    let obj = {
+        0: '12',
+        1: '锅',
+        2: null,
+        length: 3
     }
-    L(Array.from(obj),'伪数组转数组')
+    L(Array.from(obj), '伪数组转数组')
+
+    let obj2 = {
+        length: 3
+    }
+    L(Array.from(obj2), '伪数组转数组2')//[undefined,undefined,undefined]
+    //Array.from还可接收第二个和第三个参数
+    let prefix = '啊'
+    let newArr = Array.from(obj2, function (o, i) {
+        return `${prefix}-${i}`
+    }, this)
+    L(newArr, '映射转换')
+    //第二个参数类似数组map映射，第三个参数为绑定this
 </script>
 </body>
 </html>
