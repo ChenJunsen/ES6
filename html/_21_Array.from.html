@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array.from</title>
+</head>
+<body>
+<h1>Array.from</h1>
+<script>
+    function L(obj, tag) {
+        if (tag) {
+            console.log(tag + ':')
+        }
+        console.log(obj)
+    }
+
+    //Array.from用于将一个类似数组对象(伪数组)或者实现了iterator的对象转为数组
+    //1、转换实现了Iterator的对象（可迭代对象）
+    //包含Set、Map
+    let set = new Set()
+    set.add(1)
+    set.add(2)
+    set.add(1)
+    set.add(4)
+    L(Array.from(set), 'set转数组')
+
+    let map = new Map()
+    map.set('a', '小明')
+    map.set('b', '小黄')
+    map.set('c', '小狗')
+    map.set('d', '小丽')
+    L(Array.from(map),'map转数组')
+    //2、伪数组转真数组
+    //伪数组必须要有length属性，然后有数字下标对应的值
+    //length值如果大于下标对应值长度，超出部分为undefined
+    let obj={
+        0:'12',
+        1:'锅',
+        2:null,
+        length:3
+    }
+    L(Array.from(obj),'伪数组转数组')
+</script>
+</body>
+</html>
