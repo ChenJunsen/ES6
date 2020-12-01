@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扩展运算符</title>
+</head>
+<body>
+<h1>扩展运算符</h1>
+<script>
+    function L(obj, tag) {
+        if (tag) {
+            console.log(tag + ':')
+        }
+        console.log(obj)
+    }
+
+    L('1、数组合并，替代concat')
+    let arr1 = [1, 2, 3]
+    L(JSON.stringify(arr1), 'arr1')
+    let arr2 = [4, 5, 6]
+    L(JSON.stringify(arr2), 'arr2')
+    //concat写法
+    let arr3=arr1.concat(arr2)
+    L(JSON.stringify(arr3), 'concat合并数组')
+
+    let arr11 = [1, 2, 3]
+    L(JSON.stringify(arr11), 'arr11')
+    let arr22 = [4, 5, 6]
+    L(JSON.stringify(arr22), 'arr22')
+    //...写法
+    L([...arr11, ...arr22], '...合并数组')
+    L('-------------------------------------------')
+    L('2、配合解构赋值')
+    let [a,...rest]=[1,2,3,4]
+    L(a,'a')
+    L(rest,'rest')
+    //自动把a适配为第一个元素，剩下的适配给rest数组
+    //注意:当适配解构赋值时，扩展运算符只能位于参数最后一位，像下面的写法会报错
+    //let [...rest,a]=[1,2,3,4]
+    L('---------------------------------------------')
+    L('3、可用于将任何实现了Iterator接口的对象转为真正数组')
+    //Set内部实现了Iterator接口，可以转换
+    let set1=new Set()
+    set1.add(1)
+    set1.add(100)
+    set1.add(1)
+    L([...set1],'set1-...')
+    //等同于
+    L(Array.from(set1),'set1-ArrayFrom')
+    //注意：扩展运算符只可转换实现了Iterator的对象，没有实现，但是又类似数组的对象，无法转换
+    //这时，只能用Array.from,详情参考Array.from说明
+</script>
+</body>
+</html>
