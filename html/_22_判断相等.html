@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断相等</title>
+</head>
+<body>
+<h1>判断相等</h1>
+<script>
+    function L(obj, tag) {
+        if (tag) {
+            console.log(tag + ':')
+        }
+        console.log(obj)
+    }
+
+    //ES5有==和===进行相等判断
+    //前者会自动转换类型，后者认为+0和-0一致，NaN和NaN不一致
+    //ES6增加了Object.is()方法进行比较
+    L(+0 == -0, '+0和-0用==比较')
+    L(+0 === -0, '+0和-0用===比较')
+    L(NaN == NaN, 'NaN和NaN用==比较')
+    L(NaN === NaN, 'NaN和NaN用===比较')
+    L(Object.is(+0, -0), '+0和-0用Object.is()比较')
+    L(Object.is(NaN, NaN), 'NaN和NaN用Object.is()比较')
+
+    //总结：Object.is()
+    //1、基本型为与===一致
+    //2、+0和-0判断为不一致
+    //3、NaN比较NaN为一致
+</script>
+</body>
+</html>
