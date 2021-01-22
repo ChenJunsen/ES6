@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON测试</title>
+    <script src="../js/json-extend.js"></script>
+</head>
+<body>
+<div id="display"></div>
+<script>
+    let display=document.getElementById('display')
+    //因为上面引用了json的扩展脚本，所以可以得到正确的Date类型转换
+    let d=new Date()
+    display.innerText=JSON.stringify(d)
+    console.log(d)
+    console.log(d+'')
+    console.log(d.toString())
+    console.log(d.toJSON())
+</script>
+</body>
+</html>
