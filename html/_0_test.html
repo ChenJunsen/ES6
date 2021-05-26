@@ -2,11 +2,29 @@
 <html lang="en">
 <head>
     <script src="../js/desconstruct.js"></script>
+    <script src="../js/dateFormat.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .d{
+            text-align: center;
+            width: 200px;
+        }
+        .cb:hover{
+            background: #903ef4;
+        }
+        .cb:active{
+            background: #ffff00;
+        }
+    </style>
 </head>
 <body>
+<img src="./img/1111.png">
 <div id="hello">hello123</div>
+<div class="d cb">
+    <input type="checkbox">
+</div>
+
 </body>
 <script>
     /*des1([1,2]);
@@ -310,7 +328,22 @@
    // console.log(Number.parseInt('01'))
    //  let arr=[1,2]
    //  console.log(arr.join(','))
-    let s='1'
-    console.log(s.split(','))
+   //  let s0='1615392000'
+   //  console.log(s0.length)
+   //  let s=new Date(Number(s0)*1000).format('yyyy-MM-dd')
+   //  console.log(s)
+
+    var GetQueryJson2 = function () {
+        let url = 'a=111&b=222&c=3333'; // 获取当前浏览器的URL
+        let param = {}; // 存储最终JSON结果对象
+        url.replace(/([^?&]+)=([^?&]+)/g, function(s, v, k) {
+            param[v] = decodeURIComponent(k);//解析字符为中文
+            return k + '=' +  v;
+        });
+        return param;
+    }
+
+    console.log(GetQueryJson2());
+
 </script>
 </html>
