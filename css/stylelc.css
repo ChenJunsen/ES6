@@ -1,0 +1,2568 @@
+/*公共样式 start*/
+html {
+    color: #000;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form,
+fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+}
+
+@charset "utf-8";
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+a {
+    text-decoration: none;
+    /*字体*/
+}
+
+li {
+    list-style: none;
+}
+
+input, img {
+    border: none;
+}
+
+* {
+    -webkit-touch-callout: none; /*系统默认菜单被禁用*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -khtml-user-select: none; /*早期浏览器*/
+    -moz-user-select: none; /*火狐*/
+    -ms-user-select: none; /*IE10*/
+    user-select: none;
+}
+
+input, button {
+    -webkit-user-select: auto;
+    border: none;
+    outline: none;
+    box-shadow: none !important;
+    padding: 0;
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #CCCCCC;
+}
+
+/* 使用webkit内核的浏览器 */
+input::-moz-placeholder {
+    color: #CCCCCC;
+}
+
+/* Firefox版本4-18 */
+input::-moz-placeholder {
+    color: #CCCCCC;
+}
+
+/* Firefox版本19+ */
+input::-ms-input-placeholder {
+    color: #CCCCCC;
+}
+
+.fontSize64 {
+    font-size: 0.64rem !important;
+}
+
+.fontSize48 {
+    font-size: 0.48rem !important;
+}
+
+.fontColorFC923F {
+    color: #FC923F !important;
+}
+
+.fontColor666 {
+    color: #666 !important;
+}
+
+.fontColorRed {
+    color: red !important;
+}
+
+.fontColor333 {
+    color: #333 !important;
+}
+
+.fontColorCCC {
+    color: #CCC !important;
+}
+
+.fontColor999 {
+    color: #999 !important;
+}
+
+.fontColor2396F2 {
+    color: #2396F2 !important;
+}
+
+/*金额正数*/
+.fontAmountPositive {
+    color: #35BA2F !important;
+}
+
+/*金额负数*/
+.fontAmountNegative {
+    color: #F74747 !important;
+}
+
+.backGroColWhite {
+    background-color: white !important;
+}
+
+.TransferInputBlockNoTop {
+    margin-top: 0 !important;
+}
+
+.TransferInputBlockNoLeftPad {
+    padding-left: 0 !important;
+}
+
+.TransferInputBlockTop {
+    margin-top: 0.36rem !important;
+}
+
+.TransferInputBlockLeftPad {
+    padding-left: 0.6rem !important;
+}
+
+.TransferInputBlockRightPad {
+    padding-right: 0.6rem !important;
+}
+
+.TransferInputBlockPad {
+    padding-left: 0.6rem !important;
+    padding-right: 0.6rem !important;
+}
+
+.TransferInputBorTop {
+    border-top: 1px solid #E6E6E6 !important;
+}
+
+.TransferInputBorRight {
+    border-right: 1px solid #E6E6E6 !important;
+}
+
+/*用于表单中有五个字的框*/
+.TransferInputWidth34 {
+    width: 3.4rem !important;
+}
+
+/*用于表单中有六个字的框*/
+.TransferInputWidth408 {
+    width: 4.08rem !important;
+}
+
+.TransferInputBlock {
+    margin-top: 0.36rem;
+    padding-left: 0.6rem;
+    background-color: white;
+}
+
+.TransferInputDiv {
+    position: relative;
+    height: 2.04rem;
+    display: flex;
+    align-items: center;
+    padding-right: 0.6rem;
+}
+
+.TransferInputDiv > span:first-child {
+    width: 2.88rem;
+    font-size: 0.56rem;
+    color: #333;
+    line-height: 2.04rem;
+}
+
+.TransferInputDiv > input:nth-child(2), .TransferInputDiv > span:nth-child(2) {
+    color: #333;
+    font-size: 0.56rem;
+    margin-left: 0.24rem;
+    width: 4.72rem;
+    flex: 1;
+    /*height: 0.8rem;
+    line-height: 0.8rem;*/
+    height: 1rem;
+    line-height: 1rem;
+}
+
+.TransferInputDiv > span:nth-child(2) {
+    color: #222;
+}
+
+.TransferInputDiv.PayeeListImg {
+    padding-right: 1.72rem;
+}
+
+.TransferInputDiv.PayeeListImg > img {
+    position: absolute;
+    width: 0.8rem;
+    height: 0.8rem;
+    padding: 0.4rem;
+    top: 0.22rem;
+    right: 0.16rem;
+}
+
+.TransferInputDiv.RightSelectImg {
+    padding-right: 1.72rem;
+}
+
+.TransferInputDiv.RightSelectImg > img {
+    position: absolute;
+    width: 0.52rem;
+    height: 0.52rem;
+    padding: 0.4rem;
+    top: 0.36rem;
+    right: 0.3rem;
+}
+
+.TransferInputDiv.RemarkImg {
+    padding-right: 1.72rem;
+}
+
+.TransferInputDiv.RemarkImg > img {
+    position: absolute;
+    width: 0.8rem;
+    height: 0.8rem;
+    padding: 0.4rem;
+    top: 0.22rem;
+    right: 0.16rem;
+}
+
+.TransferAmountDiv {
+    height: 3.56rem;
+    padding-top: 0.66rem;
+}
+
+.TransferAmountDiv > div:first-child {
+    font-weight: bold;
+    margin-bottom: 0.52rem;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    font-size: 0.64rem;
+}
+
+.TransferAmountDiv > div:nth-child(2) {
+    height: 1.68rem;
+    margin-bottom: 0.48rem;
+    display: flex;
+    align-items: center;
+    padding-right: 0.6rem;
+}
+
+.TransferAmountDiv > div:nth-child(2) > span:first-child {
+    font-size: 1.2rem;
+}
+
+.TransferAmountDiv > div:nth-child(2) > input {
+    font-size: 0.8rem;
+    /* flex: 3; */
+    width: 7rem;
+    /*height: 1.12rem;
+    line-height: 1.12rem;*/
+    height: 1.3rem;
+    line-height: 1.3rem;
+}
+
+.TransferAmountDiv > div:nth-child(2) > span:last-child {
+    color: #999;
+    font-size: 0.48rem;
+    width: 5rem;
+    text-align: right;
+    flex: 2;
+}
+
+.TransferAmountDiv > div:nth-child(2) > span:last-child > span {
+    text-align: left;
+    display: inline-block;
+}
+
+.TransferSelectDiv {
+    height: 2.04rem;
+    display: flex;
+    align-items: center;
+}
+
+.TransferSelectDiv > div {
+    text-align: right;
+    flex: 1;
+    font-size: 0.52rem;
+}
+
+.TransferSelectDiv > div:first-child {
+    text-align: left;
+}
+
+.TransferSelectTypeDiv {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.TransferSelectTypeDiv > div {
+    text-align: right;
+    font-size: 0.52rem;
+}
+
+.TransferSelectTypeDiv > div:first-child {
+    text-align: left;
+    flex: 1;
+}
+
+.TransferSelectTypeDiv > div > div {
+    height: 0.92rem;
+    line-height: 0.92rem;
+    color: #999;
+    font-size: 0.52rem;
+}
+
+.TransferNextBtn {
+    margin: 1.2rem 0.6rem 0;
+    height: 1.92rem;
+    line-height: 1.92rem;
+    text-align: center;
+    width: 13.8rem;
+    border-radius: 0.16rem;
+}
+
+.TransferTwoBtn {
+    height: 1.76rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 0 0.8rem;
+}
+
+.TransferTwoBtn > div:first-child {
+    flex: 1;
+    margin-right: 0.6rem;
+    height: 1.76rem;
+    line-height: 1.76rem;
+    border-radius: 0.12rem;
+}
+
+.TransferTwoBtn > div:last-child {
+    flex: 1;
+    height: 1.76rem;
+    line-height: 1.76rem;
+    border-radius: 0.12rem;
+}
+
+.TransferNextBtnComOraBacGroCol {
+    background-color: #F67B2D;
+    color: white;
+}
+
+.TransferNextBtnOraBacGroCol {
+    background: -webkit-linear-gradient(left, #FC9B41, #FC813B); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #FC9B41, #FC813B); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #FC9B41, #FC813B); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #FC9B41, #FC813B);
+    color: white;
+    font-size: 0.64rem;
+}
+
+.TransferNextBtnWhiBacGroCol6F7F8B {
+    background: white;
+    color: #6F7F8B;
+    border: 1px solid #6F7F8B;
+}
+
+.TransferNextBtnWhiBacGroCol {
+    background: white;
+    color: #666;
+    border: 1px solid #979797;
+}
+
+.PayeeBankListHeadSerach {
+    background-color: #F4F4F4;
+    padding: 0.32rem 0.7rem;
+}
+
+.PayeeBankListHeadSerach > div {
+    width: 12.8rem;
+    height: 0.8rem;
+    background-color: #E7E7E7;
+    display: flex;
+    padding: 0.28rem 0.4rem;
+    align-items: center;
+    border-radius: 0.16rem;
+}
+
+.PayeeBankListHeadSerach > div > img {
+    width: 0.64rem;
+    height: 0.64rem;
+    padding-right: 0.4rem;
+}
+
+.PayeeBankListHeadSerach > div > input {
+    flex: 1;
+    font-size: 0.56rem;
+    background-color: #E7E7E7;
+}
+
+.TrsRecordDetailTitleFont {
+    height: 1.6rem;
+    line-height: 1.6rem;
+    font-size: 0.56rem;
+    color: #333;
+}
+
+.TransferFlexDiv {
+    display: flex;
+    align-items: center;
+}
+
+.displayFlex {
+    display: flex;
+}
+
+/*公共样式 end*/
+/*模块框样式 start*/
+.wxts {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wxts_fc {
+    position: absolute;
+    width: 12.8rem;
+    left: 50%;
+    margin-left: -6.4rem;
+    top: 8rem;
+    /*margin-top: -5rem;*/
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.wxts_fc_div .alert-img {
+    display: block;
+    height: 4.31rem;
+    padding-top: 1.69rem;
+    margin: 0 auto;
+}
+
+.wxts_fc_div .alert-p1 {
+    font-size: 0.68rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0.62rem;
+}
+
+.wxts_fc_div .alert-p2 {
+    font-size: 0.51rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0.3rem;
+    margin-bottom: 0.62rem;
+    color: #999999;
+}
+
+.wxts_anniu_1 input {
+    display: block;
+    width: 100%;
+    font-size: 0.68rem;
+    height: 2.24rem;
+    border: none;
+    border-top: 1px solid #EAEAEA;
+    text-align: center;
+    background: none;
+}
+
+.wxts_anniu input {
+    display: block;
+    width: 50%;
+    float: left;
+    font-size: 0.68rem;
+    height: 2.24rem;
+    border: none;
+    border-top: 1px solid #EAEAEA;
+    text-align: center;
+    background: none;
+}
+
+.wxts_anniu input:last-child {
+    border-left: 1px solid #EAEAEA;
+}
+
+.wxts_fc2 {
+    position: absolute;
+    width: 14rem;
+    left: 50%;
+    margin-left: -7rem;
+    top: 10%;
+    background-color: white;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.fize_1_2 {
+    text-align: center;
+    line-height: 1.8rem;
+    font-size: 0.7rem;
+    border-bottom: 1px solid #EAEAEA;
+    margin: 0;
+}
+
+.fize_1_2 img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.6rem;
+    float: right;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.wxts_anniu_3 {
+    padding: 0.3rem .64rem;
+}
+
+.wxts_anniu_3 input {
+    width: 100%;
+    margin: 0;
+}
+
+.wxts_fc2 .yzmk {
+    text-align: center;
+    padding: 0 .64rem;
+}
+
+.wxts_fc2 .yzmk .yzmk_t {
+    border-radius: 2px;
+    border: 1px solid #EAEAEA;
+}
+
+.wxts_fc2 .yzmk * {
+    font-size: 1.2rem;
+}
+
+.wxts_fc2 .wxts_tip {
+    font-size: 0.5rem;
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+.wxts_fc2 .wxts_tip > span {
+    font-size: 0.5rem;
+    color: #e19a3b;
+}
+
+.trs-time-list {
+    margin: 0;
+    background-color: #F5F5F5;
+    /*max-height: 11.46rem;*/
+    /*展示三条*/
+    max-height: 6.6rem;
+    /*overflow: auto;*/
+    overflow: hidden;
+}
+
+.trs-time-list li {
+    font-size: 0.68rem;
+    text-align: center;
+    line-height: 2.2rem;
+    border-bottom: 1px #EAEAEA solid;
+    height: 54px;
+    /*background-color: white;*/
+}
+
+.trs-time-list > li:first-child {
+    border-top: 1px #EAEAEA solid;
+}
+
+/*.trs-time-list li:hover{
+	background-color: #F5F5F5;
+}*/
+.trs-time-list li.testAlign {
+    text-align: right;
+}
+
+/*弹出动画*/
+.animated-up {
+    animation-name: fadeInUp;
+    animation-duration: .5s;
+    animation-delay: 0s;
+    -webkit-animation-name: fadeInUp;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-duration: 0.5s;
+}
+
+.animated-down {
+    animation-name: fadeInDown;
+    animation-duration: .5s;
+    animation-delay: 0s;
+    -webkit-animation-name: fadeInDown;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-duration: 0.5s;
+}
+
+/* TODO: 模态框 */
+.model {
+    width: 100%;
+    color: #666;
+    background: #fff;
+    position: fixed;
+    z-index: 10;
+}
+
+.m-up {
+    left: 0;
+    bottom: 0;
+}
+
+.m-down {
+    top: 0;
+}
+
+.model .model-title {
+    width: 100%;
+    height: 1.792rem;
+    line-height: 1.792rem;
+    font-size: .6827rem;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fff;
+}
+
+.model .model-title i {
+    width: .5974rem;
+    height: .5974rem;
+    background: url("img/close_btn.png") no-repeat center;
+    background-size: 100% 100%;
+    display: inline-block;
+    position: absolute;
+    top: .5973rem;
+    left: .5973rem;
+}
+
+.model .model-content {
+    width: 100%;
+    overflow: auto;
+    /*max-height: 10rem;*/
+    /*min-height: 10.88rem;*/
+}
+
+.selectModel {
+    width: 100%;
+    color: #666;
+    background: #F5F5F5;
+    position: absolute;
+    z-index: 10;
+    max-height: 14rem;
+    overflow: auto;
+}
+
+.selectModel .model-title {
+    width: 100%;
+    height: 1.792rem;
+    line-height: 1.792rem;
+    font-size: .6827rem;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fff;
+}
+
+.selectModel .model-title i {
+    width: .5974rem;
+    height: .5974rem;
+    background: url("img/close_btn.png") no-repeat center;
+    background-size: 100% 100%;
+    display: inline-block;
+    position: absolute;
+    top: .5973rem;
+    left: .5973rem;
+}
+
+.selectModel .model-content {
+    width: 100%;
+    overflow: auto;
+}
+
+.selectModel .model-content > div:first-child {
+    border-bottom: none;
+    /*margin-top: 0.34rem;*/
+    font-size: 0.68rem;
+    margin-bottom: 0.34rem;
+    text-align: center;
+    line-height: 2.2rem;
+    background-color: white;
+    overflow: hidden;
+    padding: 0 0.6rem;
+}
+
+.selectModel .model-content > div:first-child > div:first-child {
+    float: left;
+}
+
+.selectModel .model-content > div:first-child > div:last-child {
+    float: right;
+}
+
+.selectModel > .model-content > div:last-child {
+    -webkit-mask: -webkit-gradient(linear, 0% 70%, 0% 98%, from(rgba(222, 187, 71, 1)), to(rgba(36, 142, 36, 0)));
+}
+
+.selectModel > .model-content > div:last-child > ul {
+    -webkit-mask: -webkit-gradient(linear, 0% 30%, 0% 2%, from(rgba(222, 187, 71, 1)), to(rgba(36, 142, 36, 0)));
+    padding: 2.2rem 0;
+    max-height: 2.2rem;
+    background-color: white;
+}
+
+.AcnoListSelectli {
+    position: relative;
+}
+
+.AcnoListSelectli img {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 0.6rem;
+}
+
+.AcnoListSelectli > span {
+    display: block;
+    text-align: center;
+}
+
+/*模块框样式 end*/
+/*小伙伴管理左右滑动 start*/
+.ui-slide {
+}
+
+.ui-slide.uiopen {
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-name: info-slide-open;
+    -moz-animation-duration: 500ms;
+    -moz-animation-name: info-slide-open;
+    animation-duration: 500ms;
+    animation-name: info-slide-open;
+    left: -4.6rem;
+}
+
+.ui-slide.uiclose {
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-name: info-slide-close;
+    -moz-animation-duration: 500ms;
+    -moz-animation-name: info-slide-close;
+    animation-duration: 500ms;
+    animation-name: info-slide-close;
+    /*right: -673px;*/
+    /*display:none;*/
+}
+
+@-webkit-keyframes info-slide-open {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -4.6rem;
+    }
+}
+
+@-moz-keyframes info-slide-open {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -4.6rem;
+    }
+}
+
+@keyframes info-slide-open {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -4.6rem;
+    }
+}
+
+@-webkit-keyframes info-slide-close {
+    from {
+        left: -4.6rem;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+@-moz-keyframes info-slide-close {
+    from {
+        left: -4.6rem;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+@keyframes info-slide-close {
+    from {
+        left: -4.6rem;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+.comMan_modDiv {
+    position: absolute;
+    right: -2.3rem;
+    top: 0;
+    bottom: 0;
+    width: 2.3rem;
+    background-color: #F74747;
+    font-size: 0.64rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comMan_delDiv {
+    position: absolute;
+    right: -4.6rem;
+    top: 0;
+    bottom: 0;
+    width: 2.3rem;
+    background-color: #E0E0E0;
+    font-size: 0.64rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*小伙伴管理左右滑动 end*/
+/*转账首页 start*/
+.TransferHomeHead {
+    background-image: url(../images/bottom@2x.png);
+    padding-top: 1.04rem;
+    padding-bottom: 0.76rem;
+    text-align: center;
+    background-size: 100% auto;
+    background-position: right bottom;
+}
+
+.TransferHomeHead > div > img {
+    width: 1.6rem;
+    height: auto;
+    margin-bottom: 0.4rem;
+}
+
+.TransferHomeHead > div > span {
+    color: #FFFFFF;
+    font-size: 0.56rem;
+    line-height: 0.8rem;
+}
+
+.TransferHomeHeadTab {
+    height: 0.92rem;
+    padding: 0.5rem 0;
+    display: flex;
+    background-color: white;
+}
+
+.TransferHomeHeadTab > div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    font-size: 0.56rem;
+    color: #333333;
+    text-align: center;
+}
+
+.TransferHomeHeadTab > div > img {
+    width: 0.76rem;
+    height: 0.76rem;
+    margin-right: 0.5rem;
+}
+
+.TransferHomeHeadTab > div:first-child:after {
+    content: "|";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    color: #DDDDDD;
+    line-height: 0.92rem;
+}
+
+.TransferHomeContOwn {
+    margin-top: 0.36rem;
+    position: relative;
+}
+
+.TransferHomeContOwn > div:first-child {
+    background-color: white;
+    height: 1.72rem;
+    padding: 0.72rem 0.6rem;
+}
+
+.TransferHomeContOwn > div:first-child > img:first-child {
+    float: left;
+    width: 1.72rem;
+    height: auto;
+}
+
+.TransferHomeContOwn > div:first-child > div {
+    height: 1.72rem;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.56rem;
+}
+
+.TransferHomeContOwn > div:first-child > div > span {
+    flex: 1;
+    color: #999;
+    font-size: 0.48rem;
+    display: flex;
+    align-items: center;
+}
+
+.TransferHomeContOwn > div:first-child > div > span:first-child {
+    color: #333;
+    font-size: 0.6rem;
+}
+
+.TransferHomeContOwn > div:first-child > img:last-child {
+    position: absolute;
+    right: 0.6rem;
+    top: 1.28rem;
+    width: 0.6rem;
+    height: 0.6rem;
+}
+
+.TransferHomeContOwn > div:nth-child(2) {
+    background-color: #F1F1F1;
+}
+
+.TransferHomeContOwn > div:nth-child(2) > div {
+    height: 2.16rem;
+    border-top: 1px solid #DDDDDD;
+    display: flex;
+    padding: 0 0 0 0.6rem;
+    align-items: center;
+}
+
+.TransferHomeContOwn > div:nth-child(2) > div > img {
+    width: 1.12rem;
+    height: 1.12rem;
+}
+
+.TransferHomeContOwn > div:nth-child(2) > div > span {
+    padding-left: 0.28rem;
+}
+
+.TransferHomeContRecent > div:first-child {
+    height: 1.6rem;
+    line-height: 1.6rem;
+    padding: 0 0 0 0.6rem;
+}
+
+.TransferHomeContRecentDiv {
+    background-color: white;
+    position: relative;
+}
+
+.TransferHomeContRecentDiv > div {
+    background-color: white;
+    height: 1.72rem;
+    padding: 0.72rem 0.6rem;
+}
+
+.TransferHomeContRecentDiv > div > img:first-child {
+    float: left;
+    width: 1.72rem;
+    height: auto;
+}
+
+.TransferHomeContRecentDiv > div > div {
+    height: 1.72rem;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.64rem;
+}
+
+.TransferHomeContRecentDiv > div > div > span {
+    flex: 1;
+    color: #999;
+    font-size: 0.48rem;
+    display: flex;
+    align-items: center;
+}
+
+.TransferHomeContRecentDiv > div > div > span:first-child {
+    color: #333;
+    font-size: 0.6rem;
+}
+
+.TransferHomeContRecentDiv > div > div > span > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.TransferHomeContRecentDiv > div > div > span > div:first-child > span {
+    text-align: left;
+}
+
+.TransferHomeContRecentDiv > div > div > span > div > span {
+    flex: 1;
+    text-align: right;
+}
+
+.TransferHomeContRecentDiv > div > img:last-child {
+    position: absolute;
+    right: 0.64rem;
+    top: 1.32rem;
+    width: 0.52rem;
+    height: 0.52rem;
+}
+
+.TransferHomeContRecentDivNameL {
+    background-color: white;
+    position: relative;
+}
+
+.TransferHomeContRecentDivNameL > div {
+    background-color: white;
+    /*height: 1.72rem;*/
+    padding: 0.72rem 0.6rem;
+}
+
+.TransferHomeContRecentDivNameL > div > img:first-child {
+    float: left;
+    width: 1.72rem;
+    height: auto;
+}
+
+.TransferHomeContRecentDivNameL > div > div {
+    /*height: 1.72rem;*/
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.64rem;
+}
+
+.TransferHomeContRecentDivNameL > div > div > span {
+    /*flex: 1;*/
+    color: #999;
+    font-size: 0.48rem;
+    /*display: flex;*/
+    align-items: center;
+    line-height: 0.72rem;
+    overflow: hidden;
+}
+
+.TransferHomeContRecentDivNameL > div > div > span:first-child {
+    color: #333;
+    font-size: 0.6rem;
+    line-height: 0.72rem;
+    margin-bottom: 0.28rem;
+}
+
+.TransferHomeContRecentDivNameL > div > div > span > div {
+    float: left;
+    /*flex: 1;*/
+    /*display: flex;
+    align-items: center;*/
+    max-width: 60%;
+}
+
+.TransferHomeContRecentDivNameL > div > div > span > div:last-child {
+    float: right;
+    max-width: 40%;
+}
+
+.TransferHomeContRecentDivNameL > div > div > span > div:first-child > span {
+    text-align: left;
+}
+
+.TransferHomeContRecentDivNameL > div > div > span > div > span {
+    flex: 1;
+    text-align: right;
+}
+
+.TransferHomeContRecentDivNameL > div > img:last-child {
+    position: absolute;
+    right: 0.64rem;
+    top: 1.32rem;
+    width: 0.52rem;
+    height: 0.52rem;
+}
+
+.TransferRemarkDiv {
+    display: flex;
+    background-color: white;
+    height: 2.8rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.6rem;
+}
+
+.TransferRemarkDiv > div {
+    flex: 1;
+    height: 1.16rem;
+    line-height: 1.16rem;
+    text-align: center;
+    margin-left: 0.36rem;
+    border: 1px solid #BBB;
+    font-size: 0.56rem;
+    color: #666;
+}
+
+.TransferRemarkDiv > div:first-child {
+    margin-left: 0;
+}
+
+.TransferRemarkDiv > div.active {
+    color: white;
+    background-color: #FC923F;
+}
+
+/*转账首页 end*/
+/*转账页面 start*/
+.TransferSuccessBlock {
+    background-color: white;
+    height: 11.36rem;
+    padding-top: 1rem;
+    text-align: center;
+    padding-bottom: 1.24rem;
+}
+
+.TransferSuccessBlock > div:first-child {
+    height: 2rem;
+    margin-bottom: 0.56rem;
+}
+
+.TransferSuccessBlock > div:first-child > img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.TransferSuccessBlock > div:nth-child(2) {
+    height: 0.9rem;
+    line-height: 0.9rem;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.64rem;
+    margin-bottom: 0.44rem;
+}
+
+.TransferSuccessBlock > div:nth-child(3) {
+    height: 1.76rem;
+    line-height: 0.88rem;
+    color: #999;
+    font-size: 0.52rem;
+    margin-bottom: 1rem;
+}
+
+.TransferSuccessBlock > div:nth-child(4) {
+    height: 0.74rem;
+    line-height: 0.74rem;
+    color: #666;
+    font-size: 0.52rem;
+    margin-bottom: 2.2rem;
+}
+
+.TransferSuccessBlock > div:nth-child(4) > span {
+    padding: 0 0.5rem;
+}
+
+.TransferSuccessBlock > div:nth-child(4) > span:first-child {
+    border-right: 1px solid #666 !important;
+}
+
+.TransferProductRecommend {
+    background-color: white;
+    padding-top: 0.56rem;
+    padding-bottom: 0.72rem;
+}
+
+.TransferProductRecommend > div:first-child {
+    margin-bottom: 0.52rem;
+    height: 0.96rem;
+    line-height: 0.96rem;
+    padding: 0 0.6rem;
+}
+
+.TransferProductRecommend > div:first-child > span:first-child {
+    font-weight: bold;
+    color: #222222;
+    font-size: 0.68rem;
+    margin-right: 0.68rem;
+}
+
+.TransferProductRecommend > div:first-child > span:nth-child(2) {
+    color: #848996;
+    font-size: 0.52rem;
+}
+
+.TransferXLCProduct {
+    position: relative;
+    margin: 0 0.6rem;
+    width: 13.8rem;
+    height: 5.6rem;
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.1);
+    background-image: url(../images/xlc_card@2x.png);
+    background-position: right;
+    background-size: 100% auto;
+}
+
+.TransferXLCProduct > div {
+    padding-top: 0.64rem;
+}
+
+.TransferXLCProduct > div > div:first-child {
+    margin: 0 0 0.4rem 0;
+    height: 0.96rem;
+    line-height: 0.96rem;
+    color: #222;
+    font-weight: bold;
+    font-size: 0.68rem;
+}
+
+.TransferXLCProduct > div > div:nth-child(2) {
+    height: 1.88rem;
+    margin-bottom: 0.36rem;
+}
+
+.TransferXLCProduct > div > div:nth-child(2) > div {
+    display: inline-block;
+    height: 1.88rem;
+    width: 4.46rem;
+}
+
+.TransferXLCProduct > div > div:nth-child(2) > div > div:first-child {
+    height: 1.02rem;
+    line-height: 1.02rem;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.2rem;
+    color: #EF3034;
+    font-size: 0.72rem;
+}
+
+.TransferXLCProduct > div > div:nth-child(2) > div > div:first-child > span:first-child {
+    font-size: 0.88rem;
+    font-weight: bold;
+}
+
+.TransferXLCProduct > div > div:nth-child(2) > div > div:nth-child(2) {
+    height: 0.66rem;
+    line-height: 0.66rem;
+    color: #969696;
+    font-size: 0.48rem;
+}
+
+.TransferXLCProduct > div > div:nth-child(2) > div:nth-child(2) > div:first-child {
+    color: #333;
+    font-size: 0.52rem;
+}
+
+.TransferXLCProduct > div > div:nth-child(2) > div:nth-child(2) > div:first-child > span:first-child {
+    font-size: 0.88rem;
+    font-weight: bold;
+}
+
+.TransferXLCProduct > div > div:nth-child(3) {
+    height: 0.72rem;
+    line-height: 0.72rem;
+}
+
+.TransferXLCProduct > div > div:nth-child(3) > span {
+    text-align: center;
+    display: inline-block;
+    width: 3.2rem;
+    height: 0.72rem;
+    line-height: 0.72rem;
+    background-color: #F6F6F6;
+    color: #B0907A;
+    font-size: 0.44rem;
+}
+
+.TransferXLCProduct > div > div:nth-child(3) > span:first-child {
+    margin-right: 0.4rem;
+}
+
+.TransferXLCProduct > div > div:nth-child(4) {
+    position: absolute;
+    width: 3.36rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    border-radius: 0.58rem;
+    top: 2rem;
+    right: 0.6rem;
+}
+
+.TransferTypeHelpIcon {
+    width: 0.624rem;
+    height: 0.638rem;
+    padding: 0.28rem;
+}
+
+.PayeeNetworkCityPrompt {
+    /*margin: 0.42rem 0.6rem;*/
+    padding: 0.42rem 0.6rem;
+    height: 0.74rem;
+    line-height: 0.74rem;
+    color: #666;
+    font-size: 0.52rem;
+}
+
+.PayeeBankNetworkCon {
+    position: absolute;
+    top: 2rem;
+    height: calc(100vh - 2rem);
+    width: 100%;
+}
+
+.PayeeBankNetworkCon > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    background-color: #e7e7e7;
+}
+
+.PayeeBankNetworkCon > div:first-child {
+    z-index: 2;
+}
+
+.TransferTrsTypeAlert {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.TransferTrsTypeAlert > div {
+    width: 10.72rem;
+    height: auto;
+    margin: 2.2rem 1.49rem 0;
+    background-color: white;
+    padding: 1rem 0.65rem 0.96rem;
+    border-radius: 0.2rem;
+}
+
+.TransferTrsTypeAlert > div > div:first-child {
+    margin: 0 0.26rem 1.1rem;
+    width: 10.2rem;
+    font-size: 0.6rem;
+    color: #666666;
+    line-height: 1.2rem;
+}
+
+.TransferTrsTypeAlert > div > div:last-child {
+    border-radius: 0.12em;
+    height: 1.72rem;
+    line-height: 1.72rem;
+    font-size: 0.64rem;
+    text-align: center;
+}
+
+/*转账页面 end*/
+/*转账选择银行页面 start*/
+.PayeeBankListConPopularBankBlo {
+    padding-top: 0.44rem;
+    padding-bottom: 0.24rem;
+    background-color: white;
+    overflow: hidden;
+}
+
+.PayeeBankListConPopularBank {
+    float: left;
+    width: 3.75rem;
+    padding-top: 0.36rem;
+    padding-bottom: 0.36rem;
+    text-align: center;
+    background-color: white;
+}
+
+.PayeeBankListConPopularBank > div:first-child {
+    height: 1.32rem;
+    margin-bottom: 0.44rem;
+}
+
+.PayeeBankListConPopularBank > div:first-child > img {
+    width: 1.32rem;
+    height: 1.32rem;
+}
+
+.PayeeBankListConPopularBank > div {
+    line-height: 0.8rem;
+    color: #666;
+}
+
+.PayeeBankListConAllBankBlo > div > div:first-child {
+    height: 1.6rem;
+    line-height: 1.6rem;
+    padding: 0 0 0 0.58rem;
+    background-color: #F4F4F4;
+    font-size: 0.6rem;
+    color: #999999;
+}
+
+.PayeeBankListConAllBankDiv {
+    background-color: white;
+}
+
+.PayeeBankListConAllBankDiv > div {
+    height: 1.92rem;
+    line-height: 1.92rem;
+    font-size: 0.6rem;
+    color: #333;
+}
+
+.PayeeBankCon {
+    position: absolute;
+    top: 2rem;
+    height: calc(100vh - 2rem);
+    width: 100%;
+}
+
+.PayeeBankCon > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    overflow-x: hidden;
+    width: 100%;
+    background-color: #e7e7e7;
+}
+
+.PayeeBankCon > div:first-child {
+    z-index: 2;
+}
+
+.PayeeBankCon > div:nth-child(2) > div:first-child {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+/*转账选择银行页面 end*/
+/*收款人管理 start*/
+.PayeeListManCon {
+    position: absolute;
+    top: 0;
+    height: calc(100vh - 4.32rem);
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.PayeeListManCon > div:first-child {
+    z-index: 2;
+}
+
+.PayeeListManCon > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    background: #e7e7e7;
+}
+
+.PayeeListManCon > div:nth-child(2) > div:first-child {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.PayeeListManAddBtn {
+    position: absolute;
+    top: calc(100vh - 4.32rem);
+    overflow: auto;
+    overflow-x: hidden;
+    height: 1.6rem;
+    padding: 0.36rem 0.6rem;
+    background-color: white;
+}
+
+.PayeeListManAddBtn > div {
+    width: 13.8rem;
+    height: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.12rem;
+}
+
+.PayeeListManAddBtn > div > img {
+    width: 0.68rem;
+    height: 0.68rem;
+    padding-right: 0.32rem;
+}
+
+.PayeeListManAddBtn > div > span {
+    height: 0.8rem;
+    line-height: 0.8rem;
+}
+
+.PayeeListRightBlock {
+    position: absolute;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    right: 0.32rem;
+    width: 0.84rem;
+    font-size: 0.56rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.42rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.PayeeListRightBlock > div {
+    flex: 1;
+    width: 100%;
+    text-align: center;
+    height: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*收款人管理 end*/
+/*转账记录页面 start*/
+.TrsRecordDateSelectToCustom {
+    position: relative;
+}
+
+.TrsRecordDateSelectToCustom > div:last-child {
+    position: fixed;
+    width: 100%;
+    top: 3.8rem;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.TrsRecordDateSelectToCustom > div:last-child > div {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+}
+
+.TrsRecordDateSelectBlo {
+    height: 1.8rem;
+    background-color: white;
+    display: flex;
+    position: relative;
+}
+
+.TrsRecordDateSelectBlo > div {
+    position: relative;
+    display: inline-block;
+    margin: 0.3rem 0.42rem 0.3rem 0.6rem;
+    width: 6.48rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    color: #6F7F8B;
+    font-size: 0.52rem;
+    border: 1px solid #6F7F8B;
+    border-radius: 0.12rem;
+}
+
+.TrsRecordDateSelectBlo > div > img {
+    position: absolute;
+    height: 0.214rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    top: 0.3rem;
+    right: 0.72rem;
+}
+
+.TrsRecordDateSelectBloCustom {
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    line-height: 1.4rem;
+    text-align: center;
+    z-index: 3;
+}
+
+.TrsRecordDateSelectBloCustom > div:first-child {
+    margin-left: 0.7rem;
+    margin-right: 0.4rem;
+    width: 4.4rem;
+    height: 1.4rem;
+    background-color: #F2F2F2;
+    color: #999999;
+    font-size: 0.52rem;
+}
+
+.TrsRecordDateSelectBloCustom > div:nth-child(2) {
+    border-bottom: 1px solid #999;
+    margin-right: 0.4rem;
+    width: 0.8rem;
+    height: 1px;
+}
+
+.TrsRecordDateSelectBloCustom > div:nth-child(3) {
+    margin-right: 0.4rem;
+    width: 4.4rem;
+    height: 1.4rem;
+    background-color: #F2F2F2;
+    color: #999999;
+    font-size: 0.52rem;
+}
+
+.TrsRecordDateSelectBloCustom > div:nth-child(4) {
+    margin-right: 0.7rem;
+    width: 2.8rem;
+    height: 1.4rem;
+    background-color: #FC923F;
+    color: white;
+    font-size: 0.56rem;
+}
+
+.TrsRecordDetailHead {
+    background-color: white;
+}
+
+.TrsRecordDetailHead > div:first-child {
+    height: 3.12rem;
+    padding-top: 1.28rem;
+    text-align: center;
+}
+
+.TrsRecordDetailHead > div:first-child > div:first-child {
+    line-height: 0.94rem;
+    height: 0.94rem;
+    color: #333333;
+    font-size: 0.8rem;
+    padding-bottom: 0.2rem;
+}
+
+.TrsRecordDetailHead > div:first-child > div {
+    height: 0.66rem;
+    line-height: 0.66rem;
+    font-size: 0.48rem;
+    color: #999;
+}
+
+/*转账记录页面 end*/
+/*账户详情 start*/
+.accountdetail-accList {
+    padding: 0.4rem 0 0.94rem 0;
+}
+
+.accountdetail-accList > div {
+}
+
+.accountdetail-accList > div > div {
+    width: 13.8rem;
+    padding: 0 0.6rem;
+    color: white;
+    font-size: 0.48rem;
+}
+
+.accountdetail-accList > div > div > div {
+    background-image: url(../images/zhxq_card@2x.png);
+    background-position: center;
+    background-size: 100%;
+    height: 6.26rem;
+    padding: 0 0.6rem;
+}
+
+.accountdetail-accListCon > div:first-child {
+    padding: 1.02rem 0 0.92rem;
+}
+
+.accountdetail-accListCon > div:first-child > div:first-child {
+    height: 0.96rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
+}
+
+.accountdetail-accListCon > div:first-child > div:first-child > div:first-child {
+    flex: 1;
+    height: 0.96rem;
+    line-height: 0.96rem;
+    font-size: 0.84rem;
+}
+
+.accountdetail-accListCon > div:first-child > div:first-child > div:last-child {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    text-align: center;
+    width: 3rem;
+    height: 0.84rem;
+    line-height: 0.84rem;
+}
+
+.accountdetail-accListCon > div:first-child > div:last-child {
+    height: 0.66rem;
+    line-height: 0.66rem;
+}
+
+.accountdetail-accListCon > div:last-child {
+    height: 1.52rem;
+    padding: 0.44rem 0 0.42rem;
+    border-top: 1px solid #FFF;
+    position: relative;
+}
+
+.accountdetail-accListCon > div:last-child > div {
+    height: 1.52rem;
+    display: flex;
+    align-items: center;
+}
+
+.accountdetail-accListCon > div:last-child > div > img {
+    width: 1.52rem;
+    height: 1.52rem;
+    padding-right: 0.3rem;
+}
+
+.accountdetail-accListCon > div:last-child > div > div > div:first-child {
+    height: 0.8rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.12rem;
+}
+
+.accountdetail-accListCon > div:last-child > div > div > div:first-child > img {
+    width: 0.6rem;
+    height: 0.6rem;
+    padding: 0.1rem 0.15rem;
+}
+
+.accountdetail-accListCon > div:last-child > div > div > div:last-child {
+    height: 0.6rem;
+    line-height: 0.6rem;
+}
+
+.accountdetail-accListCon > div:last-child > img {
+    position: absolute;
+    width: 0.8rem;
+    height: 0.8rem;
+    padding: 0.15rem;
+    top: 0.64rem;
+    right: 0;
+}
+
+/*账户详情 end*/
+/*交易明细 start*/
+.PActTrsQryCondition {
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.6rem;
+    background-color: white;
+}
+
+.PActTrsQryCondition > div:not(:last-child) {
+    flex: 1;
+    padding: 0 0.6rem;
+    margin-right: 0.4rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid #6F7F8B;
+    font-size: 0.52rem;
+    color: #6F7F8B;
+    height: 1.2rem;
+    position: relative;
+    border-radius: 0.12rem;
+}
+
+.PActTrsQryCondition > div > img {
+    width: 0.6rem;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.4rem;
+}
+
+.PActTrsQryCondition > div:last-child {
+    padding: 0;
+    margin-right: 0;
+    display: block;
+    line-height: 1.2rem;
+    text-align: center;
+    height: 1.2rem;
+    font-size: 0.52rem;
+    border-radius: 0.12rem;
+    width: 3.4rem;
+}
+
+.PActTrsQryConditionDetail {
+    position: fixed;
+    top: 1.8rem;
+    height: calc(100vh - 1.8rem);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.PActTrsQryConditionDetail > div {
+    background-color: #F6F6F6;
+}
+
+.PActTrsQryConditionDetail > div > div {
+    padding: 0 0.6rem;
+}
+
+.PActTrsQryConditionDetail > div > div:first-child {
+    padding-bottom: 1.18rem;
+}
+
+.PActTrsQryConditionDetail > div > div:first-child > div {
+}
+
+.PActTrsQryConditionDetail > div > div:first-child > div:first-child > div:first-child {
+    margin-top: 0.72rem;
+}
+
+.PActTrsQryConditionDetail > div > div:first-child > div > div:first-child {
+    margin-top: 0.16rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.56rem;
+    color: #666;
+}
+
+.PActTrsQryConditionDetail > div > div:first-child > div > div:nth-child(2) {
+    margin-top: 0.48rem;
+}
+
+.PActTrsQryConditionDetail > div > div:first-child > div > div:nth-child(3) {
+    margin-top: 0.56rem;
+}
+
+.PActTrsQryConditionDetailList {
+    /*height: 1.32rem;*/
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 0.52rem;
+    flex-wrap: wrap;
+}
+
+.PActTrsQryConditionDetailList > div {
+    border: 1px solid #BBBBBB;
+    height: 1.32rem;
+    line-height: 1.32rem;
+    margin-right: 0.6rem;
+    flex: 1;
+    text-align: center;
+    background-color: white;
+    flex-basis: 4rem;
+    margin-bottom: 0.56rem;
+}
+
+.PActTrsQryConditionDetailList > div.active {
+    background-color: #444;
+    color: #FFF;
+}
+
+.PActTrsQryConditionDetailList > div:nth-child(3n) {
+    margin-right: 0;
+}
+
+.PActTrsQryConditionDetailAmountList {
+    color: #666;
+    font-size: 0.52rem;
+    display: flex;
+    align-items: center;
+}
+
+.PActTrsQryConditionDetailAmountList > input {
+    border: 1px solid #BBBBBB;
+    width: 4.2rem;
+    height: 1.32rem;
+    line-height: 1.32rem;
+    padding: 0 0.3rem;
+    text-align: center;
+}
+
+.PActTrsQryConditionDetailAmountList > img {
+    margin: 0 0.6rem;
+    width: 0.92rem;
+    height: 0.32rem;
+}
+
+.PActTrsQryConditionDetail > div > div:last-child {
+    padding: 0.86rem 0.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.PActTrsQryConditionDetail > div > div:last-child > div {
+    height: 1.6rem;
+    line-height: 1.6rem;
+    flex: 1;
+    font-size: 0.6rem;
+    border-radius: 0.12rem;
+    text-align: center;
+}
+
+.PActTrsQryConditionDetail > div > div:last-child > div:first-child {
+    margin-right: 0.6rem;
+}
+
+/*交易明细 end*/
+/*动账通知 start*/
+.TransferNoticeAddAcc {
+    padding-top: 0.58rem;
+    padding-bottom: 0.84rem;
+}
+
+.TransferNoticeAddAccHead {
+    height: 0.9rem;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0.64rem 0;
+}
+
+.TransferNoticeAddAccHead > div {
+    width: 0.12rem;
+    height: 0.6rem;
+    background-color: #FC923F;
+    margin-right: 0.4rem;
+}
+
+.TransferNoticeAddAccHead > span {
+    font-size: 0.64rem;
+    color: #222222;
+    font-weight: bold;
+}
+
+.TransferNoticeAddAccCon {
+    width: 13.8rem;
+    height: 3.24rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/card_bg@2x.png);
+    background-position: center;
+    background-size: 100%;
+    border-radius: 0.12rem;
+    color: white;
+    font-size: 0.6rem;
+}
+
+.TransferNoticeAddAccCon > img {
+    width: 0.72rem;
+    height: 0.72rem;
+    margin-right: 0.36rem;
+}
+
+.TransferNoticeAddAccPrompt {
+    color: #666;
+    font-size: 0.52rem;
+    padding: 0 0.6rem;
+}
+
+.TransferNoticeAddAccPrompt > div:first-child {
+    height: 0.74rem;
+    line-height: 0.74rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.4rem;
+}
+
+.TransferNoticeAddAccPrompt > div:last-child {
+    line-height: 1.04rem;
+}
+
+.TransferNoticeAccBlo {
+    margin: 0.4rem 0.6rem 0;
+    background-color: white;
+    padding: 0.48rem 0.52rem 0;
+    border-radius: 0.16rem;
+}
+
+.TransferNoticeAccBlo > div:first-child {
+    height: 0.84rem;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0.6rem 0;
+}
+
+.TransferNoticeAccBlo > div:first-child > div {
+    width: 0.12rem;
+    height: 0.6rem;
+    background-color: #FC923F;
+    margin-right: 0.4rem;
+}
+
+.TransferNoticeAccBlo > div:first-child > span {
+    font-size: 0.6rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.TransferNoticeAccBlo > div:nth-child(2) {
+    display: flex;
+}
+
+.TransferNoticeAccBlo > div:nth-child(2) > div > div:first-child {
+    height: 0.84rem;
+    line-height: 0.84rem;
+    font-size: 0.64rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.TransferNoticeAccBlo > div:nth-child(2) > div > div:nth-child(2) {
+    height: 0.66rem;
+    line-height: 0.66rem;
+    font-size: 0.48rem;
+    color: #999;
+    margin-bottom: 0.24rem;
+}
+
+.TransferNoticeAccBlo > div:nth-child(2) > div > div:nth-child(3) {
+    height: 0.66rem;
+    line-height: 0.66rem;
+    font-size: 0.48rem;
+    color: #333;
+    margin-bottom: 0.44rem;
+}
+
+.TransferNoticeAccBlo > div:nth-child(2) > div:first-child {
+    flex: 3;
+}
+
+.TransferNoticeAccBlo > div:nth-child(2) > div:first-child > div:first-child {
+    font-size: 0.72rem;
+}
+
+.TransferNoticeAccBlo > div:nth-child(2) > div:last-child {
+    flex: 2;
+}
+
+.TransferNoticeAccBlo > div:last-child {
+    padding: 0.48rem 0 0.5rem;
+    height: 0.8rem;
+    display: flex;
+}
+
+.TransferNoticeAccBlo > div:last-child > div {
+    flex: 1;
+    height: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 0.56rem;
+}
+
+.TransferNoticeAccBlo > div:last-child > div > img {
+    width: 0.72rem;
+    height: 0.72rem;
+    margin-right: 0.33rem;
+}
+
+.TransferNoticeAccBlo > div:last-child > div:first-child {
+    border-right: 1px solid #DDD;
+}
+
+/*动账通知 end*/
+/*电话银行 start*/
+.PhoneBankAccBlo {
+    margin: 0.4rem 0.6rem 0;
+    height: 3.44rem;
+    background-color: white;
+    padding: 0.48rem 0.52rem 0.96rem;
+    border-radius: 0.16rem;
+}
+
+.PhoneBankAccBlo > div:first-child {
+    height: 0.84rem;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0.88rem 0;
+}
+
+.PhoneBankAccBlo > div:first-child > div {
+    width: 0.12rem;
+    height: 0.6rem;
+    background-color: #FC923F;
+    margin-right: 0.4rem;
+}
+
+.PhoneBankAccBlo > div:first-child > span {
+    font-size: 0.6rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.PhoneBankAccBlo > div:last-child {
+    height: 1.72rem;
+    display: flex;
+    align-items: center;
+}
+
+.PhoneBankAccBlo > div:last-child > div {
+    flex: 1;
+}
+
+.PhoneBankAccBlo > div:last-child > div:first-child > div:first-child {
+    color: #5382A7;
+}
+
+.PhoneBankAccBlo > div:last-child > div > div:first-child {
+    height: 0.9rem;
+    line-height: 0.9rem;
+    font-size: 0.64rem;
+    color: #333;
+    margin-bottom: 0.16rem;
+}
+
+.PhoneBankAccBlo > div:last-child > div > div:last-child {
+    height: 0.66rem;
+    line-height: 0.66rem;
+    font-size: 0.48rem;
+    color: #999;
+}
+
+.PhoneBankAccBlo > div:last-child > div:last-child {
+    flex: none;
+    width: 3.36rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    font-size: 0.56rem;
+    border-radius: 0.58rem;
+}
+
+.MarginBottom232 {
+    margin-bottom: 2.32rem;
+}
+
+.PhoneBankBottomAdd {
+    position: fixed;
+    bottom: 0;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 1.6rem;
+    padding: 0.36rem 0.6rem;
+    background-color: white;
+}
+
+.PhoneBankBottomAdd > div {
+    width: 13.8rem;
+    height: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.12rem;
+}
+
+.PhoneBankBottomAdd > div > img {
+    width: 0.68rem;
+    height: 0.68rem;
+    padding-right: 0.32rem;
+}
+
+.PhoneBankBottomAdd > div > span {
+    height: 0.8rem;
+    line-height: 0.8rem;
+}
+
+/*电话银行 end*/
+/*消息通知 start*/
+.msgCallDiv {
+    height: 1.92rem;
+    position: relative;
+    padding: 0.72rem 0;
+}
+
+.msgCallDiv > div:first-child {
+    height: 0.9rem;
+    line-height: 0.9rem;
+    font-size: 0.64rem;
+    color: #222222;
+    margin-bottom: 0.36rem;
+    font-weight: bold;
+}
+
+.msgCallDiv > div:nth-child(2) {
+    height: 0.66rem;
+    line-height: 0.66rem;
+    font-size: 0.48rem;
+    color: #999999;
+}
+
+.msgCallDiv > img:last-child {
+    position: absolute;
+    width: 0.52rem;
+    height: 0.52rem;
+    padding: 0.4rem;
+    right: 0.2rem;
+    top: 1.02rem;
+}
+
+.msgCallDetailDiv {
+    text-align: center;
+    padding: 1rem 0.6rem 0;
+}
+
+.msgCallDetailDiv > div:first-child {
+    height: 0.96rem;
+    line-height: 0.96rem;
+    font-size: 0.68rem;
+    color: #222222;
+    margin-bottom: 0.4rem;
+}
+
+.msgCallDetailDiv > div:nth-child(2) {
+    height: 0.66rem;
+    line-height: 0.66rem;
+    font-size: 0.48rem;
+    color: #999999;
+    margin-bottom: 0.68rem;
+}
+
+.msgCallDetailDiv > div:nth-child(3) {
+    font-size: 0.56rem;
+    color: #666666;
+    line-height: 1.12rem;
+    text-align: left;
+}
+
+/*消息通知 end*/
+/*银行卡积分 start*/
+.BankCardPointHead {
+    height: 4rem;
+    background-color: white;
+    padding: 0.4rem 0.6rem;
+}
+
+.BankCardPointHead > div {
+    background-image: url(../images/jf_card@2x.png);
+    background-position: center;
+    background-size: 100%;
+    border-radius: 0.2rem;
+    padding: 0.94rem 0 0.94rem;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.BankCardPointHead > div > div:first-child {
+    height: 1.3rem;
+    line-height: 1.3rem;
+    font-size: 0.92rem;
+    margin-bottom: 0.08rem;
+}
+
+.BankCardPointHead > div > div:last-child {
+    height: 0.74rem;
+    line-height: 0.74rem;
+    font-size: 0.52rem;
+}
+
+.BankCardPointCon {
+    margin: 0.36rem 0.6rem;
+    background-color: white;
+    position: relative;
+}
+
+.BankCardPointCon > div {
+    background-color: white;
+    height: 1.72rem;
+    padding: 0.77rem 0.6rem;
+}
+
+.BankCardPointCon > div > img:first-child {
+    float: left;
+    width: 1.72rem;
+    height: auto;
+}
+
+.BankCardPointCon > div > div {
+    height: 1.72rem;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.64rem;
+}
+
+.BankCardPointCon > div > div > span {
+    flex: 1;
+    color: #333;
+    font-size: 0.52rem;
+    display: flex;
+    align-items: center;
+}
+
+.BankCardPointCon > div > div > span:first-child {
+    font-size: 0.64rem;
+}
+
+.BankCardPointCon > div > div > span:last-child > span:last-child {
+    color: #FC923F;
+}
+
+/*银行卡积分 end*/
+/*一元观影 start*/
+.POneViewActSelectSeatBtn {
+    background-color: white;
+    padding: 0.36rem 0.6rem;
+}
+
+.POneViewActSelectSeatBtn > div {
+    height: 1.6rem;
+    line-height: 1.6rem;
+    border-radius: 0.12rem;
+    font-size: 0.56rem;
+    text-align: center;
+}
+
+.POneViewActSelectSeat {
+    height: calc(100vh - 11.12rem);
+    /*overflow: scroll;*/
+    overflow: hidden;
+    position: relative;
+}
+
+.POneViewActSelectSeat > div:first-child {
+    display: inline-block;
+    transform-origin: 0% 0%;
+}
+
+.POneViewActSelectSeat > div:first-child > div:first-child {
+    height: 1.36rem;
+    line-height: 1.36rem;
+    text-align: center;
+    font-size: 0.56rem;
+    color: #333333;
+}
+
+.POneViewActSelectSeat > div:first-child > div:first-child > span {
+    line-height: 1.36rem;
+    display: inline-block;
+    background-color: #E5E5E5;
+    border-bottom-left-radius: 0.6rem 100%;
+    border-bottom-right-radius: 0.6rem 100%;
+    width: 9.36rem;
+}
+
+.POneViewActSelectSeat > div:first-child > div:last-child {
+    padding: 0.9rem 0.6rem 0;
+    min-height: calc(100vh - 13.38rem);
+}
+
+.POneViewActSelectSeat > div:first-child > div:last-child > div {
+    /*min-width: 13.8rem;*/
+    /*text-align: center;*/
+}
+
+.POneViewActSelectSeat > div:first-child > div:last-child > div > div {
+    overflow: scroll;
+    display: inline-flex;
+    /*display: -webkit-box;*/
+}
+
+.POneViewActSelectSeat > div:first-child > div:last-child > div > div > div {
+    width: 0.72rem;
+    height: 0.72rem;
+    padding: 0.3rem;
+    font-size: 0.4rem;
+    text-align: center;
+    line-height: 0.72rem;
+}
+
+.POneViewActSelectSeat > div:first-child > div:last-child > div > div > div.SelectSeatImg1 {
+    background: url(../images/sofa36/kxz@2x.png) center no-repeat;
+    background-size: 0.72rem 0.72rem;
+}
+
+.POneViewActSelectSeat > div:first-child > div:last-child > div > div > div.SelectSeatImg2 {
+    background: url(../images/sofa36/yxs@2x.png) center no-repeat;
+    background-size: 0.72rem 0.72rem;
+}
+
+.POneViewActSelectSeat > div:first-child > div:last-child > div > div > div.SelectSeatImg3 {
+    background: url(../images/sofa36/xz@2x.png) center no-repeat;
+    background-size: 0.72rem 0.72rem;
+}
+
+.POneViewActSelectSeat > div:first-child > div:last-child > div > div > div.SelectSeatImg4 {
+    background: url(../images/sofa36/bkx@2x.png) center no-repeat;
+    background-size: 0.72rem 0.72rem;
+}
+
+.POneViewActSelectSeatSuoTu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.6rem 0.5rem 0.3rem;
+}
+
+.POneViewActSelectSeatSuoTu > div:first-child {
+}
+
+.POneViewActSelectSeatSuoTu > div:first-child > div {
+    height: 0.3rem;
+    overflow: hidden;
+}
+
+.POneViewActSelectSeatSuoTu > div:first-child > div > div {
+    width: 0.15rem;
+    height: 0.15rem;
+    float: left;
+    margin: 0.05rem;
+}
+
+.POneViewActSelectSeatSuoTu > div:first-child > div > div.SelectSeatSuoTu1 {
+    background-color: white;
+}
+
+.POneViewActSelectSeatSuoTu > div:first-child > div > div.SelectSeatSuoTu2 {
+    background-color: orangered;
+}
+
+.POneViewActSelectSeatSuoTu > div:first-child > div > div.SelectSeatSuoTu3 {
+    background-color: green;
+}
+
+.POneViewActSelectSeatSuoTu > div:first-child > div > div.SelectSeatSuoTu4 {
+    background-color: lightslategray;
+}
+
+.POneViewActSelectSeatSuoTu > div:last-child {
+    border: 1px solid red;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/*一元观影 end*/
+/* pdf阅读 start */
+#pdfexp * {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 960px;
+}
+
+.pdf-controls {
+    width: 13.8rem;
+    display: block;
+    background: #eee;
+    padding: 0.6rem;
+    line-height: 1rem;
+}
+
+.pdf-controls > button {
+    padding: 1px 6px;
+    border: 2px outset buttonface;
+}
+
+.pdf-controls > input {
+    width: 3rem;
+}
+
+.pdf-controls > span {
+    margin-left: 0.5rem;
+}
+
+.rotate0 {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.rotate180 {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.rotate270 {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: calc(50% - 480px);
+    z-index: 100;
+    width: 100%;
+    padding: 1em;
+    background: rgba(238, 238, 238, .9);
+    width: 960px;
+}
+
+/* pdf阅读 end */
