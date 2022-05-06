@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arguments测试</title>
+    <style>
+        .display {
+            font-size: 30px;
+            color: #FC9B41;
+        }
+    </style>
+</head>
+<body>
+<div class="display">
+    call的使用
+</div>
+<script>
+    // example1
+    function A(a, b) {
+        this.propA = a * 2
+        this.print = function () {
+            console.log(this.propA)
+            console.log(a - b)
+        }
+    }
+
+    function B(a, b) {
+        this.propA = a
+        this.propB = b
+        console.log(this.propA)
+        console.log('this before', this)
+        A.call(this, a, b) // 可以看作B继承了A,拥有了A的属性,且A所拥有属性会覆盖此操作前的所有的B的属性
+        console.log(this.propA)
+        console.log('this after', this)
+    }
+
+    const b = new B(1, 2)
+    b.print()
+
+    console.log('---------------------------------------------------------------------')
+
+    function C(a, b) {
+        console.log(a * b)
+        this.print = function () {
+            console.log(this)
+        }
+    }
+
+    function D(a, b) {
+        console.log(a - b)
+        this.print = function () {
+            console.log(this)
+        }
+    }
+
+    C.call(D, 2, 3) //等同于 C(3,2) ,将D中的this指向C来运行这个函数
+
+    new C(1, 2).print()
+    new D(1, 2).print()
+
+    //至此，通过functionA.call(functionB,参数1，参数B)的形式，可以理解为在functionB中用functionA的方法执行参数1，参数2
+    //下面来一个另类
+    console.log('---------------------------------------------------------------------')
+    function E() {
+        this.p = "E"
+        this.print = function () {
+            console.log(this.p)
+        }
+    }
+
+    function m() {
+        this.p = 'F'
+    }
+
+    const f = new m()
+    const e = new E()
+    e.print.call(f)
+</script>
+
+</body>
+</html>

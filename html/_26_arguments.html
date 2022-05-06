@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arguments测试</title>
+    <style>
+        .display {
+            font-size: 30px;
+            color: #FC9B41;
+        }
+    </style>
+</head>
+<body>
+<div class="display">
+    arguments是函数内部的一个伪数组，保存着函数的参数集合
+    然后其内部还有一个叫做callee的属性，指向当前运行的函数<br>
+    <div style="color: #0FC542">使用callee的好处:可以在被执行函数改名后不影响之前的结果</div>
+    <div style="color: #FF0030">坏处:因为是arguments的一个属性，在创建arguments对象时会消耗大量性能，一般不建议使用</div>
+</div>
+<script>
+    //1、阶乘实验
+    function sum(v) {
+        if (v === 1) {
+            return v
+        } else {
+            return v * sum(v - 1)
+        }
+    }
+
+    const vv = sum(5)
+    console.log(vv)
+
+    //2、阶乘实验升级(使用callee)
+    function sum2(v) {
+        if (v === 1) {
+            return v
+        } else {
+            return v * arguments.callee(v - 1)
+        }
+    }
+
+    const sum3 = sum2
+
+    sum2 = function () {
+        return -999
+    }
+    //必须先将sum2赋值给sum3后才能实现改名不影响结果
+    console.log(sum3(5))
+
+    //3、
+    function sumFun(v){
+        this.temp=''
+        this.toString=function (){
+
+        }
+    }
+</script>
+
+</body>
+</html>

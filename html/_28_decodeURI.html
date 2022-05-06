@@ -1,0 +1,3678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>deCodeURI</title>
+</head>
+<body>
+<script>
+    const opt = {
+        "baseOption": {
+            "series": [
+                {
+                    "type": "effectScatter",
+                    "coordinateSystem": "geo",
+                    "showEffectOn": "render",
+                    "rippleEffect": {
+                        "show": true,
+                        "brushType": "stroke",
+                        "scale": 3,
+                        "period": 5,
+                        "color": "#0f0"
+                    },
+                    "symbolSize": 12,
+                    "data": [
+                        {
+                            "name": "\u62c9\u8428",
+                            "value": [
+                                91.11,
+                                29.97,
+                                68
+                            ]
+                        },
+                        {
+                            "name": "\u5e7f\u5dde",
+                            "value": [
+                                113.23,
+                                23.16,
+                                93
+                            ]
+                        },
+                        {
+                            "name": "\u9f50\u9f50\u54c8\u5c14",
+                            "value": [
+                                123.97,
+                                47.33,
+                                63
+                            ]
+                        },
+                        {
+                            "name": "\u9752\u5c9b",
+                            "value": [
+                                120.33,
+                                36.07,
+                                52
+                            ]
+                        },
+                        {
+                            "name": "\u4e0a\u6d77",
+                            "value": [
+                                121.473701,
+                                31.230416,
+                                51
+                            ]
+                        },
+                        {
+                            "name": "\u5317\u4eac",
+                            "value": [
+                                116.407526,
+                                39.90403,
+                                93
+                            ]
+                        },
+                        {
+                            "name": "\u897f\u5b89",
+                            "value": [
+                                108.95,
+                                34.27,
+                                87
+                            ]
+                        },
+                        {
+                            "name": "\u4e4c\u9c81\u6728\u9f50",
+                            "value": [
+                                87.68,
+                                43.77,
+                                41
+                            ]
+                        },
+                        {
+                            "name": "\u547c\u548c\u6d69\u7279",
+                            "value": [
+                                111.65,
+                                40.82,
+                                77
+                            ]
+                        },
+                        {
+                            "name": "\u6c88\u9633",
+                            "value": [
+                                123.38,
+                                41.8,
+                                56
+                            ]
+                        },
+                        {
+                            "name": "\u8fbd\u5b81",
+                            "value": [
+                                123.42944,
+                                41.835441,
+                                96
+                            ]
+                        },
+                        {
+                            "name": "\u897f\u5b81",
+                            "value": [
+                                101.74,
+                                36.56,
+                                59
+                            ]
+                        },
+                        {
+                            "name": "\u6b66\u6c49",
+                            "value": [
+                                114.31,
+                                30.52,
+                                68
+                            ]
+                        },
+                        {
+                            "name": "\u798f\u5dde",
+                            "value": [
+                                119.3,
+                                26.08,
+                                95
+                            ]
+                        },
+                        {
+                            "name": "\u90d1\u5dde",
+                            "value": [
+                                113.65,
+                                34.76,
+                                56
+                            ]
+                        },
+                        {
+                            "name": "\u8861\u6c34",
+                            "value": [
+                                115.72,
+                                37.72,
+                                29
+                            ]
+                        },
+                        {
+                            "name": "\u94f6\u5ddd",
+                            "value": [
+                                106.27,
+                                38.47,
+                                22
+                            ]
+                        },
+                        {
+                            "name": "\u5408\u80a5",
+                            "value": [
+                                117.27,
+                                31.86,
+                                65
+                            ]
+                        },
+                        {
+                            "name": "\u6d77\u53e3",
+                            "value": [
+                                110.35,
+                                20.02,
+                                24
+                            ]
+                        },
+                        {
+                            "name": "\u6d77\u53e3",
+                            "value": [
+                                110.35,
+                                20.02,
+                                14
+                            ]
+                        },
+                        {
+                            "name": "\u53f0\u5317",
+                            "value": [
+                                121.3,
+                                25.03,
+                                83
+                            ]
+                        },
+                        {
+                            "name": "\u6606\u660e",
+                            "value": [
+                                102.73,
+                                25.04,
+                                97
+                            ]
+                        },
+                        {
+                            "name": "\u5357\u5b81",
+                            "value": [
+                                108.33,
+                                22.84,
+                                10
+                            ]
+                        }
+                    ],
+                    "label": {
+                        "show": true,
+                        "position": "right",
+                        "color": "#0f0",
+                        "margin": 8,
+                        "fontSize": 13,
+                        "formatter": "{b}",
+                        "borderWidth": 2.0
+                    }
+                },
+                {
+                    "type": "lines",
+                    "name": "geo",
+                    "coordinateSystem": "geo",
+                    "zlevel": 3,
+                    "progressive": 400,
+                    "progressiveThreshold": 3000,
+                    "effect": {
+                        "show": true,
+                        "brushType": "stroke",
+                        "scale": 2.5,
+                        "period": 4,
+                        "color": "#0f0",
+                        "symbol": "path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z",
+                        "symbolSize": 20,
+                        "trailLength": 0.0
+                    },
+                    "symbol": [
+                        "none",
+                        "arrow"
+                    ],
+                    "polyline": false,
+                    "large": false,
+                    "largeThreshold": 2000,
+                    "symbolSize": 10,
+                    "data": [
+                        {
+                            "name": "\u62c9\u8428->\u5e7f\u5dde",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    113.23,
+                                    23.16
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u9f50\u9f50\u54c8\u5c14",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    123.97,
+                                    47.33
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u9752\u5c9b",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    120.33,
+                                    36.07
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u4e0a\u6d77",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    121.473701,
+                                    31.230416
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u5317\u4eac",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    116.407526,
+                                    39.90403
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u897f\u5b89",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    108.95,
+                                    34.27
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u4e4c\u9c81\u6728\u9f50",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    87.68,
+                                    43.77
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u547c\u548c\u6d69\u7279",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    111.65,
+                                    40.82
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u6c88\u9633",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    123.38,
+                                    41.8
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u8fbd\u5b81",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    123.42944,
+                                    41.835441
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u897f\u5b81",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    101.74,
+                                    36.56
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u6b66\u6c49",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    114.31,
+                                    30.52
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u798f\u5dde",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    119.3,
+                                    26.08
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u90d1\u5dde",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    113.65,
+                                    34.76
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u8861\u6c34",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    115.72,
+                                    37.72
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u94f6\u5ddd",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    106.27,
+                                    38.47
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u5408\u80a5",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    117.27,
+                                    31.86
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u6d77\u53e3",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    110.35,
+                                    20.02
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u53f0\u5317",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    121.3,
+                                    25.03
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u6606\u660e",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    102.73,
+                                    25.04
+                                ]
+                            ]
+                        },
+                        {
+                            "name": "\u62c9\u8428->\u5357\u5b81",
+                            "coords": [
+                                [
+                                    91.11,
+                                    29.97
+                                ],
+                                [
+                                    108.33,
+                                    22.84
+                                ]
+                            ]
+                        }
+                    ],
+                    "lineStyle": {
+                        "show": true,
+                        "width": 1.0,
+                        "opacity": 0.8,
+                        "curveness": 0.3,
+                        "type": "solid",
+                        "color": "#99CC99"
+                    },
+                    "label": {
+                        "show": false,
+                        "position": "top",
+                        "margin": 8
+                    }
+                }
+            ],
+            "timeline": {
+                "axisType": "category",
+                "orient": "horizontal",
+                "autoPlay": true,
+                "controlPosition": "left",
+                "loop": true,
+                "rewind": false,
+                "show": false,
+                "inverse": false,
+                "playInterval": 8000,
+                "bottom": "-5px",
+                "data": [
+                    "\u5e7f\u5dde",
+                    "\u4e0a\u6d77",
+                    "\u5317\u4eac",
+                    "\u4e4c\u9c81\u6728\u9f50",
+                    "\u62c9\u8428"
+                ]
+            },
+            "geo": {
+                "map": "china",
+                "zoom": 1.2,
+                "roam": false,
+                "label": {
+                    "show": false,
+                    "position": "top",
+                    "color": "rgba(255,144,128,1)",
+                    "margin": 8
+                },
+                "itemStyle": {
+                    "color": "rgba(46, 63, 81, 127)",
+                    "borderColor": "#445973",
+                    "borderWidth": 1.0
+                },
+                "emphasis": {
+                    "itemStyle": {
+                        "areaColor": "rgba(0,0,0,0)"
+                    },
+                    "label": {
+                        "show": false,
+                        "position": "top",
+                        "margin": 8
+                    }
+                }
+            },
+            "visualMap": {
+                "show": true,
+                "type": "continuous",
+                "min": 0,
+                "max": 100,
+                "textStyle": {
+                    "color": "#f00"
+                },
+                "inRange": {
+                    "color": [
+                        "#50a3ba",
+                        "#eac763",
+                        "#d94e5d"
+                    ]
+                },
+                "calculable": true,
+                "inverse": false,
+                "splitNumber": 5,
+                "orient": "vertical",
+                "showLabel": true,
+                "itemWidth": 20,
+                "itemHeight": 140,
+                "borderWidth": 0
+            }
+        },
+        "options": [
+            {
+                "legend": [
+                    {
+                        "data": [
+                            "",
+                            "geo"
+                        ],
+                        "selected": {
+                            "": true,
+                            "geo": true
+                        },
+                        "show": false,
+                        "padding": 5,
+                        "itemGap": 10,
+                        "itemWidth": 25,
+                        "itemHeight": 14
+                    }
+                ],
+                "series": [
+                    {
+                        "type": "effectScatter",
+                        "coordinateSystem": "geo",
+                        "showEffectOn": "render",
+                        "rippleEffect": {
+                            "show": true,
+                            "brushType": "stroke",
+                            "scale": 3,
+                            "period": 5,
+                            "color": "#0f0"
+                        },
+                        "symbolSize": 12,
+                        "data": [
+                            {
+                                "name": "\u5e7f\u5dde",
+                                "value": [
+                                    113.23,
+                                    23.16,
+                                    31
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50",
+                                "value": [
+                                    87.68,
+                                    43.77,
+                                    25
+                                ]
+                            },
+                            {
+                                "name": "\u9f50\u9f50\u54c8\u5c14",
+                                "value": [
+                                    123.97,
+                                    47.33,
+                                    12
+                                ]
+                            },
+                            {
+                                "name": "\u9752\u5c9b",
+                                "value": [
+                                    120.33,
+                                    36.07,
+                                    73
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77",
+                                "value": [
+                                    121.473701,
+                                    31.230416,
+                                    74
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac",
+                                "value": [
+                                    116.407526,
+                                    39.90403,
+                                    54
+                                ]
+                            },
+                            {
+                                "name": "\u897f\u5b89",
+                                "value": [
+                                    108.95,
+                                    34.27,
+                                    26
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428",
+                                "value": [
+                                    91.11,
+                                    29.97,
+                                    18
+                                ]
+                            },
+                            {
+                                "name": "\u547c\u548c\u6d69\u7279",
+                                "value": [
+                                    111.65,
+                                    40.82,
+                                    44
+                                ]
+                            },
+                            {
+                                "name": "\u6c88\u9633",
+                                "value": [
+                                    123.38,
+                                    41.8,
+                                    27
+                                ]
+                            },
+                            {
+                                "name": "\u8fbd\u5b81",
+                                "value": [
+                                    123.42944,
+                                    41.835441,
+                                    37
+                                ]
+                            },
+                            {
+                                "name": "\u897f\u5b81",
+                                "value": [
+                                    101.74,
+                                    36.56,
+                                    64
+                                ]
+                            },
+                            {
+                                "name": "\u6b66\u6c49",
+                                "value": [
+                                    114.31,
+                                    30.52,
+                                    74
+                                ]
+                            },
+                            {
+                                "name": "\u798f\u5dde",
+                                "value": [
+                                    119.3,
+                                    26.08,
+                                    50
+                                ]
+                            },
+                            {
+                                "name": "\u90d1\u5dde",
+                                "value": [
+                                    113.65,
+                                    34.76,
+                                    80
+                                ]
+                            },
+                            {
+                                "name": "\u8861\u6c34",
+                                "value": [
+                                    115.72,
+                                    37.72,
+                                    68
+                                ]
+                            },
+                            {
+                                "name": "\u94f6\u5ddd",
+                                "value": [
+                                    106.27,
+                                    38.47,
+                                    41
+                                ]
+                            },
+                            {
+                                "name": "\u5408\u80a5",
+                                "value": [
+                                    117.27,
+                                    31.86,
+                                    75
+                                ]
+                            },
+                            {
+                                "name": "\u6d77\u53e3",
+                                "value": [
+                                    110.35,
+                                    20.02,
+                                    33
+                                ]
+                            },
+                            {
+                                "name": "\u53f0\u5317",
+                                "value": [
+                                    121.3,
+                                    25.03,
+                                    19
+                                ]
+                            },
+                            {
+                                "name": "\u6606\u660e",
+                                "value": [
+                                    102.73,
+                                    25.04,
+                                    16
+                                ]
+                            },
+                            {
+                                "name": "\u5357\u5b81",
+                                "value": [
+                                    108.33,
+                                    22.84,
+                                    85
+                                ]
+                            }
+                        ],
+                        "label": {
+                            "show": true,
+                            "position": "right",
+                            "color": "#0f0",
+                            "margin": 8,
+                            "fontSize": 13,
+                            "formatter": "{b}",
+                            "borderWidth": 2.0
+                        }
+                    },
+                    {
+                        "type": "lines",
+                        "name": "geo",
+                        "coordinateSystem": "geo",
+                        "zlevel": 3,
+                        "progressive": 400,
+                        "progressiveThreshold": 3000,
+                        "effect": {
+                            "show": true,
+                            "brushType": "stroke",
+                            "scale": 2.5,
+                            "period": 4,
+                            "color": "#0f0",
+                            "symbol": "path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z",
+                            "symbolSize": 20,
+                            "trailLength": 0.0
+                        },
+                        "symbol": [
+                            "none",
+                            "arrow"
+                        ],
+                        "polyline": false,
+                        "large": false,
+                        "largeThreshold": 2000,
+                        "symbolSize": 10,
+                        "data": [
+                            {
+                                "name": "\u5e7f\u5dde->\u4e4c\u9c81\u6728\u9f50",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        87.68,
+                                        43.77
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u9f50\u9f50\u54c8\u5c14",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        123.97,
+                                        47.33
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u9752\u5c9b",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        120.33,
+                                        36.07
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u4e0a\u6d77",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u5317\u4eac",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u897f\u5b89",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        108.95,
+                                        34.27
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u62c9\u8428",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        91.11,
+                                        29.97
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u547c\u548c\u6d69\u7279",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        111.65,
+                                        40.82
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u6c88\u9633",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        123.38,
+                                        41.8
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u8fbd\u5b81",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        123.42944,
+                                        41.835441
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u897f\u5b81",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        101.74,
+                                        36.56
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u6b66\u6c49",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        114.31,
+                                        30.52
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u798f\u5dde",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        119.3,
+                                        26.08
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u90d1\u5dde",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        113.65,
+                                        34.76
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u8861\u6c34",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        115.72,
+                                        37.72
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u94f6\u5ddd",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        106.27,
+                                        38.47
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u5408\u80a5",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        117.27,
+                                        31.86
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u6d77\u53e3",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        110.35,
+                                        20.02
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u53f0\u5317",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        121.3,
+                                        25.03
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u6606\u660e",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        102.73,
+                                        25.04
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde->\u5357\u5b81",
+                                "coords": [
+                                    [
+                                        113.23,
+                                        23.16
+                                    ],
+                                    [
+                                        108.33,
+                                        22.84
+                                    ]
+                                ]
+                            }
+                        ],
+                        "lineStyle": {
+                            "show": true,
+                            "width": 1.0,
+                            "opacity": 0.8,
+                            "curveness": 0.3,
+                            "type": "solid",
+                            "color": "#99CC99"
+                        },
+                        "label": {
+                            "show": false,
+                            "position": "top",
+                            "margin": 8
+                        }
+                    }
+                ],
+                "title": [
+                    {
+                        "text": "2022\u5e74\u8ba1\u5212\u65c5\u6e38\u8def\u7ebf\n\n\u66f4\u591a\u7cbe\u5f69\uff0c\u8bf7\u5173\u6ce8\u54d4\u54e9\u54d4\u54e9\uff1a\u54c8\u4f5b\u5728\u7b49\u6211\u5462",
+                        "padding": 5,
+                        "itemGap": 10
+                    }
+                ],
+                "tooltip": {
+                    "show": true,
+                    "trigger": "item",
+                    "triggerOn": "mousemove|click",
+                    "axisPointer": {
+                        "type": "line"
+                    },
+                    "formatter": "{b}",
+                    "textStyle": {
+                        "fontSize": 14
+                    },
+                    "borderWidth": 0
+                },
+                "visualMap": {
+                    "show": true,
+                    "type": "continuous",
+                    "min": 0,
+                    "max": 100,
+                    "textStyle": {
+                        "color": "#f00"
+                    },
+                    "inRange": {
+                        "color": [
+                            "#50a3ba",
+                            "#eac763",
+                            "#d94e5d"
+                        ]
+                    },
+                    "calculable": true,
+                    "inverse": false,
+                    "splitNumber": 5,
+                    "orient": "vertical",
+                    "showLabel": true,
+                    "itemWidth": 20,
+                    "itemHeight": 140,
+                    "borderWidth": 0
+                },
+                "color": [
+                    "#c23531",
+                    "#2f4554",
+                    "#61a0a8",
+                    "#d48265",
+                    "#749f83",
+                    "#ca8622",
+                    "#bda29a",
+                    "#6e7074",
+                    "#546570",
+                    "#c4ccd3",
+                    "#f05b72",
+                    "#ef5b9c",
+                    "#f47920",
+                    "#905a3d",
+                    "#fab27b",
+                    "#2a5caa",
+                    "#444693",
+                    "#726930",
+                    "#b2d235",
+                    "#6d8346",
+                    "#ac6767",
+                    "#1d953f",
+                    "#6950a1",
+                    "#918597"
+                ]
+            },
+            {
+                "legend": [
+                    {
+                        "data": [
+                            "",
+                            "geo"
+                        ],
+                        "selected": {
+                            "": true,
+                            "geo": true
+                        },
+                        "show": false,
+                        "padding": 5,
+                        "itemGap": 10,
+                        "itemWidth": 25,
+                        "itemHeight": 14
+                    }
+                ],
+                "series": [
+                    {
+                        "type": "effectScatter",
+                        "coordinateSystem": "geo",
+                        "showEffectOn": "render",
+                        "rippleEffect": {
+                            "show": true,
+                            "brushType": "stroke",
+                            "scale": 3,
+                            "period": 5,
+                            "color": "#0f0"
+                        },
+                        "symbolSize": 12,
+                        "data": [
+                            {
+                                "name": "\u4e0a\u6d77",
+                                "value": [
+                                    121.473701,
+                                    31.230416,
+                                    65
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50",
+                                "value": [
+                                    87.68,
+                                    43.77,
+                                    74
+                                ]
+                            },
+                            {
+                                "name": "\u9f50\u9f50\u54c8\u5c14",
+                                "value": [
+                                    123.97,
+                                    47.33,
+                                    100
+                                ]
+                            },
+                            {
+                                "name": "\u9752\u5c9b",
+                                "value": [
+                                    120.33,
+                                    36.07,
+                                    94
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde",
+                                "value": [
+                                    113.23,
+                                    23.16,
+                                    26
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac",
+                                "value": [
+                                    116.407526,
+                                    39.90403,
+                                    21
+                                ]
+                            },
+                            {
+                                "name": "\u897f\u5b89",
+                                "value": [
+                                    108.95,
+                                    34.27,
+                                    94
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428",
+                                "value": [
+                                    91.11,
+                                    29.97,
+                                    10
+                                ]
+                            },
+                            {
+                                "name": "\u547c\u548c\u6d69\u7279",
+                                "value": [
+                                    111.65,
+                                    40.82,
+                                    60
+                                ]
+                            },
+                            {
+                                "name": "\u6c88\u9633",
+                                "value": [
+                                    123.38,
+                                    41.8,
+                                    20
+                                ]
+                            },
+                            {
+                                "name": "\u8fbd\u5b81",
+                                "value": [
+                                    123.42944,
+                                    41.835441,
+                                    33
+                                ]
+                            },
+                            {
+                                "name": "\u897f\u5b81",
+                                "value": [
+                                    101.74,
+                                    36.56,
+                                    95
+                                ]
+                            },
+                            {
+                                "name": "\u6b66\u6c49",
+                                "value": [
+                                    114.31,
+                                    30.52,
+                                    97
+                                ]
+                            },
+                            {
+                                "name": "\u798f\u5dde",
+                                "value": [
+                                    119.3,
+                                    26.08,
+                                    62
+                                ]
+                            },
+                            {
+                                "name": "\u90d1\u5dde",
+                                "value": [
+                                    113.65,
+                                    34.76,
+                                    37
+                                ]
+                            },
+                            {
+                                "name": "\u8861\u6c34",
+                                "value": [
+                                    115.72,
+                                    37.72,
+                                    37
+                                ]
+                            },
+                            {
+                                "name": "\u94f6\u5ddd",
+                                "value": [
+                                    106.27,
+                                    38.47,
+                                    49
+                                ]
+                            },
+                            {
+                                "name": "\u5408\u80a5",
+                                "value": [
+                                    117.27,
+                                    31.86,
+                                    75
+                                ]
+                            },
+                            {
+                                "name": "\u6d77\u53e3",
+                                "value": [
+                                    110.35,
+                                    20.02,
+                                    14
+                                ]
+                            },
+                            {
+                                "name": "\u53f0\u5317",
+                                "value": [
+                                    121.3,
+                                    25.03,
+                                    81
+                                ]
+                            },
+                            {
+                                "name": "\u6606\u660e",
+                                "value": [
+                                    102.73,
+                                    25.04,
+                                    18
+                                ]
+                            },
+                            {
+                                "name": "\u5357\u5b81",
+                                "value": [
+                                    108.33,
+                                    22.84,
+                                    49
+                                ]
+                            }
+                        ],
+                        "label": {
+                            "show": true,
+                            "position": "right",
+                            "color": "#0f0",
+                            "margin": 8,
+                            "fontSize": 13,
+                            "formatter": "{b}",
+                            "borderWidth": 2.0
+                        }
+                    },
+                    {
+                        "type": "lines",
+                        "name": "geo",
+                        "coordinateSystem": "geo",
+                        "zlevel": 3,
+                        "progressive": 400,
+                        "progressiveThreshold": 3000,
+                        "effect": {
+                            "show": true,
+                            "brushType": "stroke",
+                            "scale": 2.5,
+                            "period": 4,
+                            "color": "#0f0",
+                            "symbol": "path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z",
+                            "symbolSize": 20,
+                            "trailLength": 0.0
+                        },
+                        "symbol": [
+                            "none",
+                            "arrow"
+                        ],
+                        "polyline": false,
+                        "large": false,
+                        "largeThreshold": 2000,
+                        "symbolSize": 10,
+                        "data": [
+                            {
+                                "name": "\u4e0a\u6d77->\u4e4c\u9c81\u6728\u9f50",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        87.68,
+                                        43.77
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u9f50\u9f50\u54c8\u5c14",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        123.97,
+                                        47.33
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u9752\u5c9b",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        120.33,
+                                        36.07
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u5e7f\u5dde",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        113.23,
+                                        23.16
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u5317\u4eac",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u897f\u5b89",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        108.95,
+                                        34.27
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u62c9\u8428",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        91.11,
+                                        29.97
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u547c\u548c\u6d69\u7279",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        111.65,
+                                        40.82
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u6c88\u9633",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        123.38,
+                                        41.8
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u8fbd\u5b81",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        123.42944,
+                                        41.835441
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u897f\u5b81",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        101.74,
+                                        36.56
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u6b66\u6c49",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        114.31,
+                                        30.52
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u798f\u5dde",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        119.3,
+                                        26.08
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u90d1\u5dde",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        113.65,
+                                        34.76
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u8861\u6c34",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        115.72,
+                                        37.72
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u94f6\u5ddd",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        106.27,
+                                        38.47
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u5408\u80a5",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        117.27,
+                                        31.86
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u6d77\u53e3",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        110.35,
+                                        20.02
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u53f0\u5317",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        121.3,
+                                        25.03
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u6606\u660e",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        102.73,
+                                        25.04
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77->\u5357\u5b81",
+                                "coords": [
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ],
+                                    [
+                                        108.33,
+                                        22.84
+                                    ]
+                                ]
+                            }
+                        ],
+                        "lineStyle": {
+                            "show": true,
+                            "width": 1.0,
+                            "opacity": 0.8,
+                            "curveness": 0.3,
+                            "type": "solid",
+                            "color": "#99CC99"
+                        },
+                        "label": {
+                            "show": false,
+                            "position": "top",
+                            "margin": 8
+                        }
+                    }
+                ],
+                "title": [
+                    {
+                        "text": "2022\u5e74\u8ba1\u5212\u65c5\u6e38\u8def\u7ebf\n\n\u66f4\u591a\u7cbe\u5f69\uff0c\u8bf7\u5173\u6ce8\u54d4\u54e9\u54d4\u54e9\uff1a\u54c8\u4f5b\u5728\u7b49\u6211\u5462",
+                        "padding": 5,
+                        "itemGap": 10
+                    }
+                ],
+                "tooltip": {
+                    "show": true,
+                    "trigger": "item",
+                    "triggerOn": "mousemove|click",
+                    "axisPointer": {
+                        "type": "line"
+                    },
+                    "formatter": "{b}",
+                    "textStyle": {
+                        "fontSize": 14
+                    },
+                    "borderWidth": 0
+                },
+                "visualMap": {
+                    "show": true,
+                    "type": "continuous",
+                    "min": 0,
+                    "max": 100,
+                    "textStyle": {
+                        "color": "#f00"
+                    },
+                    "inRange": {
+                        "color": [
+                            "#50a3ba",
+                            "#eac763",
+                            "#d94e5d"
+                        ]
+                    },
+                    "calculable": true,
+                    "inverse": false,
+                    "splitNumber": 5,
+                    "orient": "vertical",
+                    "showLabel": true,
+                    "itemWidth": 20,
+                    "itemHeight": 140,
+                    "borderWidth": 0
+                },
+                "color": [
+                    "#c23531",
+                    "#2f4554",
+                    "#61a0a8",
+                    "#d48265",
+                    "#749f83",
+                    "#ca8622",
+                    "#bda29a",
+                    "#6e7074",
+                    "#546570",
+                    "#c4ccd3",
+                    "#f05b72",
+                    "#ef5b9c",
+                    "#f47920",
+                    "#905a3d",
+                    "#fab27b",
+                    "#2a5caa",
+                    "#444693",
+                    "#726930",
+                    "#b2d235",
+                    "#6d8346",
+                    "#ac6767",
+                    "#1d953f",
+                    "#6950a1",
+                    "#918597"
+                ]
+            },
+            {
+                "legend": [
+                    {
+                        "data": [
+                            "",
+                            "geo"
+                        ],
+                        "selected": {
+                            "": true,
+                            "geo": true
+                        },
+                        "show": false,
+                        "padding": 5,
+                        "itemGap": 10,
+                        "itemWidth": 25,
+                        "itemHeight": 14
+                    }
+                ],
+                "series": [
+                    {
+                        "type": "effectScatter",
+                        "coordinateSystem": "geo",
+                        "showEffectOn": "render",
+                        "rippleEffect": {
+                            "show": true,
+                            "brushType": "stroke",
+                            "scale": 3,
+                            "period": 5,
+                            "color": "#0f0"
+                        },
+                        "symbolSize": 12,
+                        "data": [
+                            {
+                                "name": "\u5317\u4eac",
+                                "value": [
+                                    116.407526,
+                                    39.90403,
+                                    10
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde",
+                                "value": [
+                                    113.23,
+                                    23.16,
+                                    84
+                                ]
+                            },
+                            {
+                                "name": "\u9f50\u9f50\u54c8\u5c14",
+                                "value": [
+                                    123.97,
+                                    47.33,
+                                    57
+                                ]
+                            },
+                            {
+                                "name": "\u9752\u5c9b",
+                                "value": [
+                                    120.33,
+                                    36.07,
+                                    19
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77",
+                                "value": [
+                                    121.473701,
+                                    31.230416,
+                                    98
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde",
+                                "value": [
+                                    113.23,
+                                    23.16,
+                                    86
+                                ]
+                            },
+                            {
+                                "name": "\u897f\u5b89",
+                                "value": [
+                                    108.95,
+                                    34.27,
+                                    31
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428",
+                                "value": [
+                                    91.11,
+                                    29.97,
+                                    13
+                                ]
+                            },
+                            {
+                                "name": "\u547c\u548c\u6d69\u7279",
+                                "value": [
+                                    111.65,
+                                    40.82,
+                                    20
+                                ]
+                            },
+                            {
+                                "name": "\u6c88\u9633",
+                                "value": [
+                                    123.38,
+                                    41.8,
+                                    97
+                                ]
+                            },
+                            {
+                                "name": "\u8fbd\u5b81",
+                                "value": [
+                                    123.42944,
+                                    41.835441,
+                                    48
+                                ]
+                            },
+                            {
+                                "name": "\u897f\u5b81",
+                                "value": [
+                                    101.74,
+                                    36.56,
+                                    60
+                                ]
+                            },
+                            {
+                                "name": "\u6b66\u6c49",
+                                "value": [
+                                    114.31,
+                                    30.52,
+                                    38
+                                ]
+                            },
+                            {
+                                "name": "\u798f\u5dde",
+                                "value": [
+                                    119.3,
+                                    26.08,
+                                    35
+                                ]
+                            },
+                            {
+                                "name": "\u90d1\u5dde",
+                                "value": [
+                                    113.65,
+                                    34.76,
+                                    90
+                                ]
+                            },
+                            {
+                                "name": "\u8861\u6c34",
+                                "value": [
+                                    115.72,
+                                    37.72,
+                                    64
+                                ]
+                            },
+                            {
+                                "name": "\u94f6\u5ddd",
+                                "value": [
+                                    106.27,
+                                    38.47,
+                                    93
+                                ]
+                            },
+                            {
+                                "name": "\u5408\u80a5",
+                                "value": [
+                                    117.27,
+                                    31.86,
+                                    39
+                                ]
+                            },
+                            {
+                                "name": "\u6d77\u53e3",
+                                "value": [
+                                    110.35,
+                                    20.02,
+                                    89
+                                ]
+                            },
+                            {
+                                "name": "\u53f0\u5317",
+                                "value": [
+                                    121.3,
+                                    25.03,
+                                    41
+                                ]
+                            },
+                            {
+                                "name": "\u6606\u660e",
+                                "value": [
+                                    102.73,
+                                    25.04,
+                                    96
+                                ]
+                            },
+                            {
+                                "name": "\u5357\u5b81",
+                                "value": [
+                                    108.33,
+                                    22.84,
+                                    43
+                                ]
+                            }
+                        ],
+                        "label": {
+                            "show": true,
+                            "position": "right",
+                            "color": "#0f0",
+                            "margin": 8,
+                            "fontSize": 13,
+                            "formatter": "{b}",
+                            "borderWidth": 2.0
+                        }
+                    },
+                    {
+                        "type": "lines",
+                        "name": "geo",
+                        "coordinateSystem": "geo",
+                        "zlevel": 3,
+                        "progressive": 400,
+                        "progressiveThreshold": 3000,
+                        "effect": {
+                            "show": true,
+                            "brushType": "stroke",
+                            "scale": 2.5,
+                            "period": 4,
+                            "color": "#0f0",
+                            "symbol": "path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z",
+                            "symbolSize": 20,
+                            "trailLength": 0.0
+                        },
+                        "symbol": [
+                            "none",
+                            "arrow"
+                        ],
+                        "polyline": false,
+                        "large": false,
+                        "largeThreshold": 2000,
+                        "symbolSize": 10,
+                        "data": [
+                            {
+                                "name": "\u5317\u4eac->\u5e7f\u5dde",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        113.23,
+                                        23.16
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u9f50\u9f50\u54c8\u5c14",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        123.97,
+                                        47.33
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u9752\u5c9b",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        120.33,
+                                        36.07
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u4e0a\u6d77",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u5317\u4eac",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u897f\u5b89",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        108.95,
+                                        34.27
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u62c9\u8428",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        91.11,
+                                        29.97
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u547c\u548c\u6d69\u7279",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        111.65,
+                                        40.82
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u6c88\u9633",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        123.38,
+                                        41.8
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u8fbd\u5b81",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        123.42944,
+                                        41.835441
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u897f\u5b81",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        101.74,
+                                        36.56
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u6b66\u6c49",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        114.31,
+                                        30.52
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u798f\u5dde",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        119.3,
+                                        26.08
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u90d1\u5dde",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        113.65,
+                                        34.76
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u8861\u6c34",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        115.72,
+                                        37.72
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u94f6\u5ddd",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        106.27,
+                                        38.47
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u5408\u80a5",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        117.27,
+                                        31.86
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u6d77\u53e3",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        110.35,
+                                        20.02
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u53f0\u5317",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        121.3,
+                                        25.03
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u6606\u660e",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        102.73,
+                                        25.04
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac->\u5357\u5b81",
+                                "coords": [
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ],
+                                    [
+                                        108.33,
+                                        22.84
+                                    ]
+                                ]
+                            }
+                        ],
+                        "lineStyle": {
+                            "show": true,
+                            "width": 1.0,
+                            "opacity": 0.8,
+                            "curveness": 0.3,
+                            "type": "solid",
+                            "color": "#99CC99"
+                        },
+                        "label": {
+                            "show": false,
+                            "position": "top",
+                            "margin": 8
+                        }
+                    }
+                ],
+                "title": [
+                    {
+                        "text": "2022\u5e74\u8ba1\u5212\u65c5\u6e38\u8def\u7ebf\n\n\u66f4\u591a\u7cbe\u5f69\uff0c\u8bf7\u5173\u6ce8\u54d4\u54e9\u54d4\u54e9\uff1a\u54c8\u4f5b\u5728\u7b49\u6211\u5462",
+                        "padding": 5,
+                        "itemGap": 10
+                    }
+                ],
+                "tooltip": {
+                    "show": true,
+                    "trigger": "item",
+                    "triggerOn": "mousemove|click",
+                    "axisPointer": {
+                        "type": "line"
+                    },
+                    "formatter": "{b}",
+                    "textStyle": {
+                        "fontSize": 14
+                    },
+                    "borderWidth": 0
+                },
+                "visualMap": {
+                    "show": true,
+                    "type": "continuous",
+                    "min": 0,
+                    "max": 100,
+                    "textStyle": {
+                        "color": "#f00"
+                    },
+                    "inRange": {
+                        "color": [
+                            "#50a3ba",
+                            "#eac763",
+                            "#d94e5d"
+                        ]
+                    },
+                    "calculable": true,
+                    "inverse": false,
+                    "splitNumber": 5,
+                    "orient": "vertical",
+                    "showLabel": true,
+                    "itemWidth": 20,
+                    "itemHeight": 140,
+                    "borderWidth": 0
+                },
+                "color": [
+                    "#c23531",
+                    "#2f4554",
+                    "#61a0a8",
+                    "#d48265",
+                    "#749f83",
+                    "#ca8622",
+                    "#bda29a",
+                    "#6e7074",
+                    "#546570",
+                    "#c4ccd3",
+                    "#f05b72",
+                    "#ef5b9c",
+                    "#f47920",
+                    "#905a3d",
+                    "#fab27b",
+                    "#2a5caa",
+                    "#444693",
+                    "#726930",
+                    "#b2d235",
+                    "#6d8346",
+                    "#ac6767",
+                    "#1d953f",
+                    "#6950a1",
+                    "#918597"
+                ]
+            },
+            {
+                "legend": [
+                    {
+                        "data": [
+                            "",
+                            "geo"
+                        ],
+                        "selected": {
+                            "": true,
+                            "geo": true
+                        },
+                        "show": false,
+                        "padding": 5,
+                        "itemGap": 10,
+                        "itemWidth": 25,
+                        "itemHeight": 14
+                    }
+                ],
+                "series": [
+                    {
+                        "type": "effectScatter",
+                        "coordinateSystem": "geo",
+                        "showEffectOn": "render",
+                        "rippleEffect": {
+                            "show": true,
+                            "brushType": "stroke",
+                            "scale": 3,
+                            "period": 5,
+                            "color": "#0f0"
+                        },
+                        "symbolSize": 12,
+                        "data": [
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50",
+                                "value": [
+                                    87.68,
+                                    43.77,
+                                    72
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde",
+                                "value": [
+                                    113.23,
+                                    23.16,
+                                    37
+                                ]
+                            },
+                            {
+                                "name": "\u9f50\u9f50\u54c8\u5c14",
+                                "value": [
+                                    123.97,
+                                    47.33,
+                                    14
+                                ]
+                            },
+                            {
+                                "name": "\u9752\u5c9b",
+                                "value": [
+                                    120.33,
+                                    36.07,
+                                    48
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77",
+                                "value": [
+                                    121.473701,
+                                    31.230416,
+                                    17
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac",
+                                "value": [
+                                    116.407526,
+                                    39.90403,
+                                    36
+                                ]
+                            },
+                            {
+                                "name": "\u897f\u5b89",
+                                "value": [
+                                    108.95,
+                                    34.27,
+                                    45
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428",
+                                "value": [
+                                    91.11,
+                                    29.97,
+                                    78
+                                ]
+                            },
+                            {
+                                "name": "\u547c\u548c\u6d69\u7279",
+                                "value": [
+                                    111.65,
+                                    40.82,
+                                    39
+                                ]
+                            },
+                            {
+                                "name": "\u6c88\u9633",
+                                "value": [
+                                    123.38,
+                                    41.8,
+                                    14
+                                ]
+                            },
+                            {
+                                "name": "\u8fbd\u5b81",
+                                "value": [
+                                    123.42944,
+                                    41.835441,
+                                    42
+                                ]
+                            },
+                            {
+                                "name": "\u897f\u5b81",
+                                "value": [
+                                    101.74,
+                                    36.56,
+                                    79
+                                ]
+                            },
+                            {
+                                "name": "\u6b66\u6c49",
+                                "value": [
+                                    114.31,
+                                    30.52,
+                                    81
+                                ]
+                            },
+                            {
+                                "name": "\u798f\u5dde",
+                                "value": [
+                                    119.3,
+                                    26.08,
+                                    44
+                                ]
+                            },
+                            {
+                                "name": "\u90d1\u5dde",
+                                "value": [
+                                    113.65,
+                                    34.76,
+                                    12
+                                ]
+                            },
+                            {
+                                "name": "\u8861\u6c34",
+                                "value": [
+                                    115.72,
+                                    37.72,
+                                    23
+                                ]
+                            },
+                            {
+                                "name": "\u94f6\u5ddd",
+                                "value": [
+                                    106.27,
+                                    38.47,
+                                    65
+                                ]
+                            },
+                            {
+                                "name": "\u5408\u80a5",
+                                "value": [
+                                    117.27,
+                                    31.86,
+                                    37
+                                ]
+                            },
+                            {
+                                "name": "\u6d77\u53e3",
+                                "value": [
+                                    110.35,
+                                    20.02,
+                                    20
+                                ]
+                            },
+                            {
+                                "name": "\u53f0\u5317",
+                                "value": [
+                                    121.3,
+                                    25.03,
+                                    46
+                                ]
+                            },
+                            {
+                                "name": "\u6606\u660e",
+                                "value": [
+                                    102.73,
+                                    25.04,
+                                    40
+                                ]
+                            },
+                            {
+                                "name": "\u5357\u5b81",
+                                "value": [
+                                    108.33,
+                                    22.84,
+                                    38
+                                ]
+                            }
+                        ],
+                        "label": {
+                            "show": true,
+                            "position": "right",
+                            "color": "#0f0",
+                            "margin": 8,
+                            "fontSize": 13,
+                            "formatter": "{b}",
+                            "borderWidth": 2.0
+                        }
+                    },
+                    {
+                        "type": "lines",
+                        "name": "geo",
+                        "coordinateSystem": "geo",
+                        "zlevel": 3,
+                        "progressive": 400,
+                        "progressiveThreshold": 3000,
+                        "effect": {
+                            "show": true,
+                            "brushType": "stroke",
+                            "scale": 2.5,
+                            "period": 4,
+                            "color": "#0f0",
+                            "symbol": "path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z",
+                            "symbolSize": 20,
+                            "trailLength": 0.0
+                        },
+                        "symbol": [
+                            "none",
+                            "arrow"
+                        ],
+                        "polyline": false,
+                        "large": false,
+                        "largeThreshold": 2000,
+                        "symbolSize": 10,
+                        "data": [
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u5e7f\u5dde",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        113.23,
+                                        23.16
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u9f50\u9f50\u54c8\u5c14",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        123.97,
+                                        47.33
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u9752\u5c9b",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        120.33,
+                                        36.07
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u4e0a\u6d77",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u5317\u4eac",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u897f\u5b89",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        108.95,
+                                        34.27
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u62c9\u8428",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        91.11,
+                                        29.97
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u547c\u548c\u6d69\u7279",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        111.65,
+                                        40.82
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u6c88\u9633",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        123.38,
+                                        41.8
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u8fbd\u5b81",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        123.42944,
+                                        41.835441
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u897f\u5b81",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        101.74,
+                                        36.56
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u6b66\u6c49",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        114.31,
+                                        30.52
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u798f\u5dde",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        119.3,
+                                        26.08
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u90d1\u5dde",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        113.65,
+                                        34.76
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u8861\u6c34",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        115.72,
+                                        37.72
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u94f6\u5ddd",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        106.27,
+                                        38.47
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u5408\u80a5",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        117.27,
+                                        31.86
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u6d77\u53e3",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        110.35,
+                                        20.02
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u53f0\u5317",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        121.3,
+                                        25.03
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u6606\u660e",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        102.73,
+                                        25.04
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50->\u5357\u5b81",
+                                "coords": [
+                                    [
+                                        87.68,
+                                        43.77
+                                    ],
+                                    [
+                                        108.33,
+                                        22.84
+                                    ]
+                                ]
+                            }
+                        ],
+                        "lineStyle": {
+                            "show": true,
+                            "width": 1.0,
+                            "opacity": 0.8,
+                            "curveness": 0.3,
+                            "type": "solid",
+                            "color": "#99CC99"
+                        },
+                        "label": {
+                            "show": false,
+                            "position": "top",
+                            "margin": 8
+                        }
+                    }
+                ],
+                "title": [
+                    {
+                        "text": "2022\u5e74\u8ba1\u5212\u65c5\u6e38\u8def\u7ebf\n\n\u66f4\u591a\u7cbe\u5f69\uff0c\u8bf7\u5173\u6ce8\u54d4\u54e9\u54d4\u54e9\uff1a\u54c8\u4f5b\u5728\u7b49\u6211\u5462",
+                        "padding": 5,
+                        "itemGap": 10
+                    }
+                ],
+                "tooltip": {
+                    "show": true,
+                    "trigger": "item",
+                    "triggerOn": "mousemove|click",
+                    "axisPointer": {
+                        "type": "line"
+                    },
+                    "formatter": "{b}",
+                    "textStyle": {
+                        "fontSize": 14
+                    },
+                    "borderWidth": 0
+                },
+                "visualMap": {
+                    "show": true,
+                    "type": "continuous",
+                    "min": 0,
+                    "max": 100,
+                    "textStyle": {
+                        "color": "#f00"
+                    },
+                    "inRange": {
+                        "color": [
+                            "#50a3ba",
+                            "#eac763",
+                            "#d94e5d"
+                        ]
+                    },
+                    "calculable": true,
+                    "inverse": false,
+                    "splitNumber": 5,
+                    "orient": "vertical",
+                    "showLabel": true,
+                    "itemWidth": 20,
+                    "itemHeight": 140,
+                    "borderWidth": 0
+                },
+                "color": [
+                    "#c23531",
+                    "#2f4554",
+                    "#61a0a8",
+                    "#d48265",
+                    "#749f83",
+                    "#ca8622",
+                    "#bda29a",
+                    "#6e7074",
+                    "#546570",
+                    "#c4ccd3",
+                    "#f05b72",
+                    "#ef5b9c",
+                    "#f47920",
+                    "#905a3d",
+                    "#fab27b",
+                    "#2a5caa",
+                    "#444693",
+                    "#726930",
+                    "#b2d235",
+                    "#6d8346",
+                    "#ac6767",
+                    "#1d953f",
+                    "#6950a1",
+                    "#918597"
+                ]
+            },
+            {
+                "legend": [
+                    {
+                        "data": [
+                            "",
+                            "geo"
+                        ],
+                        "selected": {
+                            "": true,
+                            "geo": true
+                        },
+                        "show": false,
+                        "padding": 5,
+                        "itemGap": 10,
+                        "itemWidth": 25,
+                        "itemHeight": 14
+                    }
+                ],
+                "series": [
+                    {
+                        "type": "effectScatter",
+                        "coordinateSystem": "geo",
+                        "showEffectOn": "render",
+                        "rippleEffect": {
+                            "show": true,
+                            "brushType": "stroke",
+                            "scale": 3,
+                            "period": 5,
+                            "color": "#0f0"
+                        },
+                        "symbolSize": 12,
+                        "data": [
+                            {
+                                "name": "\u62c9\u8428",
+                                "value": [
+                                    91.11,
+                                    29.97,
+                                    68
+                                ]
+                            },
+                            {
+                                "name": "\u5e7f\u5dde",
+                                "value": [
+                                    113.23,
+                                    23.16,
+                                    93
+                                ]
+                            },
+                            {
+                                "name": "\u9f50\u9f50\u54c8\u5c14",
+                                "value": [
+                                    123.97,
+                                    47.33,
+                                    63
+                                ]
+                            },
+                            {
+                                "name": "\u9752\u5c9b",
+                                "value": [
+                                    120.33,
+                                    36.07,
+                                    52
+                                ]
+                            },
+                            {
+                                "name": "\u4e0a\u6d77",
+                                "value": [
+                                    121.473701,
+                                    31.230416,
+                                    51
+                                ]
+                            },
+                            {
+                                "name": "\u5317\u4eac",
+                                "value": [
+                                    116.407526,
+                                    39.90403,
+                                    93
+                                ]
+                            },
+                            {
+                                "name": "\u897f\u5b89",
+                                "value": [
+                                    108.95,
+                                    34.27,
+                                    87
+                                ]
+                            },
+                            {
+                                "name": "\u4e4c\u9c81\u6728\u9f50",
+                                "value": [
+                                    87.68,
+                                    43.77,
+                                    41
+                                ]
+                            },
+                            {
+                                "name": "\u547c\u548c\u6d69\u7279",
+                                "value": [
+                                    111.65,
+                                    40.82,
+                                    77
+                                ]
+                            },
+                            {
+                                "name": "\u6c88\u9633",
+                                "value": [
+                                    123.38,
+                                    41.8,
+                                    56
+                                ]
+                            },
+                            {
+                                "name": "\u8fbd\u5b81",
+                                "value": [
+                                    123.42944,
+                                    41.835441,
+                                    96
+                                ]
+                            },
+                            {
+                                "name": "\u897f\u5b81",
+                                "value": [
+                                    101.74,
+                                    36.56,
+                                    59
+                                ]
+                            },
+                            {
+                                "name": "\u6b66\u6c49",
+                                "value": [
+                                    114.31,
+                                    30.52,
+                                    68
+                                ]
+                            },
+                            {
+                                "name": "\u798f\u5dde",
+                                "value": [
+                                    119.3,
+                                    26.08,
+                                    95
+                                ]
+                            },
+                            {
+                                "name": "\u90d1\u5dde",
+                                "value": [
+                                    113.65,
+                                    34.76,
+                                    56
+                                ]
+                            },
+                            {
+                                "name": "\u8861\u6c34",
+                                "value": [
+                                    115.72,
+                                    37.72,
+                                    29
+                                ]
+                            },
+                            {
+                                "name": "\u94f6\u5ddd",
+                                "value": [
+                                    106.27,
+                                    38.47,
+                                    22
+                                ]
+                            },
+                            {
+                                "name": "\u5408\u80a5",
+                                "value": [
+                                    117.27,
+                                    31.86,
+                                    65
+                                ]
+                            },
+                            {
+                                "name": "\u6d77\u53e3",
+                                "value": [
+                                    110.35,
+                                    20.02,
+                                    24
+                                ]
+                            },
+                            {
+                                "name": "\u6d77\u53e3",
+                                "value": [
+                                    110.35,
+                                    20.02,
+                                    14
+                                ]
+                            },
+                            {
+                                "name": "\u53f0\u5317",
+                                "value": [
+                                    121.3,
+                                    25.03,
+                                    83
+                                ]
+                            },
+                            {
+                                "name": "\u6606\u660e",
+                                "value": [
+                                    102.73,
+                                    25.04,
+                                    97
+                                ]
+                            },
+                            {
+                                "name": "\u5357\u5b81",
+                                "value": [
+                                    108.33,
+                                    22.84,
+                                    10
+                                ]
+                            }
+                        ],
+                        "label": {
+                            "show": true,
+                            "position": "right",
+                            "color": "#0f0",
+                            "margin": 8,
+                            "fontSize": 13,
+                            "formatter": "{b}",
+                            "borderWidth": 2.0
+                        }
+                    },
+                    {
+                        "type": "lines",
+                        "name": "geo",
+                        "coordinateSystem": "geo",
+                        "zlevel": 3,
+                        "progressive": 400,
+                        "progressiveThreshold": 3000,
+                        "effect": {
+                            "show": true,
+                            "brushType": "stroke",
+                            "scale": 2.5,
+                            "period": 4,
+                            "color": "#0f0",
+                            "symbol": "path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z",
+                            "symbolSize": 20,
+                            "trailLength": 0.0
+                        },
+                        "symbol": [
+                            "none",
+                            "arrow"
+                        ],
+                        "polyline": false,
+                        "large": false,
+                        "largeThreshold": 2000,
+                        "symbolSize": 10,
+                        "data": [
+                            {
+                                "name": "\u62c9\u8428->\u5e7f\u5dde",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        113.23,
+                                        23.16
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u9f50\u9f50\u54c8\u5c14",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        123.97,
+                                        47.33
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u9752\u5c9b",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        120.33,
+                                        36.07
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u4e0a\u6d77",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        121.473701,
+                                        31.230416
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u5317\u4eac",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        116.407526,
+                                        39.90403
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u897f\u5b89",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        108.95,
+                                        34.27
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u4e4c\u9c81\u6728\u9f50",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        87.68,
+                                        43.77
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u547c\u548c\u6d69\u7279",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        111.65,
+                                        40.82
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u6c88\u9633",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        123.38,
+                                        41.8
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u8fbd\u5b81",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        123.42944,
+                                        41.835441
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u897f\u5b81",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        101.74,
+                                        36.56
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u6b66\u6c49",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        114.31,
+                                        30.52
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u798f\u5dde",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        119.3,
+                                        26.08
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u90d1\u5dde",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        113.65,
+                                        34.76
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u8861\u6c34",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        115.72,
+                                        37.72
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u94f6\u5ddd",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        106.27,
+                                        38.47
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u5408\u80a5",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        117.27,
+                                        31.86
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u6d77\u53e3",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        110.35,
+                                        20.02
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u53f0\u5317",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        121.3,
+                                        25.03
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u6606\u660e",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        102.73,
+                                        25.04
+                                    ]
+                                ]
+                            },
+                            {
+                                "name": "\u62c9\u8428->\u5357\u5b81",
+                                "coords": [
+                                    [
+                                        91.11,
+                                        29.97
+                                    ],
+                                    [
+                                        108.33,
+                                        22.84
+                                    ]
+                                ]
+                            }
+                        ],
+                        "lineStyle": {
+                            "show": true,
+                            "width": 1.0,
+                            "opacity": 0.8,
+                            "curveness": 0.3,
+                            "type": "solid",
+                            "color": "#99CC99"
+                        },
+                        "label": {
+                            "show": false,
+                            "position": "top",
+                            "margin": 8
+                        }
+                    }
+                ],
+                "title": [
+                    {
+                        "text": "2022\u5e74\u8ba1\u5212\u65c5\u6e38\u8def\u7ebf\n\n\u66f4\u591a\u7cbe\u5f69\uff0c\u8bf7\u5173\u6ce8\u54d4\u54e9\u54d4\u54e9\uff1a\u54c8\u4f5b\u5728\u7b49\u6211\u5462",
+                        "padding": 5,
+                        "itemGap": 10
+                    }
+                ],
+                "tooltip": {
+                    "show": true,
+                    "trigger": "item",
+                    "triggerOn": "mousemove|click",
+                    "axisPointer": {
+                        "type": "line"
+                    },
+                    "formatter": "{b}",
+                    "textStyle": {
+                        "fontSize": 14
+                    },
+                    "borderWidth": 0
+                },
+                "visualMap": {
+                    "show": true,
+                    "type": "continuous",
+                    "min": 0,
+                    "max": 100,
+                    "textStyle": {
+                        "color": "#f00"
+                    },
+                    "inRange": {
+                        "color": [
+                            "#50a3ba",
+                            "#eac763",
+                            "#d94e5d"
+                        ]
+                    },
+                    "calculable": true,
+                    "inverse": false,
+                    "splitNumber": 5,
+                    "orient": "vertical",
+                    "showLabel": true,
+                    "itemWidth": 20,
+                    "itemHeight": 140,
+                    "borderWidth": 0
+                },
+                "color": [
+                    "#c23531",
+                    "#2f4554",
+                    "#61a0a8",
+                    "#d48265",
+                    "#749f83",
+                    "#ca8622",
+                    "#bda29a",
+                    "#6e7074",
+                    "#546570",
+                    "#c4ccd3",
+                    "#f05b72",
+                    "#ef5b9c",
+                    "#f47920",
+                    "#905a3d",
+                    "#fab27b",
+                    "#2a5caa",
+                    "#444693",
+                    "#726930",
+                    "#b2d235",
+                    "#6d8346",
+                    "#ac6767",
+                    "#1d953f",
+                    "#6950a1",
+                    "#918597"
+                ]
+            }
+        ]
+    }
+
+    //1、最简单的办法
+    /*function doIt(op) {
+        const s = JSON.stringify(op)
+        console.log(JSON.parse(decodeURI(s)))
+    }
+
+    doIt(opt)*/
+
+    //2、硬编码
+    function decode1(op) {
+        if (Array.isArray(op)) {
+            for (let i = 0; i < op.length; i++) {
+                decode1(op[i])
+            }
+        } else if (typeof op === 'object') {
+            for (let key in op) {
+                decode1(op[key])
+            }
+        } else if(typeof op === 'string') {
+            if(isContainChinese(op)){
+                console.log(`${op}---->${decodeURI(op)}`)
+            }
+        }
+    }
+
+    function isContainChinese(s) {
+        const reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
+        return reg.test(s)
+    }
+
+    decode1(opt)
+    // console.log('\u5e7f')
+    // console.log('\u5e7f'.charCodeAt(0).toString(16))
+    // console.log('\u5e7f' === '广')
+</script>
+</body>
+</html>
