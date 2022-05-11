@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acbd1bcd-f627-4d07-9ebc-3ea3306459e7" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/html/_26_arguments.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/_27_call.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html/_28_decodeURI.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ts/html/01_第一个TS.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ES6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ES6.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+    <list default="true" id="acbd1bcd-f627-4d07-9ebc-3ea3306459e7" name="更改" comment="20220506的一大波更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/_0_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/_0_test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_18_函数扩展.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/_18_函数扩展.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,29 +33,37 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="4" />
+  </component>
+  <component name="MajeraCodeReviewSettings">
+    <option name="processedVcsRemotes">
+      <set>
+        <StoredVcsRemote>
+          <option name="vcsRemoteUrl" value="https://github.com/ChenJunsen/ES6.git" />
+          <option name="vcsRootUrl" value="file://$PROJECT_DIR$" />
+        </StoredVcsRemote>
+      </set>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="21JB8EspjEm3FG0lwtKXEkCTjbz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="NewWatcherDialog.advanced.open" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ts" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="org.elm.workspace.PROJECT_DISCOVERY" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
-    <property name="ts.external.directory.path" value="J:\CodingSoft\Webstorm 2021.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "J:/workspace/kh-csdn-project",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WorkSpace\Webstorm\ES6\ts" />
@@ -114,7 +109,30 @@
       <workItem from="1650936215058" duration="9000" />
       <workItem from="1651028824643" duration="11916000" />
       <workItem from="1651111668557" duration="148000" />
+      <workItem from="1651818306247" duration="3516000" />
+      <workItem from="1651881514713" duration="1824000" />
+      <workItem from="1652165112993" duration="196000" />
+      <workItem from="1652236264846" duration="2489000" />
+      <workItem from="1652247163168" duration="686000" />
+      <workItem from="1652250335064" duration="661000" />
+      <workItem from="1652259100660" duration="265000" />
+      <workItem from="1652259590119" duration="1326000" />
     </task>
+    <task id="LOCAL-00001" summary="20220506的一大波更新">
+      <created>1651818348811</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651818348811</updated>
+    </task>
+    <task id="LOCAL-00002" summary="20220506的一大波更新">
+      <created>1651818548974</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651818548974</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +147,21 @@
         <option value="$PROJECT_DIR$/ts/t1.js.map" />
       </list>
     </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="20220506的一大波更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="20220506的一大波更新" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
